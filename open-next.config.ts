@@ -9,9 +9,11 @@ const cloudflareConfig = defineCloudflareConfig({
   enableCacheInterception: true,
 });
 
-export default {
+const config = {
   ...cloudflareConfig,
   // package.json's "build" script runs `opennextjs-cloudflare build`, so OpenNext must not call
   // `npm run build` again (infinite loop). It builds Next.js with this command instead.
   buildCommand: "npx next build",
 };
+
+export default config;
