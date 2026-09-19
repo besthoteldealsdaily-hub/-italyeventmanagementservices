@@ -188,11 +188,15 @@ export const hubPages: ContentPage[] = [
     groups: [
       {
         title: "Group accommodation",
-        slugs: ["hotel-group-bookings-italy", "wedding-accommodation-italy"],
+        slugs: ["hotel-group-bookings-italy", "wedding-accommodation-italy", "corporate-hotel-booking-italy", "tour-group-hotel-booking-italy"],
       },
       {
         title: "Events that include accommodation",
-        slugs: ["event-management-italy", "corporate-events-italy", "incentive-travel-italy", "conferences-mice-italy"],
+        slugs: ["event-management-italy", "corporate-events-italy", "incentive-travel-italy", "conferences-mice-italy", "event-hotel-accommodation-italy"],
+      },
+      {
+        title: "Hotel booking by destination",
+        slugs: ["rome-hotel-booking", "milan-hotel-booking", "florence-hotel-booking"],
       },
     ],
     sections: [
@@ -211,6 +215,18 @@ export const hubPages: ContentPage[] = [
       {
         q: "Do you also arrange transport for our group?",
         a: "Yes. Accommodation, transfers and event logistics can be managed together.",
+      },
+      {
+        q: "Do you negotiate room blocks and attrition terms on our behalf?",
+        a: "Yes — that is the core of the service. We request proposals, negotiate the rate and terms, and manage the block through to the cut-off date.",
+      },
+      {
+        q: "Do you offer corporate rates for individual business travellers, not just group blocks?",
+        a: "Yes. A standing corporate rate agreement suits regular individual travel; a room block suits several travellers on the same dates. See our corporate hotel booking page.",
+      },
+      {
+        q: "Can hotel accommodation be booked together with transport and event planning?",
+        a: "Yes — one contract and one invoice across accommodation, transport and event logistics.",
       },
     ],
     cta: { label: "Request group accommodation", service: "hotel-block" },

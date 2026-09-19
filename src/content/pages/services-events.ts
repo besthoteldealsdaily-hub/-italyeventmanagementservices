@@ -61,7 +61,14 @@ export const eventServicePages: ContentPage[] = [
         a: "Yes. Accommodation, transfers and event logistics can be managed together, with separate lines and one invoice.",
       },
     ],
-    related: ["wedding-accommodation-italy", "event-management-italy", "for-corporate-travel-managers", "group-travel-italy", "italy-hotel-group-booking-guide"],
+    related: [
+      "wedding-accommodation-italy",
+      "corporate-hotel-booking-italy",
+      "tour-group-hotel-booking-italy",
+      "event-management-italy",
+      "for-corporate-travel-managers",
+      "italy-hotel-group-booking-guide",
+    ],
     cta: { label: "Request group accommodation", service: "hotel-block" },
     serviceType: "Group hotel accommodation",
     areaServed: ["Italy"],
@@ -165,6 +172,22 @@ export const eventServicePages: ContentPage[] = [
       {
         q: "Do you handle creative production?",
         a: "Through specialist partners or alongside your own creative agency; we focus on logistics.",
+      },
+      {
+        q: "Do you manage events outside Rome?",
+        a: "Yes — Milan, Florence, Tuscany, Lake Como and the Amalfi Coast, using local suppliers vetted the same way in every city.",
+      },
+      {
+        q: "Can you source the venue, not just the logistics around it?",
+        a: "Yes, through vetted partners: congress centres, hotels, palaces and villas, proposed against your budget and guest count.",
+      },
+      {
+        q: "Can you manage transport for 100+ guests?",
+        a: "Yes — arrival waves, shuttle loops and coach transport are planned by group size, with backup vehicles held for every job.",
+      },
+      {
+        q: "Can hotel accommodation, transport and the event itself be booked together?",
+        a: "Yes. That is the core of the service: one team, one budget sheet and one invoice across all three.",
       },
     ],
     related: ["corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "for-event-agencies", "how-to-plan-a-corporate-event-in-italy"],
@@ -585,6 +608,184 @@ export const eventServicePages: ContentPage[] = [
     related: ["for-travel-agencies", "for-tour-operators", "for-event-agencies", "group-travel-italy", "what-is-an-italy-dmc"],
     cta: { label: "Request trade rates", service: "trade" },
     serviceType: "Destination management services",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "corporate-hotel-booking-italy",
+    kind: "service",
+    title: "Corporate Hotel Booking in Italy | Company Rates & Blocks",
+    description:
+      "Corporate hotel accommodation in Italy: negotiated company rates, room blocks for visiting teams and roadshows, and one consolidated monthly invoice.",
+    h1: "Corporate Hotel Booking in Italy",
+    nav: "Corporate hotel booking",
+    lead:
+      "Negotiated hotel rates and room blocks for company travel — individual business travellers, visiting teams and multi-city roadshows — billed against your cost centres.",
+    parent: { slug: "hotels", label: "Hotels" },
+    tags: [],
+    facts: [
+      { label: "Two different needs", value: "Standing corporate rates for individual travellers, and room blocks for teams of ten or more on the same dates" },
+      { label: "Invoicing", value: "One consolidated monthly e-invoice with booking-level detail and cost-centre codes, not a hotel bill per traveller" },
+      { label: "Coverage", value: "Rome, Milan, Florence and other Italian cities where your team travels" },
+      { label: "Not a public rate", value: "Corporate and block rates are negotiated per account; we do not publish prices online" },
+    ],
+    included: [
+      "Negotiated corporate rates at hotels near your Italy offices or client sites",
+      "Room blocks for visiting teams, roadshows and offsites",
+      "One point of contact for changes, no-shows and late cancellations",
+      "Ground transport between the hotel, the office and the airport",
+      "One monthly invoice with cost-centre level detail",
+    ],
+    sections: [
+      {
+        heading: "Standing rate vs. one-off block",
+        paragraphs: [
+          "If your team travels to the same city regularly, a standing corporate rate agreement is usually the better fit: a fixed nightly rate, a cancellation window and priority availability at one or two preferred hotels. If it is a single visit by several people on the same dates — a roadshow, an audit team, a training week — a room block for those specific dates is simpler and often cheaper.",
+        ],
+      },
+      {
+        heading: "What we ask before quoting",
+        bullets: [
+          "Cities and approximate nights per month or per trip",
+          "Typical group size when several travellers move together",
+          "Hotel category and any preferred chains or locations",
+          "Whether you need ground transport included in the same invoice",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you offer rates for individual business travellers, not just groups?",
+        a: "Yes. A standing corporate rate agreement works for one traveller at a time, at a hotel near your office or client site; room blocks are for several travellers on the same dates.",
+      },
+      {
+        q: "Can this be billed against our cost centres?",
+        a: "Yes — one monthly e-invoice with booking-level detail, coded to the cost centres you specify.",
+      },
+      {
+        q: "Do you handle the airport-to-hotel leg as well?",
+        a: "Yes, on the same invoice, so ground transport and accommodation are managed by one team.",
+      },
+    ],
+    related: ["for-corporate-travel-managers", "corporate-travel-italy", "hotel-group-bookings-italy", "milan-hotel-booking", "rome-hotel-booking"],
+    cta: { label: "Request corporate hotel rates", service: "hotel-block" },
+    serviceType: "Corporate hotel accommodation",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "event-hotel-accommodation-italy",
+    kind: "service",
+    title: "Event Hotel Accommodation in Italy | Delegate Room Blocks",
+    description:
+      "Hotel room blocks for conference and event delegates in Italy: cut-off dates aligned to the programme, rooming lists and on-site coordination.",
+    h1: "Event Hotel Accommodation in Italy",
+    nav: "Event hotel accommodation",
+    lead:
+      "Delegate room blocks timed to your conference or event programme — with cut-off dates, a managed rooming list and hotels close to the venue.",
+    parent: { slug: "hotels", label: "Hotels" },
+    tags: [],
+    facts: [
+      { label: "Timing", value: "The cut-off date is set against the programme, not a fixed number of days, so it moves if the event date changes" },
+      { label: "Venue proximity", value: "We prioritise hotels within walking distance or a short shuttle ride of the venue" },
+      { label: "Rooming list", value: "A single list mapped to delegate names, with updates managed centrally rather than by each traveller" },
+      { label: "Overflow", value: "A second or third hotel is held in reserve once the primary block reaches its attrition limit" },
+    ],
+    included: [
+      "Room-block proposals from hotels near the venue",
+      "Cut-off date and attrition terms aligned to the event programme",
+      "Rooming-list management and delegate change requests",
+      "Shuttle transport between hotels and the venue",
+      "One invoice alongside the rest of the event budget",
+    ],
+    sections: [
+      {
+        heading: "Why event hotel blocks need their own approach",
+        paragraphs: [
+          "A conference room block is different from a leisure group booking: dates rarely move once a venue is confirmed, delegates book at different times as registrations come in, and the hotel needs to know how many rooms to release if the block is not full by the cut-off. We manage that cut-off actively — not just at signing, but in the weeks before the event, when it matters most.",
+        ],
+      },
+      {
+        heading: "Working alongside your PCO or event agency",
+        paragraphs: [
+          "If a professional conference organiser or event agency runs your registration system, we plug the accommodation and shuttle piece into their programme rather than duplicating it, and report block status to whoever needs it.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How close to the venue are the hotels?",
+        a: "As close as budget and availability allow; we always show the walking or shuttle time in the proposal.",
+      },
+      {
+        q: "Can you manage the block if registrations run past the cut-off?",
+        a: "Yes — we can request an extension or add an overflow hotel if the block is filling.",
+      },
+      {
+        q: "Do you also run the delegate shuttles?",
+        a: "Yes, on the same booking, timed to the session schedule rather than a fixed timetable.",
+      },
+    ],
+    related: ["conferences-mice-italy", "milan-mice-services", "event-management-italy", "hotel-group-bookings-italy"],
+    cta: { label: "Request event accommodation", service: "hotel-block" },
+    serviceType: "Event and conference accommodation",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "tour-group-hotel-booking-italy",
+    kind: "service",
+    title: "Tour Group Hotel Booking in Italy | Rooms for 20+ Travellers",
+    description:
+      "Hotel booking for tour groups in Italy: schools, sports teams, faith groups and coach tours. Room blocks by twin/triple share, with a single rooming list.",
+    h1: "Tour Group Hotel Booking in Italy",
+    nav: "Tour group hotel booking",
+    lead:
+      "Rooms for coach tours, schools, sports teams and faith groups — quoted by room configuration, with one rooming list and terms that match a multi-stop itinerary.",
+    parent: { slug: "hotels", label: "Hotels" },
+    tags: [],
+    facts: [
+      { label: "Typical group", value: "20 to 200+ travellers moving together on a multi-city or multi-stop itinerary" },
+      { label: "Room mix", value: "Mostly twin and triple share, with a smaller allocation of singles for leaders and chaperones" },
+      { label: "Multi-stop terms", value: "Cancellation and attrition terms are agreed per city, since group numbers can change city by city" },
+      { label: "Coach access", value: "Hotels are checked for coach parking or a nearby drop-off point before they go on the itinerary" },
+    ],
+    included: [
+      "Room-block proposals by twin/triple/single mix",
+      "Terms agreed per city on multi-stop itineraries",
+      "One rooming list, updated as numbers are confirmed",
+      "Coach parking and drop-off checked in advance",
+      "Coordination with coach transport and guided activities",
+    ],
+    sections: [
+      {
+        heading: "Booking accommodation across a multi-city tour",
+        bullets: [
+          "You send the itinerary: cities, nights per city and approximate group size",
+          "We propose hotels with coach access, checked against your route",
+          "Room mix and rooming list are set once numbers firm up",
+          "Cut-off and attrition are agreed per city, not as one blanket term",
+          "Coach transport and guide bookings are coordinated to the same schedule",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can group size still change after we book?",
+        a: "Within the attrition allowance agreed per city, yes — we manage the changes and tell you the impact on price early.",
+      },
+      {
+        q: "Do you handle school trips and chaperone requirements?",
+        a: "Yes — room configurations, chaperone-to-student ratios and any safeguarding paperwork requested by the school are handled as part of the booking.",
+      },
+      {
+        q: "Is coach parking checked before you propose a hotel?",
+        a: "Yes. A hotel without coach access or a nearby drop-off is not proposed for a coach tour.",
+      },
+    ],
+    related: ["group-travel-italy", "for-tour-operators", "italy-dmc-services", "hotel-group-bookings-italy"],
+    cta: { label: "Request tour group accommodation", service: "hotel-block" },
+    serviceType: "Group tour accommodation",
     areaServed: ["Italy"],
   }),
 ];

@@ -10,16 +10,17 @@ import type { ContentPage, Faq } from "@/content/types";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Italy Event Management Services | Transfers, Hotels & DMC",
-  description: site.description,
+  title: "Italy Event Management, Hotels & Transportation",
+  description:
+    "Event management, group hotel bookings and private transportation across Italy: airport transfers, corporate events, weddings and DMC. Request a fixed quote.",
   path: "/",
 });
 
 const services = [
   {
-    title: "Transportation",
-    text: "Airport and city-to-city transfers, chauffeurs by the hour or day, minivans, minibuses and coaches for groups.",
-    slug: "transportation",
+    title: "Event management",
+    text: "Logistics-led events: transport waves, hotel blocks, venues and on-site coordination through vetted partners.",
+    slug: "event-management-italy",
   },
   {
     title: "Hotels and group accommodation",
@@ -27,9 +28,9 @@ const services = [
     slug: "hotels",
   },
   {
-    title: "Event management",
-    text: "Logistics-led events: transport waves, hotel blocks, venues and on-site coordination through vetted partners.",
-    slug: "event-management-italy",
+    title: "Transportation",
+    text: "Airport and city-to-city transfers, chauffeurs by the hour or day, minivans, minibuses and coaches for groups.",
+    slug: "transportation",
   },
   {
     title: "Conferences and MICE",
@@ -85,10 +86,13 @@ const routeSlugs = [
 ];
 
 const differentiators = [
-  { title: "Vetted, licensed partners", text: "We book licensed operators and check licences and insurance before anyone receives work." },
+  { title: "Licensed, insured partners", text: "We book licensed operators and check licences and insurance before anyone receives work." },
   { title: "Fixed, itemised prices", text: "Tolls, parking, waiting and city fees are shown as lines — no surprises on the day." },
-  { title: "A backup for every job", text: "If a vehicle fails, dispatch redirects a pre-approved backup. Every voucher carries the dispatch number." },
-  { title: "One team, one invoice", text: "One contract and one consolidated invoice across transport, hotels and events." },
+  { title: "Experienced local coordinators", text: "A named contact in each city who knows the venues, hotels and access rules." },
+  { title: "24/7 dispatch, one contact", text: `Reply ${site.responseSla}, and a single dispatch number on every voucher.` },
+  { title: "A backup for every job", text: "If a vehicle fails, dispatch redirects a pre-approved backup from our network." },
+  { title: "Transparent quotations", text: "Every quote is itemised — service, supplier cost basis and any city fees, shown as separate lines." },
+  { title: "B2B net rates", text: "Agencies and planners get net rates by route and vehicle class, with one consolidated invoice." },
 ];
 
 const faqs: Faq[] = [
@@ -151,13 +155,14 @@ export default function Home() {
       {/* HERO */}
       <section className="bg-ink text-white">
         <Container className="py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">Italy · Transfers · Hotels · Events</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">Italy · Events · Hotels · Transportation</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] sm:text-6xl">
-            Event Management and Ground Services Across Italy
+            Italy Event Management, Hotels &amp; Transportation
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            Vetted local partners, fixed prices and one point of contact — from airport transfers and wedding guest
-            shuttles to 200-guest corporate events in Rome, Milan, Tuscany and the Lakes.
+            Complete event, accommodation and transportation services across Italy for corporate groups, travel
+            agencies, weddings and international visitors — vetted local partners, fixed prices and one point of
+            contact, from an airport transfer to a 200-guest event in Rome, Milan, Tuscany and the Lakes.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <ButtonLink href="/request-a-quote">Request a quote — reply {site.responseSla}</ButtonLink>
@@ -180,13 +185,16 @@ export default function Home() {
 
       {/* PROCESS PROOF */}
       <section className="border-b border-line bg-white">
-        <Container className="grid gap-6 py-8 sm:grid-cols-2 lg:grid-cols-4">
-          {differentiators.map((d) => (
+        <Container className="py-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Why work with us</p>
+          <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {differentiators.map((d) => (
             <div key={d.title}>
               <p className="font-semibold">{d.title}</p>
               <p className="mt-1 text-sm text-muted">{d.text}</p>
             </div>
-          ))}
+            ))}
+          </div>
         </Container>
       </section>
 

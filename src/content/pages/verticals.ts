@@ -66,7 +66,7 @@ export const verticalPages: ContentPage[] = [
         a: "Yes — many clients are agencies who need reliable ground logistics as a specialist partner.",
       },
     ],
-    related: ["milan", "conferences-mice-italy", "milan-fair-transfers", "milan-event-transportation"],
+    related: ["milan", "conferences-mice-italy", "milan-corporate-events", "milan-hotel-booking"],
     cta: { label: "Request a MICE quote", service: "event" },
     serviceType: "MICE logistics",
     areaServed: ["Milan", "Lombardy"],
@@ -673,9 +673,270 @@ export const verticalPages: ContentPage[] = [
         a: "Yes, through partners: S-Class or equivalent sedans and V-Class vehicles for VIP guests.",
       },
     ],
-    related: ["milan", "milan-fair-transfers", "milan-mice-services", "event-transportation-italy"],
+    related: ["milan", "milan-fair-transfers", "milan-mice-services", "milan-corporate-events"],
     cta: { label: "Request an event transport plan", service: "event" },
     serviceType: "Event transportation",
     areaServed: ["Milan", "Lombardy"],
+  }),
+
+  page({
+    slug: "rome-hotel-booking",
+    kind: "vertical",
+    title: "Rome Hotel Booking | Group Rates & Room Blocks",
+    description:
+      "Group hotel booking in Rome: room blocks for corporate events, weddings and tour groups near the centro storico or the fair and conference districts.",
+    h1: "Hotel Booking in Rome",
+    nav: "Rome hotels",
+    lead:
+      "Room blocks and corporate rates in Rome, proposed near your venue or itinerary — from boutique hotels in the centro storico to larger properties near La Nuvola and the station.",
+    parent: ROME,
+    tags: ["rome"],
+    facts: [
+      { label: "Where hotels cluster", value: "Boutique and mid-size hotels in the centro storico; larger group properties near Termini station and the EUR/La Nuvola congress district" },
+      { label: "Access for guests", value: "Centro storico hotels sit inside the ZTL; we confirm the closest permitted drop-off before your group arrives" },
+      { label: "Typical group", value: "10+ rooms for weddings and corporate events; larger tour-group blocks for coach itineraries" },
+      { label: "Season", value: "Spring and autumn are the busiest for both leisure and events; request room blocks early for those windows" },
+    ],
+    included: [
+      "Hotel and villa proposals matched to your venue or itinerary",
+      "Negotiated block rates with clear cut-off and attrition terms",
+      "Rooming-list management",
+      "Coordinated airport, station and venue transfers",
+      "One contract and one invoice alongside your transport",
+    ],
+    sections: [
+      {
+        heading: "Choosing a district in Rome",
+        paragraphs: [
+          "A centro storico hotel puts guests within walking distance of most sights and evening venues, but every vehicle drop-off happens at the edge of the restricted zone. Hotels near Termini or EUR give easier coach and vehicle access and suit larger groups or events at La Nuvola. We propose both options where relevant so you can weigh walkability against ease of transport.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you propose hotels close to La Nuvola for a conference?",
+        a: "Yes — we prioritise EUR-district hotels for La Nuvola events and show shuttle time in the proposal.",
+      },
+      {
+        q: "Do centro storico hotels work for a coach tour?",
+        a: "Usually with a short walk from the nearest permitted drop-off; we flag this before you book so it is not a surprise on arrival.",
+      },
+      {
+        q: "Can this be combined with airport transfers and event transport?",
+        a: "Yes, on one invoice alongside the room block.",
+      },
+    ],
+    related: ["rome", "hotel-group-bookings-italy", "rome-corporate-events", "for-travel-agencies"],
+    cta: { label: "Request Rome hotel rates", service: "hotel-block" },
+    serviceType: "Hotel booking",
+    areaServed: ["Rome", "Lazio"],
+  }),
+
+  page({
+    slug: "milan-corporate-events",
+    kind: "vertical",
+    title: "Milan Corporate Events | Offsites, Launches & Retreats",
+    description:
+      "Corporate event management in Milan: offsites, product launches and retreats with hotel blocks, transport and venue sourcing through vetted partners.",
+    h1: "Corporate Event Management in Milan",
+    nav: "Milan corporate events",
+    lead:
+      "Offsites, product launches and leadership retreats in Milan — hotel blocks, transport and venue sourcing run by one team, separate from our fair-week and delegate-transport services.",
+    parent: MILAN,
+    tags: ["milan"],
+    facts: [
+      { label: "Distinct from fair transport", value: "This is for company-run events (offsites, launches, retreats), not trade-fair delegate transport, which is covered separately" },
+      { label: "Meetings scale", value: "Milan ranks fourteenth in the world for international association meetings, with 100 in 2024" },
+      { label: "Venue districts", value: "Porta Nuova and CityLife for modern venues, the Navigli and Brera areas for smaller, characterful spaces" },
+      { label: "City access", value: "Area C charges apply to central venues and are itemised on the quote" },
+    ],
+    included: [
+      "Hotel blocks near the chosen venue",
+      "Venue sourcing through vetted partners",
+      "Transport waves and shuttle loops",
+      "On-site coordinator and dispatch desk",
+      "One budget sheet and one invoice",
+    ],
+    sections: [
+      {
+        heading: "Why this is separate from our fair and delegate pages",
+        paragraphs: [
+          "Milan also hosts major trade fairs and international conferences, which we cover with dedicated fair-transport and MICE-logistics services built around Fieramilano Rho and delegate schedules. A company offsite, product launch or leadership retreat has a different shape — a single client, a chosen venue and a guest list you control — so we plan it as its own scope rather than fitting it into a fair-week template.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How is this different from your MICE or fair-transport services?",
+        a: "Those are built around trade fairs and multi-organisation conferences with fixed external schedules. This service is for events your company runs and controls end to end.",
+      },
+      {
+        q: "Can you suggest a venue, or only work with one we've already booked?",
+        a: "Both — we can propose venue options against your brief, or plan around a venue you have already chosen.",
+      },
+    ],
+    related: ["milan", "milan-mice-services", "milan-hotel-booking", "corporate-events-italy", "milan-event-transportation"],
+    cta: { label: "Request a Milan event quote", service: "event" },
+    serviceType: "Corporate event management",
+    areaServed: ["Milan", "Lombardy"],
+  }),
+
+  page({
+    slug: "milan-hotel-booking",
+    kind: "vertical",
+    title: "Milan Hotel Booking | Group & Corporate Rates",
+    description:
+      "Group and corporate hotel booking in Milan: room blocks near Fieramilano Rho, the city centre or Porta Nuova, with clear cut-off and attrition terms.",
+    h1: "Hotel Booking in Milan",
+    nav: "Milan hotels",
+    lead:
+      "Room blocks and corporate rates in Milan, proposed against your event, fair or itinerary — with fair-week availability checked well ahead of the dates that matter.",
+    parent: MILAN,
+    tags: ["milan"],
+    facts: [
+      { label: "Fair-week pressure", value: "Hotels sell out during Salone del Mobile, fashion weeks and major Fieramilano fairs; blocks for those weeks need early requests" },
+      { label: "Where hotels cluster", value: "Near Fieramilano Rho for exhibitors, central Milan and Porta Nuova for corporate and leisure groups" },
+      { label: "City access", value: "Area C charges apply to vehicles entering the central zone; itemised where it affects your group" },
+      { label: "Typical group", value: "10+ rooms for corporate events and weddings; larger blocks for fair-week exhibitor teams" },
+    ],
+    included: [
+      "Hotel proposals near Fieramilano Rho or the city centre",
+      "Negotiated block rates with clear cut-off and attrition terms",
+      "Rooming-list management",
+      "Coordinated airport and Rho-fair shuttle transport",
+      "One contract and one invoice alongside your transport",
+    ],
+    sections: [
+      {
+        heading: "Booking around Milan's fair calendar",
+        paragraphs: [
+          "Milan's hotel market moves with its trade-fair and fashion calendar: rates and availability during Salone del Mobile or a major fashion week are nothing like an ordinary week. If your dates overlap with a known fair, we flag it early and recommend booking rooms before flights, since fair-week blocks are the first to sell out.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How early should we book for Salone del Mobile or fashion week?",
+        a: "As soon as dates are fixed — these weeks are Milan's tightest for hotel availability, often months ahead.",
+      },
+      {
+        q: "Can you propose hotels close to Fieramilano Rho?",
+        a: "Yes, and we show the shuttle time to the fair gates in the proposal.",
+      },
+      {
+        q: "Do you handle the shuttle between the hotel and the fair or venue?",
+        a: "Yes, on the same invoice as the room block.",
+      },
+    ],
+    related: ["milan", "milan-fair-transfers", "milan-corporate-events", "hotel-group-bookings-italy"],
+    cta: { label: "Request Milan hotel rates", service: "hotel-block" },
+    serviceType: "Hotel booking",
+    areaServed: ["Milan", "Lombardy"],
+  }),
+
+  page({
+    slug: "florence-event-management",
+    kind: "vertical",
+    title: "Florence Event Management | Corporate Events & Weddings",
+    description:
+      "Event management in Florence and Tuscany: hotel blocks, transport and venue sourcing for corporate events, weddings and retreats through vetted partners.",
+    h1: "Event Management in Florence",
+    nav: "Florence events",
+    lead:
+      "Corporate offsites, retreats and wedding-style events in Florence and the Tuscan countryside — hotel blocks, transport and venue sourcing run by one team.",
+    parent: FLORENCE,
+    tags: ["florence", "tuscany"],
+    facts: [
+      { label: "Venue range", value: "From historic city venues to countryside villas and estates in Chianti and the Val d'Orcia" },
+      { label: "Access", value: "Florence's historic centre is a restricted-traffic zone; event vehicles and load-in are planned around the closest permitted point" },
+      { label: "Meetings scale", value: "Florence is one of six Italian cities in the world's top 100 for international association meetings" },
+      { label: "Arrival", value: "Most guests arrive via Pisa or Rome airport, or by train to Santa Maria Novella station" },
+    ],
+    included: [
+      "Hotel and villa blocks for the guest list",
+      "Venue sourcing through vetted partners, in the city or the countryside",
+      "Transport waves from Pisa, Rome or the station",
+      "On-site coordinator and dispatch desk",
+      "One budget sheet and one invoice",
+    ],
+    sections: [
+      {
+        heading: "City venue or countryside villa",
+        paragraphs: [
+          "A historic city venue keeps guests within a short walk of hotels and evening plans, but load-in for production or catering has to work around the restricted-traffic zone. A countryside villa or estate in Chianti or the Val d'Orcia gives more room and easier vehicle access, at the cost of a longer transfer for guests staying in the city. We plan the transport around whichever you choose — including the last kilometres, which are where a local driver matters most.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you manage an event at a countryside villa, not just in the city?",
+        a: "Yes — villas and estates across Tuscany are a regular part of this service, with guest transport planned for the longer transfer.",
+      },
+      {
+        q: "How do you handle vehicle access for load-in at a historic venue?",
+        a: "We confirm permitted access windows and the closest drop-off point with the venue before your event, so there are no surprises on the day.",
+      },
+      {
+        q: "Can hotel blocks and transport be arranged for the whole guest list?",
+        a: "Yes, on one invoice, whether guests are staying in the city or in the countryside.",
+      },
+    ],
+    related: ["florence", "florence-hotel-booking", "florence-chauffeur-service", "event-management-italy", "corporate-events-italy"],
+    cta: { label: "Request a Florence event quote", service: "event" },
+    serviceType: "Event management",
+    areaServed: ["Florence", "Tuscany"],
+  }),
+
+  page({
+    slug: "florence-hotel-booking",
+    kind: "vertical",
+    title: "Florence Hotel Booking | Group Rates & Villa Stays",
+    description:
+      "Group hotel and villa booking in Florence and Tuscany: room blocks for weddings, corporate events and tour groups, with clear cut-off and attrition terms.",
+    h1: "Hotel Booking in Florence",
+    nav: "Florence hotels",
+    lead:
+      "Room blocks in the city and villa stays in the Tuscan countryside, proposed against your event or itinerary — with the last-mile access to each property checked in advance.",
+    parent: FLORENCE,
+    tags: ["florence", "tuscany"],
+    facts: [
+      { label: "Two kinds of property", value: "City hotels within the restricted-traffic centre, and villas or agriturismi across Chianti, the Val d'Orcia and the wider countryside" },
+      { label: "Access", value: "City hotels are checked against the restricted zone; countryside properties are checked for coach and vehicle access before they go on a proposal" },
+      { label: "Typical group", value: "10+ rooms for weddings and corporate events; villa exclusives for wedding parties wanting one shared property" },
+      { label: "Season", value: "May to October is peak for weddings and villa stays; request blocks well ahead for that window" },
+    ],
+    included: [
+      "City hotel and countryside villa proposals",
+      "Negotiated block rates with clear cut-off and attrition terms",
+      "Rooming-list management",
+      "Coordinated transfers from Pisa, Rome or the station",
+      "One contract and one invoice alongside your transport",
+    ],
+    sections: [
+      {
+        heading: "Booking a villa exclusive vs. a city hotel block",
+        paragraphs: [
+          "For a wedding party that wants to stay together, a single villa or estate booked exclusively is often simpler than a room block spread across a city hotel — but it needs its own transport plan, since guests are further from restaurants and evening venues. A city hotel block suits guests who want to walk to dinner and explore between events. We usually propose both so you can compare.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you book an entire villa for our wedding party?",
+        a: "Yes — exclusive villa bookings are a regular request, alongside the guest transport plan that comes with staying outside the city.",
+      },
+      {
+        q: "Are countryside properties checked for coach access?",
+        a: "Yes. A villa or agriturismo without workable vehicle access is not proposed for a group booking.",
+      },
+      {
+        q: "Can this include transfers from Pisa or Rome airport?",
+        a: "Yes, on the same invoice as the room block.",
+      },
+    ],
+    related: ["florence", "florence-event-management", "wedding-accommodation-italy", "hotel-group-bookings-italy"],
+    cta: { label: "Request Florence hotel rates", service: "hotel-block" },
+    serviceType: "Hotel booking",
+    areaServed: ["Florence", "Tuscany"],
   }),
 ];
