@@ -27,7 +27,7 @@ npm run build && npm start
 | `src/components/RegistryPage.tsx` | Renders facts, inclusions, sections, FAQs; emits Breadcrumb + Service + FAQ JSON-LD. |
 | `src/app/page.tsx` | Home. Static pages: `about`, `contact`, `partners`, `vehicles`, `request-a-quote`. |
 | `src/app/actions/quote.ts` + `src/lib/leads.ts` | Quote form → validation (zod) → email (Resend) and/or webhook. Honeypot + time trap. |
-| `src/app/{sitemap,robots,opengraph-image}` | SEO plumbing. **robots blocks everything until `NEXT_PUBLIC_ALLOW_INDEXING=true`.** |
+| `src/app/{sitemap,robots}` + `public/og-image.png` | SEO plumbing. **robots blocks everything until `NEXT_PUBLIC_ALLOW_INDEXING=true`.** The share image is a static PNG on purpose (keeps the Cloudflare Worker small). |
 | `db/schema.sql` | Booking-system schema (not wired yet). |
 
 ### Publishing a new page
@@ -35,6 +35,31 @@ npm run build && npm start
 2. It must contain **unique, real data** (`facts`) — the "no unique data, no page" rule. Set `updated` to today.
 3. Link it from related pages via `related: [...]`. Nav/footer pick it up only if you add it in `Header.tsx`.
 4. `npm run build` — the page appears in `/sitemap.xml` automatically.
+
+## Deploy on Cloudflare (Workers + OpenNext)
+
+Adapter: `@opennextjs/cloudflare` (supports Next.js 16). Config already in the repo: `wrangler.jsonc`,
+`open-next.config.ts`, `public/_headers`, `.node-version`. **Use Workers, not Cloudflare Pages** (`next-on-pages` is not used).
+
+1. Cloudflare dashboard → **Workers & Pages → Create → Import a repository** → pick this repo.
+2. **Worker name: `italy-event-management-services`** — it must equal `name` in `wrangler.jsonc`, or the build fails.
+   The GitHub repo name starts with "-", so Cloudflare's suggested name will be invalid: type the name yourself.
+   (If you choose another name, change it in both places in `wrangler.jsonc`: `name` and the `WORKER_SELF_REFERENCE` service.)
+3. Build settings:
+   - Build command: `npx opennextjs-cloudflare build`
+   - Deploy command: `npx opennextjs-cloudflare deploy`
+   - Root directory: leave empty (repo root is the app)
+4. **Build variables** (Settings → Build → Variables and secrets): every `NEXT_PUBLIC_*` value from `.env.example`.
+   They are inlined **at build time** — changing them requires a new deploy.
+5. **Runtime variables & secrets** (Settings → Variables and secrets): `RESEND_API_KEY` (as a *secret*), `QUOTE_FROM_EMAIL`,
+   `QUOTE_TO_EMAIL`, `LEAD_WEBHOOK_URL`.
+6. Custom domain: Worker → Settings → Domains & Routes → add `italyeventmanagementservices.com` (domain must be on Cloudflare DNS).
+7. Keep `NEXT_PUBLIC_ALLOW_INDEXING=false` until launch; to launch, set it to `true` and **redeploy**.
+
+Notes
+- Local Cloudflare preview (`npm run preview`) worked on Windows in testing, but OpenNext does not guarantee Windows; the real build runs on Linux (Workers Builds). Put local-only secrets in `.dev.vars` (gitignored).
+- Prerendered pages are served from static assets; there is no on-demand revalidation — content changes ship with a redeploy.
+- Free-plan Worker limit is 3 MiB compressed; this app measured about 1.2 MiB (wrangler dry run), so it fits the free plan.
 
 ## Before you launch (checklist)
 

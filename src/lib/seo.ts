@@ -4,6 +4,9 @@ import type { ContentPage, Faq } from "@/content/types";
 
 export const orgId = () => absoluteUrl("/#organization");
 
+/** Static social-share image (public/og-image.png) — a static file keeps the Cloudflare Worker small. */
+export const ogImage = { url: "/og-image.png", width: 1200, height: 630, alt: site.name };
+
 interface MetaInput {
   /** Full <title>. Keep ≤ 60 characters. */
   title: string;
@@ -21,8 +24,8 @@ export function pageMetadata({ title, description, path, index = true }: MetaInp
     description,
     alternates: { canonical: url },
     robots: { index: allow, follow: allow },
-    openGraph: { title, description, url, siteName: site.name, type: "website", locale: "en_GB" },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: { title, description, url, siteName: site.name, type: "website", locale: "en_GB", images: [ogImage] },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
   };
 }
 

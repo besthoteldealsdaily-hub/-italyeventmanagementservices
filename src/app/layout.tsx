@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import JsonLd from "@/components/JsonLd";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { site } from "@/config/site";
-import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
+import { ogImage, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], display: "swap" });
@@ -24,7 +24,9 @@ export const metadata: Metadata = {
     siteName: site.name,
     type: "website",
     locale: "en_GB",
+    images: [ogImage],
   },
+  twitter: { card: "summary_large_image", images: [ogImage.url] },
 };
 
 export const viewport: Viewport = {

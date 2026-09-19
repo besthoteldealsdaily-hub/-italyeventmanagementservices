@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // MUST match the Worker name in the Cloudflare dashboard (Workers Builds fails otherwise).
+  "name": "italy-event-management-services",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2024-12-30",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      // Same value as "name" above.
+      "service": "italy-event-management-services"
+    }
+  ],
+  "observability": { "enabled": true }
+}
