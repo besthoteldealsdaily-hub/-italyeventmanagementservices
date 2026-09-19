@@ -9,7 +9,7 @@ cp .env.example .env.local     # then edit values
 npm install
 npm run dev                    # http://localhost:3000
 npm run lint && npx tsc --noEmit
-npm run build && npm start
+npm run build:next && npm start   # plain Next.js build; use `npm run build` for the Cloudflare build
 ```
 
 > `AGENTS.md` (created by Next.js) says this Next version has breaking changes — read
@@ -38,28 +38,35 @@ npm run build && npm start
 
 ## Deploy on Cloudflare (Workers + OpenNext)
 
-Adapter: `@opennextjs/cloudflare` (supports Next.js 16). Config already in the repo: `wrangler.jsonc`,
-`open-next.config.ts`, `public/_headers`, `.node-version`. **Use Workers, not Cloudflare Pages** (`next-on-pages` is not used).
+Adapter: `@opennextjs/cloudflare` (supports Next.js 16). Config in the repo: `wrangler.jsonc`, `open-next.config.ts`,
+`public/_headers`, `.node-version`. **Use Workers, not Cloudflare Pages.**
 
-1. Cloudflare dashboard → **Workers & Pages → Create → Import a repository** → pick this repo.
-2. **Worker name: `italy-event-management-services`** — it must equal `name` in `wrangler.jsonc`, or the build fails.
-   The GitHub repo name starts with "-", so Cloudflare's suggested name will be invalid: type the name yourself.
-   (If you choose another name, change it in both places in `wrangler.jsonc`: `name` and the `WORKER_SELF_REFERENCE` service.)
-3. Build settings:
-   - Build command: `npx opennextjs-cloudflare build`
-   - Deploy command: `npx opennextjs-cloudflare deploy`
-   - Root directory: leave empty (repo root is the app)
-4. **Build variables** (Settings → Build → Variables and secrets): every `NEXT_PUBLIC_*` value from `.env.example`.
-   They are inlined **at build time** — changing them requires a new deploy.
-5. **Runtime variables & secrets** (Settings → Variables and secrets): `RESEND_API_KEY` (as a *secret*), `QUOTE_FROM_EMAIL`,
-   `QUOTE_TO_EMAIL`, `LEAD_WEBHOOK_URL`.
-6. Custom domain: Worker → Settings → Domains & Routes → add `italyeventmanagementservices.com` (domain must be on Cloudflare DNS).
-7. Keep `NEXT_PUBLIC_ALLOW_INDEXING=false` until launch; to launch, set it to `true` and **redeploy**.
+**Dashboard settings (the defaults work):**
+- Build command: `npm run build` — this runs `opennextjs-cloudflare build` (which builds Next.js itself and creates `.open-next/`)
+- Deploy command: `npx wrangler deploy` — Wrangler detects the OpenNext project and runs `opennextjs-cloudflare deploy`
+- Root directory: empty (the repo root is the app)
+- **Worker name must equal `name` in `wrangler.jsonc`** (currently `italyeventmanagementservices`). If you rename the Worker in the dashboard,
+  change both `name` and the `WORKER_SELF_REFERENCE` service in `wrangler.jsonc`.
 
-Notes
-- Local Cloudflare preview (`npm run preview`) worked on Windows in testing, but OpenNext does not guarantee Windows; the real build runs on Linux (Workers Builds). Put local-only secrets in `.dev.vars` (gitignored).
+**Variables**
+- **Build variables** (Settings → Build → Variables and secrets): every `NEXT_PUBLIC_*` value from `.env.example` — inlined at build time,
+  so changing them needs a new deploy.
+- **Runtime variables & secrets** (Settings → Variables and secrets): `RESEND_API_KEY` (secret), `QUOTE_FROM_EMAIL`, `QUOTE_TO_EMAIL`, `LEAD_WEBHOOK_URL`.
+
+**Domain & launch**
+- Worker → Settings → Domains & Routes → add `italyeventmanagementservices.com` (domain must use Cloudflare DNS).
+- Keep `NEXT_PUBLIC_ALLOW_INDEXING=false` until launch; then set it to `true` and **redeploy**.
+
+**Scripts**
+- `npm run build` → OpenNext/Cloudflare build (creates `.open-next/`) · `npm run build:next` → plain `next build`
+- `npm run preview` → run the Worker locally (worked on Windows in testing; the real build runs on Linux). Local secrets go in `.dev.vars` (gitignored).
+
+**Troubleshooting**
+- *"Service binding 'WORKER_SELF_REFERENCE' references Worker 'web' which was not found"* → the repo had no `wrangler.jsonc`, so Wrangler auto-generated
+  one from `package.json`'s name. Make sure the committed `wrangler.jsonc` is on the branch Cloudflare builds.
+- *Build succeeds but deploy says the Worker name doesn't match* → align the Worker name in the dashboard and `wrangler.jsonc`.
 - Prerendered pages are served from static assets; there is no on-demand revalidation — content changes ship with a redeploy.
-- Free-plan Worker limit is 3 MiB compressed; this app measured about 1.2 MiB (wrangler dry run), so it fits the free plan.
+- Free-plan Worker limit is 3 MiB compressed; this app is about 1.2 MiB (Wrangler dry run).
 
 ## Before you launch (checklist)
 
