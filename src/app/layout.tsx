@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -8,8 +8,19 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { site } from "@/config/site";
 import { ogImage, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const fraunces = Fraunces({ variable: "--font-fraunces", subsets: ["latin"], display: "swap" });
+// Self-hosted variable fonts (see ./fonts/LICENSE.txt): no network access needed at build time.
+const inter = localFont({
+  src: "./fonts/inter-latin-wght-normal.woff2",
+  variable: "--font-inter",
+  weight: "100 900",
+  display: "swap",
+});
+const fraunces = localFont({
+  src: "./fonts/fraunces-latin-wght-normal.woff2",
+  variable: "--font-fraunces",
+  weight: "100 900",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

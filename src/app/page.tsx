@@ -2,10 +2,11 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import FaqList from "@/components/FaqList";
 import JsonLd from "@/components/JsonLd";
+import PageCards from "@/components/PageCards";
 import { ButtonLink, Container, SectionHeading } from "@/components/ui";
 import { site, whatsappLink } from "@/config/site";
-import { getPublishedPage } from "@/content/registry";
-import type { Faq } from "@/content/types";
+import { getGuides, getPublishedPage, hrefFor } from "@/content/registry";
+import type { ContentPage, Faq } from "@/content/types";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -17,36 +18,52 @@ export const metadata: Metadata = pageMetadata({
 const services = [
   {
     title: "Transportation",
-    text: "Airport and city-to-city transfers, chauffeurs by the hour or day, and minivans, minibuses and coaches for groups.",
-    slug: "group-transportation-italy",
+    text: "Airport and city-to-city transfers, chauffeurs by the hour or day, minivans, minibuses and coaches for groups.",
+    slug: "transportation",
   },
   {
-    title: "Hotels & group accommodation",
+    title: "Hotels and group accommodation",
     text: "Room blocks and group rates negotiated with hotels and villas, with clear cut-off dates and terms.",
-    slug: "rome-corporate-events",
+    slug: "hotels",
   },
   {
     title: "Event management",
     text: "Logistics-led events: transport waves, hotel blocks, venues and on-site coordination through vetted partners.",
-    slug: "rome-corporate-events",
+    slug: "event-management-italy",
   },
   {
-    title: "Weddings",
-    text: "Guest shuttles, couple car and arrival waves for destination weddings — with a backup vehicle on standby.",
-    slug: "lake-como-wedding-transport",
+    title: "Conferences and MICE",
+    text: "Delegate arrivals, venue shuttles and hotel blocks for conferences and exhibitions.",
+    slug: "conferences-mice-italy",
   },
   {
-    title: "Tours & day trips",
+    title: "Corporate travel",
+    text: "Delegations, roadshows and executive visits, with one consolidated monthly invoice.",
+    slug: "corporate-travel-italy",
+  },
+  {
+    title: "Destination weddings",
+    text: "Guest shuttles, couple cars and accommodation blocks — with a backup vehicle on standby.",
+    slug: "destination-weddings-italy",
+  },
+  {
+    title: "Tours and day trips",
     text: "Private day trips with a driver and, through licensed partners, nationally qualified guides.",
-    slug: "rome-to-florence-transfer",
+    slug: "private-tours-italy",
+  },
+  {
+    title: "Group travel and DMC services",
+    text: "Coaches, hotels and guides for tour groups, schools, sports teams and faith groups.",
+    slug: "group-travel-italy",
   },
 ];
 
 const audiences = [
   { title: "Wedding planners", text: "Guest logistics with a backup vehicle and one coordinator on the day.", slug: "for-wedding-planners" },
-  { title: "Travel agencies & advisors", text: "Net-rate ground handling with a 24/7 contact and one monthly invoice.", slug: "for-travel-agencies" },
-  { title: "Event & MICE agencies", text: "Shuttle waves, hotel blocks and on-site dispatch for your Italy programmes.", slug: "rome-corporate-events" },
-  { title: "Corporate teams", text: "Executive transfers, delegations and offsites, handled end to end.", slug: "rome-corporate-events" },
+  { title: "Travel agencies and advisors", text: "Net-rate ground handling with a 24/7 contact and one monthly invoice.", slug: "for-travel-agencies" },
+  { title: "Event and MICE agencies", text: "Shuttle waves, hotel blocks and on-site dispatch for your Italy programmes.", slug: "for-event-agencies" },
+  { title: "Tour operators", text: "Coaches, hotel blocks and licensed guides with access permits handled.", slug: "for-tour-operators" },
+  { title: "Corporate teams", text: "Executive transfers, delegations and offsites, handled end to end.", slug: "for-corporate-travel-managers" },
 ];
 
 const steps = [
@@ -56,17 +73,15 @@ const steps = [
   { n: "4", title: "We run it", text: "Vouchers, driver details, live dispatch and a backup plan — 24/7." },
 ];
 
-const destinations = [
-  { name: "Rome", note: "Our hub — airports, city, corporate events", slug: "rome" },
-  { name: "Florence & Tuscany", note: "Routes from Rome, villas and weddings", slug: "rome-to-florence-transfer" },
-  { name: "Amalfi Coast & Naples", note: "Routes from Rome, local access planning", slug: "rome-to-amalfi-coast-transfer" },
-  { name: "Milan & Lake Como", note: "Weddings and corporate logistics", slug: "lake-como-wedding-transport" },
-];
+const destinationSlugs = ["rome", "milan", "florence", "venice", "naples", "amalfi-coast", "lake-como", "tuscany"];
 
-const routes = [
-  { label: "Rome Fiumicino to your hotel", slug: "rome-airport-transfer" },
-  { label: "Rome to Florence", slug: "rome-to-florence-transfer" },
-  { label: "Rome to the Amalfi Coast", slug: "rome-to-amalfi-coast-transfer" },
+const routeSlugs = [
+  "rome-airport-transfer",
+  "rome-to-florence-transfer",
+  "rome-to-amalfi-coast-transfer",
+  "rome-to-naples-transfer",
+  "florence-to-venice-transfer",
+  "malpensa-to-lake-como-transfer",
 ];
 
 const differentiators = [
@@ -111,12 +126,14 @@ const faqs: Faq[] = [
   },
 ];
 
+function livePages(slugs: string[]): ContentPage[] {
+  return slugs.map((s) => getPublishedPage(s)).filter((p): p is ContentPage => Boolean(p));
+}
+
 function CardLink({ slug, children }: { slug: string; children: React.ReactNode }) {
-  // Cards link to a live page when available, otherwise to the quote form.
-  const href = getPublishedPage(slug) ? `/${slug}` : "/request-a-quote";
   return (
     <Link
-      href={href}
+      href={hrefFor(slug)}
       className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition hover:border-accent hover:shadow-md"
     >
       {children}
@@ -126,6 +143,7 @@ function CardLink({ slug, children }: { slug: string; children: React.ReactNode 
 
 export default function Home() {
   const wa = whatsappLink("Hello, I'd like a quote for a transfer/event in Italy.");
+  const guides = getGuides().slice(0, 3);
   return (
     <>
       <JsonLd data={faqJsonLd(faqs)} />
@@ -153,11 +171,7 @@ export default function Home() {
                 WhatsApp our team
               </a>
             )}
-            <ButtonLink
-              href={getPublishedPage("for-travel-agencies") ? "/for-travel-agencies" : "/partners"}
-              variant="outline"
-              className="!border-white/40 !text-white hover:!bg-white/10"
-            >
+            <ButtonLink href={hrefFor("for-travel-agencies")} variant="outline" className="!border-white/40 !text-white hover:!bg-white/10">
               Get trade net rates
             </ButtonLink>
           </div>
@@ -184,29 +198,31 @@ export default function Home() {
             title="Everything that moves, sleeps and gathers your guests in Italy"
             lead="One accountable team across transportation, accommodation and events — built on a network of vetted local suppliers."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s) => (
               <CardLink key={s.title} slug={s.slug}>
-                <h3 className="text-xl font-semibold">{s.title}</h3>
-                <p className="mt-2 flex-1 text-muted">{s.text}</p>
+                <h3 className="text-lg font-semibold">{s.title}</h3>
+                <p className="mt-2 flex-1 text-sm text-muted">{s.text}</p>
                 <span className="mt-4 text-sm font-semibold text-accent group-hover:underline">Learn more →</span>
               </CardLink>
             ))}
           </div>
+          <p className="mt-8">
+            <Link href="/services" className="font-semibold text-accent hover:underline">
+              See all services →
+            </Link>
+          </p>
         </Container>
       </section>
 
       {/* WHO WE WORK WITH */}
       <section className="bg-sand/50 py-20">
         <Container>
-          <SectionHeading
-            eyebrow="Who we work with"
-            title="Built for professionals who can't afford a missed pick-up"
-          />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <SectionHeading eyebrow="Who we work with" title="Built for professionals who can't afford a missed pick-up" />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {audiences.map((a) => (
               <CardLink key={a.title} slug={a.slug}>
-                <h3 className="text-lg font-semibold">{a.title}</h3>
+                <h3 className="text-base font-semibold">{a.title}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted">{a.text}</p>
               </CardLink>
             ))}
@@ -230,37 +246,47 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* DESTINATIONS + ROUTES */}
+      {/* DESTINATIONS */}
       <section className="bg-sand/50 py-20">
-        <Container className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <SectionHeading eyebrow="Where we operate" title="Rome first — and the routes people actually travel" />
-            <ul className="mt-8 space-y-3">
-              {destinations.map((d) => (
-                <li key={d.name}>
-                  <CardLink slug={d.slug}>
-                    <p className="font-semibold">{d.name}</p>
-                    <p className="text-sm text-muted">{d.note}</p>
-                  </CardLink>
-                </li>
-              ))}
-            </ul>
+        <Container>
+          <SectionHeading eyebrow="Where we operate" title="Rome first — and the destinations people actually travel to" />
+          <div className="mt-10">
+            <PageCards pages={livePages(destinationSlugs)} />
           </div>
-          <div>
-            <SectionHeading eyebrow="Popular routes" title="Fixed price, all-inclusive" lead="Tell us the date and group size; we reply with a fixed quote." />
-            <ul className="mt-8 space-y-3">
-              {routes.map((r) => (
-                <li key={r.slug}>
-                  <CardLink slug={r.slug}>
-                    <p className="font-semibold">{r.label}</p>
-                    <p className="text-sm text-muted">Fixed price on request</p>
-                  </CardLink>
-                </li>
-              ))}
-            </ul>
+          <p className="mt-8">
+            <Link href="/destinations" className="font-semibold text-accent hover:underline">
+              All destinations, airports and routes →
+            </Link>
+          </p>
+        </Container>
+      </section>
+
+      {/* POPULAR ROUTES */}
+      <section className="py-20">
+        <Container>
+          <SectionHeading eyebrow="Popular routes" title="Fixed price, all-inclusive" lead="Tell us the date and group size; we reply with a fixed quote." />
+          <div className="mt-10">
+            <PageCards pages={livePages(routeSlugs)} />
           </div>
         </Container>
       </section>
+
+      {/* GUIDES */}
+      {guides.length > 0 && (
+        <section className="bg-sand/50 py-20">
+          <Container>
+            <SectionHeading eyebrow="Guides" title="Real numbers and access rules, with sources" />
+            <div className="mt-10">
+              <PageCards pages={guides} />
+            </div>
+            <p className="mt-8">
+              <Link href="/guides" className="font-semibold text-accent hover:underline">
+                All guides →
+              </Link>
+            </p>
+          </Container>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="py-20">

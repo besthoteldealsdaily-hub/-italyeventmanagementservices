@@ -1,0 +1,6 @@
+Fonts in this folder are self-hosted so builds never depend on Google Fonts being reachable.
+
+- Inter (variable, latin subset) — Copyright The Inter Project Authors. SIL Open Font License 1.1. https://github.com/rsms/inter
+- Fraunces (variable, latin subset) — Copyright The Fraunces Project Authors. SIL Open Font License 1.1. https://github.com/undercasetype/Fraunces
+
+Files come from the Fontsource packages @fontsource-variable/inter and @fontsource-variable/fraunces.

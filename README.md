@@ -8,7 +8,7 @@ Next.js (App Router) · TypeScript · Tailwind CSS 4. Domain: **italyeventmanage
 cp .env.example .env.local     # then edit values
 npm install
 npm run dev                    # http://localhost:3000
-npm run lint && npx tsc --noEmit
+npm run lint && npx tsc --noEmit && npm run check:content
 npm run build:next && npm start   # plain Next.js build; use `npm run build` for the Cloudflare build
 ```
 
@@ -17,24 +17,34 @@ npm run build:next && npm start   # plain Next.js build; use `npm run build` for
 
 ## How the site is organised
 
+The site is **data-driven**: 98 content pages live in `src/content/pages/` and render through one template.
+Static pages: `/`, `/about`, `/contact`, `/partners`, `/vehicles`, `/request-a-quote`, `/guides`, and the four legal pages.
+
 | Path | What |
 |---|---|
 | `src/config/site.ts` | Site-wide config. Company/licence details come from env vars and stay **hidden until set**. |
-| `src/content/pages/published.ts` | **Live pages** (services, airports, routes, verticals, B2B, city). Only these are routable and in the sitemap. |
-| `src/content/pages/stubs.ts` | The rest of the **planned 100 pages** — not routable. |
-| `src/content/registry.ts` | Merges both; `getPublishedPage()`; nav helpers never link to unpublished pages. |
-| `src/app/[slug]/page.tsx` | One template for every registry page; `dynamicParams = false` → unknown slugs 404. |
-| `src/components/RegistryPage.tsx` | Renders facts, inclusions, sections, FAQs; emits Breadcrumb + Service + FAQ JSON-LD. |
-| `src/app/page.tsx` | Home. Static pages: `about`, `contact`, `partners`, `vehicles`, `request-a-quote`. |
+| `src/config/nav.ts` | Header menus and footer columns (page slugs; only published pages are shown). |
+| `src/content/pages/hubs.ts` | Category hubs: `/services`, `/transportation`, `/hotels`, `/destinations`. |
+| `src/content/pages/services-transport.ts`, `services-events.ts`, `published.ts` | Service pages (transport, hotels, events, MICE, corporate, weddings, tours, groups, DMC). |
+| `src/content/pages/airports.ts` | 8 airport pages. |
+| `src/content/pages/routes.ts` | 25 route pages, built with the `route()` helper (distance, drive time, stops, access notes, route-specific advice). |
+| `src/content/pages/cities.ts` | City/region hubs (10). Each city page auto-lists every page tagged with its slug. |
+| `src/content/pages/verticals.ts` | City × service pages (chauffeur, weddings, MICE, fairs, events). |
+| `src/content/pages/industries.ts` | "For …" pages for agencies, planners, event agencies, tour operators, corporates. |
+| `src/content/pages/guides.ts` | 10 guides served at `/guides/[slug]`, each with sources. |
+| `src/content/registry.ts` | Merges everything; `pathFor()`, related-links logic, tag lookups. Duplicate slugs fail the build. |
+| `src/app/[slug]/page.tsx`, `src/app/guides/[slug]/page.tsx` | One template each; `dynamicParams = false` → unknown slugs 404. |
+| `src/components/RegistryPage.tsx` | Renders hubs, cities, routes, services, guides; emits Breadcrumb + Service/Article/Collection + FAQ JSON-LD. |
 | `src/app/actions/quote.ts` + `src/lib/leads.ts` | Quote form → validation (zod) → email (Resend) and/or webhook. Honeypot + time trap. |
-| `src/app/{sitemap,robots}` + `public/og-image.png` | SEO plumbing. **robots blocks everything until `NEXT_PUBLIC_ALLOW_INDEXING=true`.** The share image is a static PNG on purpose (keeps the Cloudflare Worker small). |
+| `src/app/{sitemap,robots}` + `public/og-image.png` | SEO plumbing. **robots blocks everything until `NEXT_PUBLIC_ALLOW_INDEXING=true`.** |
+| `scripts/check-content.ts` | Content QA: broken links/slugs, duplicate titles/descriptions, title/description length, orphans. |
 | `db/schema.sql` | Booking-system schema (not wired yet). |
 
-### Publishing a new page
-1. Add a full `ContentPage` object with the **same slug** as its stub to `published.ts`.
-2. It must contain **unique, real data** (`facts`) — the "no unique data, no page" rule. Set `updated` to today.
-3. Link it from related pages via `related: [...]`. Nav/footer pick it up only if you add it in `Header.tsx`.
-4. `npm run build` — the page appears in `/sitemap.xml` automatically.
+### Adding or editing a page
+1. Add a `page({...})` (or `route({...})` / `airport({...})`) entry in the right file in `src/content/pages/`.
+2. It must carry **unique, real data** (`facts`) — the "no unique data, no page" rule. Set `updated` when you re-check facts.
+3. Give it a `parent`, `tags` (destination slugs, so city pages list it) and `related` slugs.
+4. Run `npm run check:content` (must pass), then `npm run build`. The page appears in `/sitemap.xml` automatically.
 
 ## Deploy on Cloudflare (Workers + OpenNext)
 

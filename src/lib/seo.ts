@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { absoluteUrl, site } from "@/config/site";
+import { pathFor } from "@/content/registry";
 import type { ContentPage, Faq } from "@/content/types";
 
 export const orgId = () => absoluteUrl("/#organization");
@@ -81,7 +82,7 @@ export function serviceJsonLd(page: ContentPage) {
     name: page.h1,
     serviceType: page.serviceType ?? page.h1,
     description: page.description,
-    url: absoluteUrl(`/${page.slug}`),
+    url: absoluteUrl(pathFor(page)),
     provider: { "@id": orgId() },
     areaServed: (page.areaServed ?? ["Italy"]).map((name) => ({ "@type": "Place", name })),
   };
@@ -96,5 +97,40 @@ export function faqJsonLd(faqs: Faq[]) {
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
+  };
+}
+
+export function articleJsonLd(page: ContentPage) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.h1,
+    description: page.description,
+    mainEntityOfPage: absoluteUrl(pathFor(page)),
+    datePublished: page.updated,
+    dateModified: page.updated,
+    author: { "@id": orgId() },
+    publisher: { "@id": orgId() },
+    inLanguage: "en",
+  };
+}
+
+export function collectionJsonLd(page: ContentPage, items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: page.h1,
+    description: page.description,
+    url: absoluteUrl(pathFor(page)),
+    isPartOf: { "@id": absoluteUrl("/#website") },
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: item.name,
+        url: absoluteUrl(item.path),
+      })),
+    },
   };
 }

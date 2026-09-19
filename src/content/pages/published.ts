@@ -19,12 +19,15 @@ export const publishedPages: ContentPage[] = [
     slug: "group-transportation-italy",
     kind: "service",
     status: "published",
+    nav: "Group transportation",
+    tags: [],
     title: "Group Transportation in Italy | Minibus & Coach Hire",
     description:
       "Minivan, minibus and coach transport for groups in Italy — weddings, corporate events, tours. Fixed prices, access-rule planning, backup vehicles.",
     h1: "Group Transportation in Italy",
     lead:
       "Minivans, minibuses and coaches for wedding guests, corporate teams and tour groups — planned around Italian access rules and run by a dispatch team you can reach 24/7.",
+    parent: { slug: "transportation", label: "Transportation" },
     facts: [
       { label: "Vehicle classes", value: "Minivan (up to 7 passengers), minibus (16–35 seats), coach (50+ seats)" },
       { label: "Typical uses", value: "Airport arrival waves, hotel–venue shuttles, day tours, multi-day group logistics" },
@@ -106,6 +109,8 @@ export const publishedPages: ContentPage[] = [
     slug: "rome-airport-transfer",
     kind: "airport",
     status: "published",
+    nav: "Rome airport (FCO)",
+    tags: ["rome"],
     title: "Rome Airport Transfer: Fiumicino & Ciampino Private Driver",
     description:
       "Private transfers from Rome Fiumicino and Ciampino airports to your hotel. Fixed price agreed in advance, meet-and-greet, flight tracking. Request a quote.",
@@ -180,6 +185,8 @@ export const publishedPages: ContentPage[] = [
     slug: "rome-to-florence-transfer",
     kind: "route",
     status: "published",
+    nav: "Rome to Florence",
+    tags: ["rome", "florence", "tuscany"],
     title: "Rome to Florence Private Transfer — Door-to-Door Driver",
     description:
       "Private door-to-door transfer from Rome to Florence with a licensed driver. Fixed all-inclusive price, optional stops in Orvieto or Siena. Request a quote.",
@@ -249,6 +256,8 @@ export const publishedPages: ContentPage[] = [
     slug: "rome-to-amalfi-coast-transfer",
     kind: "route",
     status: "published",
+    nav: "Rome to Amalfi Coast",
+    tags: ["rome", "amalfi-coast", "naples"],
     title: "Rome to Amalfi Coast Private Transfer | Positano & Sorrento",
     description:
       "Private transfer from Rome to Amalfi, Positano, Ravello or Sorrento with a licensed driver who knows Amalfi Coast access rules. Fixed price.",
@@ -323,12 +332,15 @@ export const publishedPages: ContentPage[] = [
     slug: "lake-como-wedding-transport",
     kind: "vertical",
     status: "published",
+    nav: "Lake Como weddings",
+    tags: ["lake-como", "milan"],
     title: "Lake Como Wedding Transport: Guest Shuttles & Couple Car",
     description:
       "Guest shuttles, couple car and airport arrival waves for Lake Como weddings. Fixed prices, backup vehicle on standby, one coordinator on the day.",
     h1: "Lake Como Wedding Transportation",
     lead:
       "Guest shuttles, the couple's car and airport arrival waves — planned for the lake's narrow roads and delivered by one coordinator on the day, with a backup vehicle on standby.",
+    parent: { slug: "lake-como", label: "Lake Como" },
     facts: [
       {
         label: "Main gateway",
@@ -397,6 +409,8 @@ export const publishedPages: ContentPage[] = [
     slug: "rome-corporate-events",
     kind: "vertical",
     status: "published",
+    nav: "Rome corporate events",
+    tags: ["rome"],
     title: "Rome Corporate Events: Transport, Hotel Blocks & Logistics",
     description:
       "Corporate events in Rome: guest transport, hotel room blocks, venue and catering sourcing, and on-site coordination through vetted partners. Request a quote.",
@@ -468,12 +482,15 @@ export const publishedPages: ContentPage[] = [
     slug: "for-wedding-planners",
     kind: "industry",
     status: "published",
+    nav: "Wedding planners",
+    tags: [],
     title: "Guest Logistics for Destination Wedding Planners in Italy",
     description:
       "Ground partner for Italian destination weddings: guest shuttles, couple car, hotel blocks, a backup vehicle on standby and one coordinator on the day.",
     h1: "Guest Logistics for Wedding Planners",
     lead:
       "Shuttles, couple car and hotel blocks for your Italian weddings — with a backup vehicle on standby and one coordinator who knows your timeline.",
+    parent: { slug: "services", label: "Services" },
     facts: [
       { label: "Market context", value: "15,100+ foreign weddings in Italy in 2024; planners were involved in 46.3% of them" },
       { label: "Response time", value: "Sample logistics plan within 24 hours of receiving guest list and timeline" },
@@ -529,12 +546,15 @@ export const publishedPages: ContentPage[] = [
     slug: "for-travel-agencies",
     kind: "industry",
     status: "published",
+    nav: "Travel agencies",
+    tags: [],
     title: "Italy Ground Handling for Travel Agencies | Net Rates",
     description:
       "Private transfers, chauffeur days and group transport across Italy at net rates — 24/7 contact, one consolidated invoice. For agencies and advisors.",
     h1: "Italy Ground Handling for Travel Agencies",
     lead:
       "Private transfers, chauffeur days and group transport across Italy at net rates — with a 24/7 contact and one consolidated invoice.",
+    parent: { slug: "services", label: "Services" },
     facts: [
       { label: "Coverage", value: "Rome hub with Florence/Tuscany and Naples/Amalfi Coast routes; Milan and Lake Como being added" },
       { label: "Rates", value: "Net rates by route and vehicle class — you set your own markup" },
@@ -591,12 +611,15 @@ export const publishedPages: ContentPage[] = [
     slug: "rome",
     kind: "city",
     status: "published",
+    nav: "Rome",
+    tags: ["rome"],
     title: "Rome — Transfers, Chauffeurs, Group Transport & Events",
     description:
       "Ground services in Rome: airport transfers, private drivers, city-to-city routes, group transport and corporate events, run by a local dispatch team.",
     h1: "Ground Services in Rome",
     lead:
       "Airport transfers, private drivers, routes to Tuscany and the Amalfi Coast, group transport and corporate events — coordinated from Rome.",
+    parent: { slug: "destinations", label: "Destinations" },
     facts: [
       { label: "Main airports", value: "Fiumicino (50.9 million passengers in 2025) and Ciampino" },
       { label: "Tourism spend", value: "Lazio received €10.2 billion in foreign visitor spending — about 18% of Italy's total" },
@@ -627,10 +650,13 @@ export const publishedPages: ContentPage[] = [
     ],
     related: [
       "rome-airport-transfer",
+      "ciampino-airport-transfer",
       "rome-to-florence-transfer",
       "rome-to-amalfi-coast-transfer",
+      "rome-to-naples-transfer",
+      "rome-chauffeur-service",
       "rome-corporate-events",
-      "group-transportation-italy",
+      "rome-group-transportation",
     ],
     cta: { label: "Request a quote for Rome", service: "other" },
     serviceType: "Ground transportation and events",

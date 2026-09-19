@@ -1,4 +1,5 @@
 export type PageKind =
+  | "hub"
   | "service"
   | "city"
   | "airport"
@@ -37,26 +38,43 @@ export type QuoteService =
   | "supplier"
   | "other";
 
+export interface HubGroup {
+  title: string;
+  text?: string;
+  /** Slugs of pages listed as cards (unpublished ones are skipped automatically) */
+  slugs: string[];
+}
+
 export interface ContentPage {
   slug: string;
   kind: PageKind;
   status: "published";
-  /** <title> without the site suffix */
+  /** <title> without the site suffix. Keep ≤ 60 characters. */
   title: string;
   description: string;
   h1: string;
+  /** Short label for menus and cards (falls back to h1) */
+  nav?: string;
   lead: string;
   /** Breadcrumb parent; only linked if that slug is published */
   parent?: { slug: string; label: string };
+  /** Destination tags, e.g. ["rome"]. City pages list every page carrying their tag. */
+  tags?: string[];
   facts?: Fact[];
   included?: string[];
   sections?: Section[];
   faqs?: Faq[];
+  /** Hub pages: grouped cards */
+  groups?: HubGroup[];
   /** Slugs of related pages (unpublished ones are ignored automatically) */
   related?: string[];
   cta: { label: string; service: QuoteService };
   serviceType?: string;
   areaServed?: string[];
+  /** Guides: approximate reading time */
+  readingMinutes?: number;
+  /** Sources shown at the bottom of the page (used by guides) */
+  sources?: { label: string; url: string }[];
   /** ISO date of the last human review of the facts on this page */
   updated: string;
 }
