@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/config/site";
 import { getPublishedPages } from "@/content/registry";
 
-// Static routes that are real, indexable pages. (Legal pages are draft/noindex and excluded on purpose.)
+// Static routes that are real, indexable pages. (Legal pages are noindex and excluded on purpose.)
 const STATIC_ROUTES = ["/", "/about", "/contact", "/partners", "/vehicles", "/request-a-quote"];
 
 export default function sitemap(): MetadataRoute.Sitemap {

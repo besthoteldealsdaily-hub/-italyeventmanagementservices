@@ -77,7 +77,7 @@ Adapter: `@opennextjs/cloudflare` (supports Next.js 16). Config in the repo: `wr
 - [ ] No prices are published yet (by design) — add "from" prices only from signed supplier rate cards
 
 **Legal**
-- [ ] Replace the **draft** privacy/terms/cookie/cancellation pages with lawyer-reviewed text (they are `noindex` and not in the sitemap)
+- [ ] Have a lawyer review the legal pages (privacy, terms, cookies, cancellation) before you start taking bookings — they are complete, but written without legal review
 - [ ] Fill company details env vars after the SRL exists
 - [ ] Set `NEXT_PUBLIC_AGENCY_LICENSED=true` + authorisation + insurer **only** when the SCIA is filed and insurance is bound (switches JSON-LD to `TravelAgency` and shows the authorisation in the footer)
 - [ ] Cookie banner **before** adding GA4/ads (site currently sets no non-technical cookies)
