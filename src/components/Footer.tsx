@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CookieSettingsButton } from "./Analytics";
 import { site } from "@/config/site";
 import { getFooterColumns } from "@/lib/nav";
 import { Container } from "./ui";
@@ -85,6 +86,7 @@ export default function Footer() {
             <li><Link href="/privacy" className="hover:text-white">Privacy</Link></li>
             <li><Link href="/terms" className="hover:text-white">Terms</Link></li>
             <li><Link href="/cookies" className="hover:text-white">Cookies</Link></li>
+            <li><CookieSettingsButton className="hover:text-white" /></li>
             <li><Link href="/cancellation-policy" className="hover:text-white">Cancellation</Link></li>
           </ul>
         </Container>

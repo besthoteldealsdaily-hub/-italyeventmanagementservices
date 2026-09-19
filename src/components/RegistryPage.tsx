@@ -6,6 +6,7 @@ import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
 import FaqList from "./FaqList";
 import JsonLd from "./JsonLd";
 import PageCards from "./PageCards";
+import PriceWidget from "./PriceWidget";
 import { ButtonLink, CheckList, Container, Eyebrow } from "./ui";
 
 const KIND_LABEL: Record<ContentPage["kind"], string> = {
@@ -126,6 +127,8 @@ export default function RegistryPage({ page }: { page: ContentPage }) {
               </dl>
             </section>
           )}
+
+          {(page.kind === "route" || page.kind === "airport") && <PriceWidget slug={page.slug} quoteHref={quoteHref} />}
 
           {page.included && page.included.length > 0 && (
             <section aria-labelledby="included">

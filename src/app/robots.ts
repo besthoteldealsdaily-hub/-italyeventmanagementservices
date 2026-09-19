@@ -10,7 +10,8 @@ export default function robots(): MetadataRoute.Robots {
     return { rules: { userAgent: "*", disallow: "/" } };
   }
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/admin", "/api"] },
+    // Private, token-based customer pages and the admin panel must never be crawled.
+    rules: { userAgent: "*", allow: "/", disallow: ["/admin", "/api", "/quote/", "/pay/", "/voucher/", "/review/"] },
     sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

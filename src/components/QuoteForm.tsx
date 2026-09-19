@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useActionState, useEffect, useRef, useState } from "react";
 import { submitQuote } from "@/app/actions/quote";
 import { SERVICE_OPTIONS, type QuoteFormState, type ServiceValue } from "@/lib/quote-options";
+import Turnstile from "./Turnstile";
 
 const initialState: QuoteFormState = { status: "idle" };
 
@@ -239,6 +240,8 @@ export default function QuoteForm({ defaultService = "transfer" }: { defaultServ
         </label>
         {err.consent && <p className="mt-1 text-sm text-red-700">{err.consent}</p>}
       </div>
+
+      <Turnstile resetKey={state} />
 
       <button
         type="submit"

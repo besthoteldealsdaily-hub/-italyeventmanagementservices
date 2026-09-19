@@ -9,6 +9,8 @@ export const metadata: Metadata = pageMetadata({
   index: false,
 });
 
+const ANALYTICS = Boolean(process.env.NEXT_PUBLIC_GA_ID);
+
 export default function CookiesPage() {
   return (
     <LegalPage title="Cookie Policy" updated="19 September 2026">
@@ -35,8 +37,10 @@ export default function CookiesPage() {
               </tr>
               <tr>
                 <th scope="row" className="px-4 py-3 font-medium">Analytics / statistics</th>
-                <td className="px-4 py-3">No</td>
-                <td className="px-4 py-3 text-muted">—</td>
+                <td className="px-4 py-3">{ANALYTICS ? "Only if you accept" : "No"}</td>
+                <td className="px-4 py-3 text-muted">
+                  {ANALYTICS ? "Google Analytics 4 (cookies _ga and _ga_*, up to 2 years) to measure visits. Not loaded until you press “Accept analytics”; change your choice any time under “Cookie settings” in the footer." : "—"}
+                </td>
               </tr>
               <tr>
                 <th scope="row" className="px-4 py-3 font-medium">Advertising / tracking</th>

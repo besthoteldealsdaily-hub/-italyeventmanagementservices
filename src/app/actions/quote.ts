@@ -1,6 +1,9 @@
 "use server";
 
 import { deliverLead, newReference } from "@/lib/leads";
+import { saveLead } from "@/lib/lead-store";
+import { headers } from "next/headers";
+import { turnstileEnabled, verifyTurnstile } from "@/lib/turnstile";
 import type { QuoteFormState } from "@/lib/quote-options";
 import { quoteSchema } from "@/lib/quote-schema";
 
@@ -38,10 +41,19 @@ export async function submitQuote(_prev: QuoteFormState, formData: FormData): Pr
     return { status: "success", reference: newReference(), message: "Thank you — we'll be in touch shortly." };
   }
 
+  // Optional Cloudflare Turnstile (only when both keys are configured). Fails closed.
+  if (turnstileEnabled()) {
+    const h = await headers();
+    const passed = await verifyTurnstile(raw["cf-turnstile-response"], h.get("cf-connecting-ip") ?? undefined);
+    if (!passed) return { status: "error", message: "Please complete the security check and send again.", values: echo() };
+  }
+
   const reference = newReference();
+  // Store first (never lose a lead), then notify. Either one succeeding is enough to tell the customer "received".
+  const saved = await saveLead(reference, lead);
   const delivered = await deliverLead(reference, lead);
 
-  if (!delivered) {
+  if (!delivered && !saved) {
     return {
       status: "error",
       message: "We couldn't send your request just now. Please email us or use WhatsApp — we'll answer right away.",
