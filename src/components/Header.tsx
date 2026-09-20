@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/config/site";
 import { getNavGroups, getNavLinks } from "@/lib/nav";
@@ -11,9 +12,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-6">
-        <Link href="/" className="leading-none" aria-label={`${site.name} — home`}>
-          <span className="block text-[10px] font-semibold uppercase tracking-[0.3em] text-accent">Italy</span>
-          <span className="block font-serif text-base font-semibold sm:text-lg">Event Management Services</span>
+        <Link href="/" className="shrink-0 leading-none" aria-label={`${site.name} — home`}>
+          <Image
+            src="/italy-event-management-services-logo.webp"
+            alt={site.name}
+            width={2216}
+            height={709}
+            className="h-9 w-auto rounded-md sm:h-10"
+          />
         </Link>
 
         <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">

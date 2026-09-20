@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import FaqList from "@/components/FaqList";
 import JsonLd from "@/components/JsonLd";
@@ -153,32 +154,72 @@ export default function Home() {
       <JsonLd data={faqJsonLd(faqs)} />
 
       {/* HERO */}
-      <section className="bg-ink text-white">
-        <Container className="py-20 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">Italy · Events · Hotels · Transportation</p>
-          <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] sm:text-6xl">
-            Italy Event Management, Hotels &amp; Transportation
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
-            Complete event, accommodation and transportation services across Italy for corporate groups, travel
-            agencies, weddings and international visitors — vetted local partners, fixed prices and one point of
-            contact, from an airport transfer to a 200-guest event in Rome, Milan, Tuscany and the Lakes.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <ButtonLink href="/request-a-quote">Request a quote — reply {site.responseSla}</ButtonLink>
-            {wa && (
-              <a
-                href={wa}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-md border border-white/40 px-5 py-3 text-sm font-semibold hover:bg-white/10"
-              >
-                WhatsApp our team
-              </a>
-            )}
-            <ButtonLink href={hrefFor("for-travel-agencies")} variant="outline" className="!border-white/40 !text-white hover:!bg-white/10">
-              Get trade net rates
-            </ButtonLink>
+      <section className="relative overflow-hidden bg-ink text-white">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 [background:radial-gradient(ellipse_70%_55%_at_15%_-10%,rgba(168,72,42,0.14),transparent)]"
+        />
+        <Container className="!max-w-[1400px] relative py-16 sm:py-20 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:items-start lg:gap-16">
+            {/* Content */}
+            <div className="motion-safe:animate-[hero-fade-up_650ms_ease-out_both]">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/70">
+                Italy · Events · Hotels · Transportation
+              </p>
+              <h1 className="mt-5 font-semibold tracking-tight leading-[1.08] text-[2.75rem] sm:text-[3.25rem] lg:text-[4rem]">
+                Italy Event Management, Hotels &amp; Transportation
+              </h1>
+              <p className="mt-6 max-w-[600px] text-lg leading-relaxed text-white/80">
+                Complete event, accommodation and transportation services across Italy for corporate groups, travel
+                agencies, weddings and international visitors — with vetted local partners, fixed prices and one
+                point of contact, from airport transfers to large-scale events in Rome, Milan, Tuscany and the
+                Lakes.
+              </p>
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <ButtonLink href="/request-a-quote" className="!h-[52px] w-full !px-6 sm:w-auto">
+                  Request a quote
+                </ButtonLink>
+                <ButtonLink
+                  href={hrefFor("for-travel-agencies")}
+                  variant="outline"
+                  className="!h-[52px] w-full !border-white/30 !px-6 !text-white hover:!bg-white/10 sm:w-auto"
+                >
+                  Get trade net rates
+                </ButtonLink>
+              </div>
+              <p className="mt-4 text-sm text-white/60">
+                Reply {site.responseSla}
+                {wa && (
+                  <>
+                    {" "}
+                    ·{" "}
+                    <a href={wa} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-white">
+                      WhatsApp our team
+                    </a>
+                  </>
+                )}
+              </p>
+
+              <p className="mt-8 text-[0.7rem] font-medium uppercase tracking-[0.12em] text-white/40">
+                Vetted local partners · Fixed pricing · One point of contact
+              </p>
+            </div>
+
+            {/* Visual */}
+            <div className="relative mx-auto w-full max-w-[620px] motion-safe:animate-[hero-fade-scale_700ms_ease-out_both] motion-safe:[animation-delay:150ms] lg:mx-0">
+              <div className="relative aspect-[7/6] overflow-hidden rounded-[20px] border border-white/10 shadow-lg shadow-black/25">
+                <Image
+                  src="/luxury-event-transportation-italy.webp"
+                  alt="A chauffeur welcoming guests into a private Mercedes V-Class outside a Rome venue at sunset, with St Peter's Basilica in the distance"
+                  width={1536}
+                  height={1024}
+                  priority
+                  sizes="(min-width: 1024px) 620px, 90vw"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         </Container>
       </section>
