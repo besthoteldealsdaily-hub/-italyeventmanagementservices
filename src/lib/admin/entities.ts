@@ -4,7 +4,7 @@
  * Money fields are stored as integer cents and edited as decimals.
  */
 
-export type FieldType = "text" | "textarea" | "number" | "money" | "date" | "datetime" | "select" | "checkbox" | "ref";
+export type FieldType = "text" | "textarea" | "number" | "money" | "date" | "datetime" | "select" | "checkbox" | "ref" | "file";
 
 export interface FieldDef {
   name: string;
@@ -19,6 +19,12 @@ export interface FieldDef {
   placeholder?: string;
   /** pre-filled value when adding a new row */
   default?: string;
+  /** render this text value as a clickable link (external URL, or a stored file via /admin/files) */
+  link?: boolean;
+  /** file fields only: accepted file types, e.g. ".pdf,.jpg,.png" */
+  accept?: string;
+  /** file fields only: not a real column — a successful upload is written into this field instead */
+  mapsTo?: string;
 }
 
 export interface ChildDef {
@@ -161,7 +167,15 @@ export const ENTITIES: Record<string, EntityDef> = {
       { name: "issued_by", label: "Issued by", type: "text", help: "e.g. Comune di Roma, INPS, insurer" },
       { name: "valid_from", label: "Valid from", type: "date" },
       { name: "valid_to", label: "Valid to (expiry)", type: "date", list: true },
-      { name: "file_url", label: "File link", type: "text", help: "Link to the scanned document (Drive/Dropbox)." },
+      { name: "file_url", label: "Document link", type: "text", list: true, link: true, help: "Paste a Google Drive/Dropbox link, or leave blank and upload the file below." },
+      {
+        name: "document_file",
+        label: "Or upload the file here",
+        type: "file",
+        accept: ".pdf,.jpg,.jpeg,.png,.heic,.heif",
+        mapsTo: "file_url",
+        help: "PDF or photo, stored privately (only admins can open it). Uploading here fills the link above and takes priority over it.",
+      },
       { name: "verified_by", label: "Verified by", type: "text" },
       { name: "verified_at", label: "Verified on", type: "date" },
       { name: "verification_method", label: "How verified", type: "select", options: ["called_authority", "checked_registry", "saw_original", "other"] },

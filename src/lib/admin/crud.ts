@@ -1,7 +1,10 @@
 import type { Db, Row } from "@/lib/db/client";
 import { toCents } from "@/lib/money";
+import { makeObjectKey, MAX_UPLOAD_BYTES, putObject } from "@/lib/r2";
 import type { EntityDef, FieldDef } from "./entities";
 import { ENTITIES } from "./entities";
+
+type Bucket = Parameters<typeof putObject>[0];
 
 export interface RefOption {
   id: string;
@@ -21,10 +24,29 @@ export async function loadRefOptions(db: Db, entity: EntityDef): Promise<Record<
   return out;
 }
 
-/** Reads a submitted form into a DB row. Returns an error message when a required field is empty. */
-export function parseEntityForm(entity: EntityDef, form: FormData): { data: Row } | { error: string } {
+/**
+ * Reads a submitted form into a DB row. File fields are virtual: a chosen file is uploaded to R2 and its
+ * key is written into `mapsTo` instead of the file field itself, which is never a real column. Returns an
+ * error message when a required field is empty, a file is too large, or storage isn't enabled yet.
+ */
+export async function parseEntityForm(entity: EntityDef, form: FormData, bucket: Bucket | null): Promise<{ data: Row } | { error: string }> {
   const data: Row = {};
   for (const f of entity.fields) {
+    if (f.type === "file") {
+      const file = form.get(f.name);
+      if (file instanceof File && file.size > 0) {
+        if (!bucket) return { error: `${f.label}: file storage is not enabled yet. Ask your developer to add the R2 bucket, or paste a link instead.` };
+        if (file.size > MAX_UPLOAD_BYTES) return { error: `${f.label}: that file is too large (max ${Math.floor(MAX_UPLOAD_BYTES / 1024 / 1024)} MB).` };
+        const key = makeObjectKey(entity.table, file.name);
+        try {
+          await putObject(bucket, key, file);
+        } catch {
+          return { error: `${f.label}: the file could not be uploaded. Please try again.` };
+        }
+        if (f.mapsTo) data[f.mapsTo] = key;
+      }
+      continue; // virtual — never written as its own column
+    }
     const raw = form.get(f.name);
     const text = typeof raw === "string" ? raw.trim() : "";
     if (f.type === "checkbox") {

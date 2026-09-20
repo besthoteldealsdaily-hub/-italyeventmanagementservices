@@ -62,7 +62,7 @@ the public site works without it. Full setup guide: **[docs/ADMIN-SETUP.md](docs
 | Payments | `/pay/[token]`, `/api/stripe/webhook` | Bank-transfer instructions + optional Stripe Checkout; webhook verified with HMAC and idempotent; manual payments and refunds recorded. |
 | Cancellations | booking page | Refund suggestion computed from the same rules as the public cancellation policy (`src/lib/policy.ts`), editable; queues the refund, cancels supplier payouts. |
 | Invoices | `/admin/invoices` | Sequential numbering per year, VAT regime, SDI status tracking, CSV for the accountant. **Not** the legal e-invoice (see setup guide). |
-| Suppliers | `/admin/data/suppliers`, `/admin/documents` | Documents with expiry + verification, per-type onboarding checklist, vehicles, drivers, rate cards, payouts (paid only after the customer paid and the service is complete). |
+| Suppliers | `/admin/data/suppliers`, `/admin/documents` | Documents with expiry + verification (optionally uploaded to Cloudflare R2 instead of a Drive link — see setup guide), per-type onboarding checklist, vehicles, drivers, rate cards, payouts (paid only after the customer paid and the service is complete). |
 | Pricing | `/admin/data/routes` | Routes, supplier cost rate cards, sell prices. A **b2c** sell price makes the route/airport page show "Fixed price from €…". |
 | Finance | `/admin/finance` | Revenue, margin by service, estimated card fees/commissions/incidents, contribution, result vs your monthly target, receivables/payables. |
 | Sales CRM | `/admin/sales` | Daily outreach queue with the blueprint cadence (day 0 → 4 → 9 → 15), daily targets, message templates, opt-out handling. |

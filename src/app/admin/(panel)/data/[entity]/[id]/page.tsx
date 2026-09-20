@@ -5,6 +5,7 @@ import { getDb, type Db, type Row } from "@/lib/db/client";
 import { ENTITIES, getEntity, type ChildDef } from "@/lib/admin/entities";
 import { displayValue, loadRefOptions } from "@/lib/admin/crud";
 import { eur } from "@/lib/money";
+import { fileHref } from "@/lib/r2";
 import EntityForm from "@/components/admin/EntityForm";
 import ConfirmButton from "@/components/admin/ConfirmButton";
 import { A, btnCls, btnDangerCls, Card, EmptyRow, Flash, PageHead, SetupNeeded, TableWrap, tdCls, thCls } from "@/components/admin/ui";
@@ -54,7 +55,15 @@ async function ChildCard({ db, def, parentId, here }: { db: Db; def: ChildDef; p
                   const href = def.linkBase ? `${def.linkBase}/${String(r.id)}` : `/admin/data/${child.key}/${String(r.id)}?return=${encodeURIComponent(here)}`;
                   return (
                     <td key={f.name} className={tdCls}>
-                      {i === 0 ? <A href={href}>{text}</A> : text}
+                      {i === 0 ? (
+                        <A href={href}>{text}</A>
+                      ) : f.link && shown !== "–" ? (
+                        <a href={fileHref(String(r[f.name]))} target="_blank" rel="noopener noreferrer" className="font-medium text-accent hover:underline">
+                          View file
+                        </a>
+                      ) : (
+                        text
+                      )}
                     </td>
                   );
                 })}

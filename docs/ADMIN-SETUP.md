@@ -54,12 +54,29 @@ Tables are created automatically the first time the admin is opened — there is
 `RESEND_API_KEY`, `QUOTE_FROM_EMAIL`, `QUOTE_TO_EMAIL` (see `.env.example`). Enables "Email to customer" buttons and owner alerts
 (quote accepted, payment received, low review).
 
-## 6. Important limits — read this
+## 6. File storage for documents and photos (optional — Cloudflare R2)
+
+Without this, supplier documents still work — you just paste a Google Drive/Dropbox link. Adding R2 lets you upload the file
+directly (PDF or photo) instead, stored privately (10 GB free, no egress fee).
+
+1. **Add the bucket binding.** In `wrangler.jsonc`, add alongside the D1 binding:
+
+   ```jsonc
+   "r2_buckets": [{ "binding": "BUCKET", "bucket_name": "italyeventmanagementservices-docs" }],
+   ```
+
+   Commit and push. If the deploy log says it could not provision the bucket, create it yourself: Cloudflare dashboard →
+   Storage & Databases → R2 → *Create bucket*, name `italyeventmanagementservices-docs`.
+2. Redeploy. Open a supplier's document (or add a new one) — an upload button now appears under "Or upload the file here".
+   Uploaded files are served back only to logged-in admins (`/admin/files/…`), never made public.
+
+## 7. Important limits — read this
 
 - **Invoices here are internal records.** The legally valid Italian e-invoice (FatturaPA via SDI) must be issued through your accountant or an
   e-invoicing provider. The panel numbers invoices sequentially per year, keeps the VAT regime, and exports a CSV for your accountant.
 - **VAT rates and the 74‑ter margin scheme** are inputs, not advice — confirm with your commercialista.
 - **Security:** one owner password. Use a long unique password; the login is rate-limited. Make the GitHub repository **private** if you store
   anything sensitive in code (this repo holds none — all data lives in D1).
-- **Backups:** D1 has Time Travel (30 days point-in-time restore on the free plan). Export the CSVs monthly as well.
+- **Backups:** D1 has Time Travel (30 days point-in-time restore on the free plan). Export the CSVs monthly as well. R2 has no
+  automatic point-in-time restore — don't delete the only copy of a document elsewhere until you're sure the upload worked.
 - **Privacy:** you now store customer names, emails and phone numbers. Keep the Privacy Policy accurate and delete data you no longer need.

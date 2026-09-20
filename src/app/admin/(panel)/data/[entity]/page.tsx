@@ -5,6 +5,7 @@ import { getDb } from "@/lib/db/client";
 import { getEntity } from "@/lib/admin/entities";
 import { displayValue, loadRefOptions } from "@/lib/admin/crud";
 import { eur } from "@/lib/money";
+import { fileHref } from "@/lib/r2";
 import { A, btnCls, Flash, inputCls, PageHead, SetupNeeded, TableWrap, tdCls, thCls, EmptyRow, btnGhostCls } from "@/components/admin/ui";
 
 type Props = {
@@ -71,7 +72,15 @@ export default async function EntityListPage({ params, searchParams }: Props) {
                   const text = f.type === "money" ? eur(Number(r[f.name] ?? 0)) : f.type === "select" ? shown.replace(/_/g, " ") : shown;
                   return (
                     <td key={f.name} className={tdCls}>
-                      {i === 0 ? <A href={`/admin/data/${entity.key}/${String(r.id)}`}>{text}</A> : text}
+                      {i === 0 ? (
+                        <A href={`/admin/data/${entity.key}/${String(r.id)}`}>{text}</A>
+                      ) : f.link && shown !== "–" ? (
+                        <a href={fileHref(String(r[f.name]))} target="_blank" rel="noopener noreferrer" className="font-medium text-accent hover:underline">
+                          View file
+                        </a>
+                      ) : (
+                        text
+                      )}
                     </td>
                   );
                 })}
