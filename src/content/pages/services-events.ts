@@ -117,7 +117,7 @@ export const eventServicePages: ContentPage[] = [
         a: "They are released at cut-off, subject to the attrition allowance in the contract.",
       },
     ],
-    related: ["destination-weddings-italy", "wedding-transportation-italy", "hotel-group-bookings-italy", "for-wedding-planners"],
+    related: ["destination-weddings-italy", "wedding-transportation-italy", "baby-shower-family-celebration-transport-italy", "for-wedding-planners"],
     cta: { label: "Request wedding accommodation", service: "hotel-block" },
     serviceType: "Wedding accommodation",
     areaServed: ["Italy"],
@@ -608,7 +608,7 @@ export const eventServicePages: ContentPage[] = [
         a: "Yes — licensed guides for Rome, Assisi and other sites, booked as separate lines.",
       },
     ],
-    related: ["group-transportation-italy", "for-tour-operators", "rome-to-assisi-transfer", "minibus-coach-hire-italy"],
+    related: ["group-transportation-italy", "cultural-religious-group-transport-italy", "for-tour-operators", "minibus-coach-hire-italy"],
     cta: { label: "Request a group quote", service: "group" },
     serviceType: "Group travel logistics",
     areaServed: ["Italy"],
@@ -907,6 +907,317 @@ export const eventServicePages: ContentPage[] = [
     related: ["group-travel-italy", "for-tour-operators", "italy-dmc-services", "hotel-group-bookings-italy"],
     cta: { label: "Request tour group accommodation", service: "hotel-block" },
     serviceType: "Group tour accommodation",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "birthday-celebration-transport-italy",
+    kind: "service",
+    title: "Birthday & Milestone Celebration Transport | Italy",
+    description:
+      "Group transport for birthday celebrations in Italy: guest shuttles, a chauffeur for the milestone trip, hotel blocks and a backup vehicle for the night.",
+    h1: "Birthday & Milestone Celebration Transport in Italy",
+    nav: "Birthday celebrations",
+    lead:
+      "The logistics side of a birthday trip or party in Italy — guest transport, a hotel block if the group is staying, and a driver who knows the venue and the return time. We don't plan the party itself.",
+    parent: { slug: "services", label: "Services" },
+    tags: [],
+    facts: [
+      { label: "What we do", value: "Guest transport, hotel blocks and a chauffeur for the day or evening; venue booking, catering, decor and entertainment stay with the venue or a specialist planner" },
+      { label: "Typical booking", value: "A shuttle loop for a restaurant or venue evening, or a full-day chauffeur for a milestone-birthday trip (Tuscany, the Amalfi Coast, Lake Como)" },
+      { label: "Group size", value: "From a couple to 40+ guests for a milestone celebration with a hired venue" },
+      { label: "Milestone trips", value: "18th, 21st, 30th, 40th, 50th, 60th and 70th birthdays are the most common reasons a group books a multi-day Italy trip through us" },
+    ],
+    included: [
+      "Guest shuttle loops to and from the venue",
+      "A chauffeur for a milestone-birthday day trip or multi-day stay",
+      "Hotel room blocks for out-of-town guests",
+      "A backup vehicle held for the evening",
+      "One dispatch number for the group",
+    ],
+    sections: [
+      {
+        heading: "What we handle, and what stays with a planner",
+        paragraphs: [
+          "We are the transport and accommodation layer: getting guests to the venue, back to their hotel, and sized correctly for the group. Venue hire, catering, decor, cake and entertainment are better handled by the venue itself or a dedicated party planner — we don't produce those and won't pretend to.",
+        ],
+      },
+      {
+        heading: "A typical milestone-birthday trip",
+        bullets: [
+          "Airport or station pickup for the group on arrival",
+          "A chauffeur for day trips — a vineyard, the coast, a city we haven't visited yet",
+          "Evening shuttle to the celebration venue and a late return",
+          "A backup vehicle on standby for the night itself",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you book the venue or catering?",
+        a: "No — we handle transport and accommodation. We're happy to coordinate timing with a venue or planner you've already booked.",
+      },
+      {
+        q: "Can you arrange transport for just one evening?",
+        a: "Yes, a shuttle loop for a single celebration night, or a full itinerary for a multi-day trip — whichever fits.",
+      },
+      {
+        q: "Do you handle large milestone groups?",
+        a: "Yes, with minibuses or coaches sized to the group, and hotel blocks negotiated alongside the transport.",
+      },
+    ],
+    related: ["private-social-event-transport-italy", "group-transportation-italy", "hotel-group-bookings-italy", "marriage-proposal-transfer-italy"],
+    cta: { label: "Request birthday celebration transport", service: "group" },
+    serviceType: "Private celebration transport",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "baby-shower-family-celebration-transport-italy",
+    kind: "service",
+    title: "Baby Shower & Family Celebration Transport | Italy",
+    description:
+      "Guest transport for baby showers, gender-reveal gatherings and family celebrations in Italy: shuttles, hotel blocks and one coordinator for the day.",
+    h1: "Baby Shower & Family Celebration Transport in Italy",
+    nav: "Baby & family celebrations",
+    lead:
+      "Guest transport and accommodation for a baby shower, gender-reveal gathering or family celebration — the venue, styling and catering stay with the host or venue.",
+    parent: { slug: "services", label: "Services" },
+    tags: [],
+    facts: [
+      { label: "What we do", value: "Guest transport and, for out-of-town family, hotel room blocks; venue styling, catering and games stay with the host or venue" },
+      { label: "Typical booking", value: "A shuttle for guests arriving from the airport or a nearby city, or a chauffeur day for a family group visiting for the occasion" },
+      { label: "Group size", value: "Usually 10–30 guests" },
+      { label: "Common venues", value: "A family home, a villa or agriturismo rental, or a private room at a restaurant" },
+    ],
+    included: [
+      "Guest shuttle to and from the venue",
+      "Hotel room blocks for family travelling from abroad",
+      "A chauffeur day for the visiting family, if needed",
+      "One coordinator for arrival timing",
+      "A backup vehicle if the group is large enough to need one",
+    ],
+    sections: [
+      {
+        heading: "What we handle, and what stays with the host",
+        paragraphs: [
+          "We move people and, where needed, put them in a hotel — not decorate the venue or plan the games. If out-of-town family are flying in for a baby shower or christening weekend, we can also handle their airport transfer and a short day trip while they're here.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you help with venue decoration or catering?",
+        a: "No — that stays with the host or venue. We handle guest transport and, if needed, accommodation for travelling family.",
+      },
+      {
+        q: "Can you arrange a small shuttle for a private villa?",
+        a: "Yes — vans or minibuses sized to your guest list, timed to the event.",
+      },
+    ],
+    related: ["private-social-event-transport-italy", "group-transportation-italy", "wedding-accommodation-italy", "hotel-group-bookings-italy"],
+    cta: { label: "Request family celebration transport", service: "group" },
+    serviceType: "Private celebration transport",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "private-social-event-transport-italy",
+    kind: "service",
+    title: "Private & Social Event Transport in Italy",
+    description:
+      "Guest transport for anniversaries, graduations, retirements, family reunions and other private celebrations in Italy, with hotel blocks and a backup vehicle.",
+    h1: "Private & Social Event Transport in Italy",
+    nav: "Private & social events",
+    lead:
+      "One transport plan for anniversaries, graduations, retirements, reunions and any private celebration that needs guests moved and, sometimes, housed — sized to your group, not a template.",
+    parent: { slug: "services", label: "Services" },
+    tags: [],
+    facts: [
+      { label: "Occasions we cover", value: "Anniversaries, graduations, retirements, family reunions, welcome and farewell gatherings — any private group event, not just the ones with their own page" },
+      { label: "Why one page, not several", value: "The transport need is the same shape for each — a shuttle or chauffeur, sometimes a hotel block — the occasion changes, the logistics don't" },
+      { label: "Group size", value: "From a family of six to 80+ for a reunion or milestone anniversary" },
+      { label: "Typical booking", value: "A single evening shuttle, or a multi-day itinerary with hotel blocks for a reunion or anniversary trip" },
+    ],
+    included: [
+      "Guest shuttle loops sized to your group",
+      "Hotel room blocks where the group is staying over",
+      "A chauffeur for day trips built into the occasion",
+      "A backup vehicle for the day or evening",
+      "One dispatch contact throughout",
+    ],
+    sections: [
+      {
+        heading: "Tell us the occasion and the numbers",
+        paragraphs: [
+          "Whatever the reason for the gathering, the questions are the same: how many guests, where they're staying, what time the venue needs them and when they need to leave. Send us those and we return a fixed transport plan — we don't need a separate page or a different process for a graduation versus a 40th-anniversary trip.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you handle one-off single-evening events?",
+        a: "Yes — a shuttle loop for one evening is a common booking, priced separately from multi-day trips.",
+      },
+      {
+        q: "Can you combine transport and hotel blocks?",
+        a: "Yes, on one invoice, for reunions and multi-day celebrations where out-of-town guests need rooms.",
+      },
+      {
+        q: "What if our occasion isn't listed?",
+        a: "If it's a private group that needs moving and, sometimes, housing, it fits here — tell us the details and we'll quote it.",
+      },
+    ],
+    related: ["birthday-celebration-transport-italy", "group-transportation-italy", "hotel-group-bookings-italy", "group-travel-italy"],
+    cta: { label: "Request private event transport", service: "group" },
+    serviceType: "Private celebration transport",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "product-launch-fashion-event-transport-italy",
+    kind: "service",
+    title: "Product Launch & Fashion Event Transport | Italy",
+    description:
+      "Guest and VIP transport for product launches, brand activations and fashion events in Italy: shuttle loops, VIP cars and venue-access planning.",
+    h1: "Product Launch & Fashion Event Transport in Italy",
+    nav: "Launches & fashion events",
+    lead:
+      "Guest shuttles, VIP cars and venue-access planning for a product launch, brand activation or fashion-week event — we run the transport, your production team or agency runs the show.",
+    parent: { slug: "event-management-italy", label: "Event management" },
+    tags: [],
+    facts: [
+      { label: "What we do", value: "Guest and press arrival waves, VIP and talent transfers, venue-access planning; staging, production and creative direction stay with your agency" },
+      { label: "Where this comes up most", value: "Milan, during fashion weeks and design week, and for brand launches in Rome and Milan" },
+      { label: "Typical guest list", value: "Press, buyers, influencers and VIP guests, often arriving on a tight schedule around a single show time" },
+      { label: "Access planning", value: "Milan's Area C charge and central-Rome ZTL rules are built into the drop-off plan, same as any other event in those cities" },
+    ],
+    included: [
+      "Guest and press arrival waves timed to the show or launch",
+      "VIP and talent transfers with named drivers",
+      "Venue drop-off and access planning around city restrictions",
+      "A dispatch desk for changes during the event",
+      "Backup vehicles held for VIP guests",
+    ],
+    sections: [
+      {
+        heading: "We run the transport, not the show",
+        paragraphs: [
+          "A launch or fashion event lives or dies on timing — press arriving before doors close, VIPs not queuing with everyone else. We plan the arrival waves and venue access around your show schedule. Staging, lighting, the runway or the product reveal itself stay with your production team or agency; we don't produce those.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you handle a press list separately from VIP guests?",
+        a: "Yes — different arrival waves and, where needed, different vehicle classes for press versus VIP guests.",
+      },
+      {
+        q: "Do you work alongside our production or PR agency?",
+        a: "Yes — we plug into their schedule as the transport and access-planning layer rather than duplicating what they do.",
+      },
+    ],
+    related: ["milan-event-transportation", "corporate-events-italy", "vip-transfers-italy", "luxury-event-management-italy"],
+    cta: { label: "Request launch event transport", service: "event" },
+    serviceType: "Event transportation",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "entertainment-event-transport-italy",
+    kind: "service",
+    title: "Entertainment & Concert Event Transport | Italy",
+    description:
+      "Guest transport for concerts, festivals and entertainment events in Italy: group shuttles, VIP cars and late-night returns. We move guests, not the show.",
+    h1: "Entertainment & Concert Event Transport in Italy",
+    nav: "Entertainment events",
+    lead:
+      "Group shuttles and VIP transfers to a concert, festival or entertainment event — timed around the show, with a plan for the crowd at the end of the night.",
+    parent: { slug: "event-management-italy", label: "Event management" },
+    tags: [],
+    facts: [
+      { label: "What we do", value: "Guest and VIP transport to and from the venue; booking the artist, staging or production stays with the promoter or your entertainment agency" },
+      { label: "The hard part", value: "The end of the night — everyone leaving a venue at once. We plan staggered pickup waves rather than one queue" },
+      { label: "Typical booking", value: "A group shuttle from hotels to a venue, or VIP cars for a smaller guest list around a private performance" },
+      { label: "Vehicle classes", value: "Sedans and vans for VIP guests, minibuses and coaches for larger groups" },
+    ],
+    included: [
+      "Hotel-to-venue shuttle loops timed to doors and show start",
+      "VIP transfers for a smaller guest list",
+      "Staggered late-night return waves",
+      "A staging area near the venue for pickup",
+      "Backup vehicles for VIP guests",
+    ],
+    sections: [
+      {
+        heading: "We move the audience, not the act",
+        paragraphs: [
+          "Booking artists, staging, sound and production are outside what we do — that stays with the promoter or an entertainment agency. What we do well is getting a group of guests to a venue on time and home again afterwards, which is its own logistics problem once a few hundred people want to leave at the same moment.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you book the artist or entertainment?",
+        a: "No — we handle guest transport only. We're glad to coordinate timing with whoever is producing the entertainment.",
+      },
+      {
+        q: "How do you handle everyone leaving at once?",
+        a: "Staggered return waves from a staging area near the venue, rather than one queue — planned in advance around the show's expected finish time.",
+      },
+    ],
+    related: ["event-transportation-italy", "milan-event-transportation", "rome-event-transportation", "group-transportation-italy"],
+    cta: { label: "Request entertainment event transport", service: "event" },
+    serviceType: "Event transportation",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "cultural-religious-group-transport-italy",
+    kind: "service",
+    title: "Cultural & Religious Group Transport in Italy",
+    description:
+      "Group transport for pilgrimage, faith and cultural-heritage groups in Italy: coaches, hotel blocks and licensed guides, planned around access rules.",
+    h1: "Cultural & Religious Group Transport in Italy",
+    nav: "Cultural & religious groups",
+    lead:
+      "Coaches, hotel blocks and licensed guides for pilgrimage, parish and cultural-heritage groups — the same careful planning we use for any large group, built around the sites you're visiting.",
+    parent: { slug: "group-travel-italy", label: "Group travel" },
+    tags: [],
+    facts: [
+      { label: "Pilgrim travel is real demand", value: "The 2025 Jubilee brought 33.4 million pilgrims to Rome; faith travel to Assisi, Loreto and Rome remains steady beyond Jubilee years" },
+      { label: "Typical group", value: "Parish groups, diocese trips and faith-based tour groups, usually 20–60 travellers" },
+      { label: "What we do", value: "Coaches and minibuses, hotel blocks near the sites, and licensed guides through partners; the spiritual or ceremonial programme stays with your group leader or diocese" },
+      { label: "Common routes", value: "Rome's basilicas and the Vatican, Assisi, Loreto, and heritage sites across Tuscany and Umbria" },
+    ],
+    included: [
+      "Coaches and minibuses with professional drivers",
+      "Hotel blocks near the sites on your itinerary",
+      "Licensed guides and entry reservations through partners",
+      "Access and parking planning at each stop",
+      "One quote, one contact for the whole group",
+    ],
+    sections: [
+      {
+        heading: "Planning around the sites, not just the roads",
+        paragraphs: [
+          "Basilicas, shrines and heritage sites have their own access rules, crowd patterns and, often, dress-code expectations — we plan arrival times and coach parking around those, not just the fastest route. The spiritual programme, liturgy and any ceremonial elements stay with your group leader or diocese; we handle the ground logistics around them.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you arrange guides for religious sites?",
+        a: "Only nationally licensed guides, as Italian law requires — booked as a separate line through partners.",
+      },
+      {
+        q: "Can you plan a multi-site pilgrimage itinerary?",
+        a: "Yes — Rome, Assisi and other sites in one trip, with hotel blocks and coach transport planned around each stop.",
+      },
+    ],
+    related: ["group-travel-italy", "rome-to-assisi-transfer", "for-tour-operators", "tour-group-hotel-booking-italy"],
+    cta: { label: "Request pilgrimage group transport", service: "group" },
+    serviceType: "Group travel logistics",
     areaServed: ["Italy"],
   }),
 ];

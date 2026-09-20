@@ -504,7 +504,7 @@ export const transportServicePages: ContentPage[] = [
         a: "Through vetted partners, as separate lines on your quote.",
       },
     ],
-    related: ["rome-event-transportation", "milan-event-transportation", "milan-fair-transfers", "for-event-agencies"],
+    related: ["rome-event-transportation", "milan-event-transportation", "entertainment-event-transport-italy", "for-event-agencies"],
     cta: { label: "Request an event transport plan", service: "event" },
     serviceType: "Event transportation",
     areaServed: ["Italy"],

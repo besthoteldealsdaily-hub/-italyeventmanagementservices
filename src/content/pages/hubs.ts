@@ -48,6 +48,8 @@ export const hubPages: ContentPage[] = [
           "corporate-travel-italy",
           "christmas-corporate-events-italy",
           "luxury-event-management-italy",
+          "product-launch-fashion-event-transport-italy",
+          "entertainment-event-transport-italy",
         ],
       },
       {
@@ -60,11 +62,17 @@ export const hubPages: ContentPage[] = [
           "lake-como-wedding-transport",
           "tuscany-wedding-transport",
           "amalfi-coast-wedding-transport",
+          "marriage-proposal-transfer-italy",
         ],
       },
       {
+        title: "Private and family celebrations",
+        text: "Transport for birthdays, baby showers and any private gathering.",
+        slugs: ["birthday-celebration-transport-italy", "baby-shower-family-celebration-transport-italy", "private-social-event-transport-italy"],
+      },
+      {
         title: "Tours, groups and destination services",
-        slugs: ["private-tours-italy", "group-travel-italy", "italy-dmc-services"],
+        slugs: ["private-tours-italy", "group-travel-italy", "italy-dmc-services", "cultural-religious-group-transport-italy"],
       },
       {
         title: "For professionals",

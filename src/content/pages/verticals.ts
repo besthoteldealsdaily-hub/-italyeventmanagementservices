@@ -674,7 +674,7 @@ export const verticalPages: ContentPage[] = [
         a: "Yes, through partners: S-Class or equivalent sedans and V-Class vehicles for VIP guests.",
       },
     ],
-    related: ["milan", "milan-fair-transfers", "milan-mice-services", "milan-corporate-events"],
+    related: ["milan", "milan-fair-transfers", "product-launch-fashion-event-transport-italy", "milan-corporate-events"],
     cta: { label: "Request an event transport plan", service: "event" },
     serviceType: "Event transportation",
     areaServed: ["Milan", "Lombardy"],
