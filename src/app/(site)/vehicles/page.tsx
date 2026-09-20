@@ -52,7 +52,8 @@ export default function VehiclesPage() {
         are &quot;or similar&quot;; the exact vehicle is confirmed on your voucher.
       </p>
 
-      <div className="mt-10 overflow-x-auto rounded-lg border border-line bg-white">
+      <h2 className="mt-12 text-2xl font-semibold">Vehicle classes and capacities</h2>
+      <div className="mt-6 overflow-x-auto rounded-lg border border-line bg-white">
         <table className="w-full min-w-[40rem] text-left text-sm">
           <thead className="bg-sand/60 text-xs uppercase tracking-wider text-muted">
             <tr>

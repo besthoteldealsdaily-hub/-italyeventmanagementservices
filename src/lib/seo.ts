@@ -24,7 +24,9 @@ export function pageMetadata({ title, description, path, index = true }: MetaInp
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    robots: { index: allow, follow: allow },
+    // Pages with index=false (legal pages) still allow crawlers to follow their links and pass
+    // PageRank onward — only the site-wide pre-launch gate should also block following.
+    robots: { index: allow, follow: site.indexable },
     openGraph: { title, description, url, siteName: site.name, type: "website", locale: "en_GB", images: [ogImage] },
     twitter: { card: "summary_large_image", title, description, images: [ogImage.url] },
   };

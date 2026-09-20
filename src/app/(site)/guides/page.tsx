@@ -29,7 +29,8 @@ export default function GuidesIndex() {
         <p className="mt-5 max-w-2xl text-lg text-muted">
           Real numbers, access rules and checklists for transfers, weddings, events and group travel — with sources.
         </p>
-        <div className="mt-10">
+        <h2 className="mt-12 text-2xl font-semibold">All guides</h2>
+        <div className="mt-6">
           <PageCards pages={guides} />
         </div>
         <div className="mt-12">

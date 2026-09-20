@@ -37,7 +37,7 @@ export default async function RequestQuotePage({
 
       <aside className="space-y-6 lg:pt-24">
         <div className="rounded-xl border border-line bg-white p-6">
-          <p className="font-serif text-xl font-semibold">What happens next</p>
+          <h2 className="font-serif text-xl font-semibold">What happens next</h2>
           <ol className="mt-4 list-decimal space-y-3 pl-5 text-sm text-muted marker:font-semibold marker:text-accent">
             <li>We check availability with our vetted partners.</li>
             <li>You receive a fixed quote with inclusions and cancellation terms.</li>
@@ -47,7 +47,7 @@ export default async function RequestQuotePage({
         </div>
 
         <div className="rounded-xl border border-line bg-white p-6">
-          <p className="font-semibold">Every quote includes</p>
+          <h2 className="font-semibold">Every quote includes</h2>
           <div className="mt-3 text-sm">
             <CheckList
               items={[

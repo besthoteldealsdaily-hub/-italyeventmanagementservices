@@ -19,7 +19,8 @@ export default function ContactPage() {
         For quotes, use the form — it gets you a fixed price fastest. For anything urgent, message or call.
       </p>
 
-      <dl className="mt-10 divide-y divide-line rounded-lg border border-line bg-white">
+      <h2 className="mt-12 text-2xl font-semibold">Contact details</h2>
+      <dl className="mt-6 divide-y divide-line rounded-lg border border-line bg-white">
         <div className="grid gap-1 px-5 py-4 sm:grid-cols-[12rem_1fr]">
           <dt className="font-semibold text-muted">Email</dt>
           <dd>
