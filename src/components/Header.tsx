@@ -10,8 +10,8 @@ export default function Header() {
   const links = getNavLinks();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B1F31]/95 text-white backdrop-blur">
-      <Container className="flex h-20 items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 text-white backdrop-blur">
+      <Container className="flex h-24 items-center justify-between gap-6">
         <Link href="/" className="shrink-0 leading-none" aria-label={`${site.name} — home`}>
           <Image
             src="/italy-event-management-services-logo.webp"
@@ -19,7 +19,7 @@ export default function Header() {
             width={2216}
             height={709}
             priority
-            className="h-14 w-auto rounded-md sm:h-16"
+            className="h-16 w-auto rounded-md sm:h-20"
           />
         </Link>
 

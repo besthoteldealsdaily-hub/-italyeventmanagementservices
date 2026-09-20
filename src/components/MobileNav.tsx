@@ -31,7 +31,7 @@ export default function MobileNav({
       {open && (
         <div
           id="mobile-menu"
-          className="absolute inset-x-0 top-20 max-h-[calc(100vh-5rem)] overflow-y-auto border-b border-line bg-paper px-4 pb-6 pt-2 text-ink shadow-lg"
+          className="absolute inset-x-0 top-24 max-h-[calc(100vh-6rem)] overflow-y-auto border-b border-line bg-paper px-4 pb-6 pt-2 text-ink shadow-lg"
         >
           <ul className="divide-y divide-line">
             {groups.map((g) => (

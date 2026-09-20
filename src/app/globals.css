@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #12202f; /* deep navy */
+  --ink: #0b1f31; /* deep navy — matches the logo's background */
   --paper: #fbf9f5; /* warm off-white */
   --sand: #f1ece3;
   --line: #e2dbcf;
@@ -24,7 +24,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
