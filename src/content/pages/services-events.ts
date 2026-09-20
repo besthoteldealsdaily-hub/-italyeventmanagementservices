@@ -199,10 +199,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "corporate-events-italy",
     kind: "service",
-    title: "Corporate Events in Italy | Offsites & Company Retreats",
+    title: "Corporate Event Management in Italy | Offsites & Retreats",
     description:
-      "Corporate events in Italy: offsites, retreats, team events and gala dinners with hotel blocks, transport and venues through vetted partners. Request a quote.",
-    h1: "Corporate Events in Italy",
+      "Corporate event management in Italy: offsites, retreats, team events and gala dinners with hotel blocks, transport and venues through vetted partners.",
+    h1: "Corporate Event Management in Italy",
     nav: "Corporate events",
     lead:
       "Offsites, retreats and gala dinners in Rome, Milan, Tuscany and the Lakes — with accommodation, transport and venues organised by one team.",
@@ -252,10 +252,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "conferences-mice-italy",
     kind: "service",
-    title: "Conferences & MICE in Italy | Delegate Logistics",
+    title: "Conferences & MICE Services in Italy | Delegate Logistics",
     description:
-      "Conference and MICE logistics in Italy: delegate transfers, hotel blocks, venue shuttles and on-site coordination for meetings, conferences and exhibitions.",
-    h1: "Conferences and MICE in Italy",
+      "MICE services in Italy: delegate transfers, hotel blocks, venue shuttles and on-site coordination for meetings, conferences and exhibitions.",
+    h1: "Conferences & MICE Services in Italy",
     nav: "Conferences & MICE",
     lead:
       "Delegate arrivals, hotel blocks, venue shuttles and on-site coordination for conferences and exhibitions across Italy.",
@@ -292,7 +292,7 @@ export const eventServicePages: ContentPage[] = [
         a: "Through vetted partners, quoted as separate lines.",
       },
     ],
-    related: ["milan-mice-services", "for-event-agencies", "milan-fair-transfers", "hotel-group-bookings-italy"],
+    related: ["rome-mice-services", "milan-mice-services", "for-event-agencies", "hotel-group-bookings-italy"],
     cta: { label: "Request a MICE quote", service: "event" },
     serviceType: "Conference and MICE logistics",
     areaServed: ["Italy"],
@@ -555,10 +555,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "italy-dmc-services",
     kind: "service",
-    title: "Italy DMC-Style Ground Services | Transport, Hotels, Events",
+    title: "Italy DMC Services | Ground Transport, Hotels & Events",
     description:
-      "Destination-management style ground services in Italy for agencies, tour operators and corporates: transport, group hotels and event logistics.",
-    h1: "Italy DMC-Style Ground Services",
+      "Destination management company services in Italy for agencies, tour operators and corporates: ground transport, group hotels and event logistics.",
+    h1: "Italy DMC Services",
     nav: "Italy DMC services",
     lead:
       "The local logistics that foreign agencies, tour operators and event teams need in Italy — transport, group accommodation and events — with one accountable team.",

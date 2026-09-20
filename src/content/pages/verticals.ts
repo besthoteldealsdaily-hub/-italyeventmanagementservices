@@ -733,6 +733,68 @@ export const verticalPages: ContentPage[] = [
   }),
 
   page({
+    slug: "rome-mice-services",
+    kind: "vertical",
+    title: "Rome MICE Services: Delegate Transport & Hotel Blocks",
+    description:
+      "MICE logistics in Rome: delegate transfers, shuttle loops to the venue, hotel blocks with clear terms and on-site coordination through vetted partners.",
+    h1: "MICE Services in Rome",
+    nav: "Rome MICE",
+    lead:
+      "Delegate arrivals, venue shuttles, hotel blocks and on-site coordination for meetings, conferences and exhibitions in Rome.",
+    parent: ROME,
+    tags: ["rome"],
+    facts: [
+      { label: "Rome as a meetings city", value: "Ninth in the world for international association meetings, with 114 in 2024" },
+      { label: "Venues", value: "The EUR/La Nuvola congress district, Fiera di Roma and hotel congress facilities" },
+      { label: "Market context", value: "Italy is second in the world for international association meetings, with 635 in 2024" },
+      { label: "Access", value: "Rome's Centro Storico ZTL shapes hotel-to-venue shuttle routing; licensed NCC vehicles are among the authorised categories" },
+    ],
+    included: [
+      "Delegate arrival waves from Fiumicino and Ciampino",
+      "Shuttle loops between hotels and the venue, timed to the programme",
+      "Hotel blocks with clear cut-off dates and attrition terms",
+      "VIP and speaker transfers with named drivers",
+      "On-site dispatch desk and backup vehicles",
+    ],
+    sections: [
+      {
+        heading: "Logistics, not production",
+        paragraphs: [
+          "We are the transport and accommodation spine of your event: getting delegates in and out, between hotels and the venue, and to dinners. For staging, AV and content we work with specialist partners or alongside your own agency.",
+        ],
+      },
+      {
+        heading: "A typical conference shuttle plan",
+        bullets: [
+          "Airport waves from Fiumicino and Ciampino, grouped by flight arrival windows",
+          "Morning hotel-to-venue loops with a fixed frequency, routed around the Centro Storico ZTL",
+          "Evening returns and dinner transfers, with late-night buffers",
+          "A dispatch desk that adjusts loops when sessions overrun",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "What size of event do you handle?",
+        a: "From 20-person meetings to several hundred delegates. Larger events use staged supplier deposits and an on-site team.",
+      },
+      {
+        q: "Do you take care of hotel blocks near the venue?",
+        a: "Yes. We prioritise hotels near La Nuvola or your venue, negotiate rooms, agree cut-off and attrition terms and manage the rooming list.",
+      },
+      {
+        q: "Can you work with our PCO or event agency?",
+        a: "Yes — many clients are agencies who need reliable ground logistics as a specialist partner in Rome.",
+      },
+    ],
+    related: ["rome", "conferences-mice-italy", "rome-corporate-events", "rome-hotel-booking"],
+    cta: { label: "Request a MICE quote", service: "event" },
+    serviceType: "MICE logistics",
+    areaServed: ["Rome", "Lazio"],
+  }),
+
+  page({
     slug: "milan-corporate-events",
     kind: "vertical",
     title: "Milan Corporate Events | Offsites, Launches & Retreats",
