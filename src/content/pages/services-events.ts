@@ -252,10 +252,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "christmas-corporate-events-italy",
     kind: "service",
-    title: "Christmas & NYE Corporate Party Transport | Italy",
+    title: "Christmas & NYE Corporate Party Logistics | Italy",
     description:
-      "Guest transport for company Christmas parties and New Year's Eve events in Italy: hotel-to-venue shuttles, late-night returns and backup vehicles.",
-    h1: "Christmas & New Year's Eve Corporate Party Transport",
+      "Transport and hotel logistics for company Christmas parties and New Year's Eve events in Italy: shuttles, late-night returns and backup vehicles.",
+    h1: "Christmas & New Year's Eve Corporate Party Logistics",
     nav: "Christmas & NYE parties",
     lead:
       "Shuttles, late-night returns and a backup vehicle for the company Christmas party or a New Year's Eve group in Rome, Milan, Florence and beyond — booked early, before the season fills up.",
@@ -913,10 +913,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "birthday-celebration-transport-italy",
     kind: "service",
-    title: "Birthday & Milestone Celebration Transport | Italy",
+    title: "Birthday & Milestone Celebration Logistics | Italy",
     description:
-      "Group transport for birthday celebrations in Italy: guest shuttles, a chauffeur for the milestone trip, hotel blocks and a backup vehicle for the night.",
-    h1: "Birthday & Milestone Celebration Transport in Italy",
+      "Transport and hotel logistics for birthday celebrations in Italy: guest shuttles, a chauffeur for the milestone trip, room blocks and a backup vehicle.",
+    h1: "Birthday & Milestone Celebration Logistics in Italy",
     nav: "Birthday celebrations",
     lead:
       "The logistics side of a birthday trip or party in Italy — guest transport, a hotel block if the group is staying, and a driver who knows the venue and the return time. We don't plan the party itself.",
@@ -975,10 +975,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "baby-shower-family-celebration-transport-italy",
     kind: "service",
-    title: "Baby Shower & Family Celebration Transport | Italy",
+    title: "Baby Shower & Family Celebration Logistics | Italy",
     description:
-      "Guest transport for baby showers, gender-reveal gatherings and family celebrations in Italy: shuttles, hotel blocks and one coordinator for the day.",
-    h1: "Baby Shower & Family Celebration Transport in Italy",
+      "Transport and hotel logistics for baby showers, gender-reveal gatherings and family celebrations in Italy: shuttles, room blocks and one coordinator.",
+    h1: "Baby Shower & Family Celebration Logistics in Italy",
     nav: "Baby & family celebrations",
     lead:
       "Guest transport and accommodation for a baby shower, gender-reveal gathering or family celebration — the venue, styling and catering stay with the host or venue.",
@@ -1024,10 +1024,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "private-social-event-transport-italy",
     kind: "service",
-    title: "Private & Social Event Transport in Italy",
+    title: "Private & Social Event Logistics in Italy",
     description:
-      "Guest transport for anniversaries, graduations, retirements, family reunions and other private celebrations in Italy, with hotel blocks and a backup vehicle.",
-    h1: "Private & Social Event Transport in Italy",
+      "Transport and hotel logistics for anniversaries, graduations, retirements, family reunions and other private celebrations in Italy, with a backup vehicle.",
+    h1: "Private & Social Event Logistics in Italy",
     nav: "Private & social events",
     lead:
       "One transport plan for anniversaries, graduations, retirements, reunions and any private celebration that needs guests moved and, sometimes, housed — sized to your group, not a template.",
@@ -1077,10 +1077,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "product-launch-fashion-event-transport-italy",
     kind: "service",
-    title: "Product Launch & Fashion Event Transport | Italy",
+    title: "Product Launch & Fashion Event Logistics | Italy",
     description:
-      "Guest and VIP transport for product launches, brand activations and fashion events in Italy: shuttle loops, VIP cars and venue-access planning.",
-    h1: "Product Launch & Fashion Event Transport in Italy",
+      "Guest, VIP and hotel logistics for product launches, brand activations and fashion events in Italy: shuttle loops, VIP cars and venue-access planning.",
+    h1: "Product Launch & Fashion Event Logistics in Italy",
     nav: "Launches & fashion events",
     lead:
       "Guest shuttles, VIP cars and venue-access planning for a product launch, brand activation or fashion-week event — we run the transport, your production team or agency runs the show.",
@@ -1126,10 +1126,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "entertainment-event-transport-italy",
     kind: "service",
-    title: "Entertainment & Concert Event Transport | Italy",
+    title: "Entertainment & Concert Event Logistics | Italy",
     description:
-      "Guest transport for concerts, festivals and entertainment events in Italy: group shuttles, VIP cars and late-night returns. We move guests, not the show.",
-    h1: "Entertainment & Concert Event Transport in Italy",
+      "Guest and hotel logistics for concerts, festivals and entertainment events in Italy: group shuttles, VIP cars, late-night returns. We move guests, not the show.",
+    h1: "Entertainment & Concert Event Logistics in Italy",
     nav: "Entertainment events",
     lead:
       "Group shuttles and VIP transfers to a concert, festival or entertainment event — timed around the show, with a plan for the crowd at the end of the night.",
@@ -1175,10 +1175,10 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "cultural-religious-group-transport-italy",
     kind: "service",
-    title: "Cultural & Religious Group Transport in Italy",
+    title: "Cultural & Religious Group Logistics in Italy",
     description:
-      "Group transport for pilgrimage, faith and cultural-heritage groups in Italy: coaches, hotel blocks and licensed guides, planned around access rules.",
-    h1: "Cultural & Religious Group Transport in Italy",
+      "Group transport and hotel logistics for pilgrimage, faith and cultural-heritage groups in Italy: coaches, room blocks and licensed guides.",
+    h1: "Cultural & Religious Group Logistics in Italy",
     nav: "Cultural & religious groups",
     lead:
       "Coaches, hotel blocks and licensed guides for pilgrimage, parish and cultural-heritage groups — the same careful planning we use for any large group, built around the sites you're visiting.",

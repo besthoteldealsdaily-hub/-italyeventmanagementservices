@@ -3,10 +3,9 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import FaqList from "@/components/FaqList";
 import JsonLd from "@/components/JsonLd";
-import PageCards from "@/components/PageCards";
 import { ButtonLink, Check, Container, SectionHeading } from "@/components/ui";
 import { site, whatsappLink } from "@/config/site";
-import { getGuides, getPublishedPage, hrefFor } from "@/content/registry";
+import { getGuides, getPublishedPage, hrefFor, pathFor } from "@/content/registry";
 import type { ContentPage, Faq } from "@/content/types";
 import { faqJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -76,6 +75,15 @@ const steps = [
 ];
 
 const destinationSlugs = ["rome", "milan", "florence", "venice", "naples", "amalfi-coast", "lake-como", "tuscany"];
+
+/** Destinations with a real photo — the rest are listed as a compact text line until photos exist for them too. */
+const destinationPhotos: Record<string, { src: string; alt: string }> = {
+  rome: { src: "/rome-colosseum-private-chauffeur.webp", alt: "A chauffeur greets guests walking toward the Colosseum in Rome at golden hour" },
+  milan: { src: "/milan-duomo-private-chauffeur.webp", alt: "A private chauffeur car outside Milan's Duomo at golden hour" },
+  florence: { src: "/florence-ponte-vecchio-private-chauffeur.webp", alt: "A private chauffeur near the Ponte Vecchio and Florence's Duomo at golden hour" },
+  venice: { src: "/venice-rialto-bridge-private-chauffeur.webp", alt: "The Rialto Bridge and Grand Canal in Venice at golden hour" },
+  naples: { src: "/naples-bay-vesuvius-private-chauffeur.webp", alt: "A private chauffeur car overlooking the Bay of Naples and Mount Vesuvius at golden hour" },
+};
 
 const routeSlugs = [
   "rome-airport-transfer",
@@ -276,17 +284,21 @@ export default function Home() {
       <section className="bg-sand/50 py-20">
         <Container>
           <SectionHeading eyebrow="Who we work with" title="Built for professionals who can't afford a missed pick-up" />
-          <div className="reveal-on-scroll mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="reveal-on-scroll mt-10 grid gap-x-8 gap-y-1 sm:grid-cols-2 lg:grid-cols-5">
             {audiences.map((a, i) => (
-              <CardLink key={a.title} slug={a.slug}>
-                <span className="font-serif text-xl font-semibold text-accent/50 transition-colors duration-300 group-hover:text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-2 text-base font-semibold">{a.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-muted">{a.text}</p>
-              </CardLink>
+              <li key={a.title} className="border-t border-line">
+                <Link href={hrefFor(a.slug)} className="group flex items-start gap-3 py-5">
+                  <span className="font-serif text-xl font-semibold text-accent/50 transition-colors duration-300 group-hover:text-accent">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>
+                    <span className="block font-semibold transition-colors group-hover:text-accent">{a.title}</span>
+                    <span className="mt-1 block text-sm text-muted">{a.text}</span>
+                  </span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </section>
 
@@ -309,14 +321,71 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* EDITORIAL BREAK */}
+      <section className="relative">
+        <div className="relative h-[420px] w-full sm:h-[500px]">
+          <Image
+            src="/luxury-villa-arrival-group-transport-italy.webp"
+            alt="Guests arriving with luggage at an Italian villa, greeted by chauffeurs and hotel staff"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent" />
+        </div>
+        <Container className="absolute inset-x-0 bottom-0 pb-10 sm:pb-14">
+          <p className="max-w-xl font-serif text-2xl font-semibold leading-snug text-white sm:text-3xl">
+            From the airport to the villa gate to a 200-guest gala — transport, hotels and event logistics, one invoice.
+          </p>
+        </Container>
+      </section>
+
       {/* DESTINATIONS */}
       <section className="bg-sand/50 py-20">
         <Container>
           <SectionHeading eyebrow="Where we operate" title="Rome first — and the destinations people actually travel to" />
-          <div className="reveal-on-scroll mt-10">
-            <PageCards pages={livePages(destinationSlugs)} />
+          <div className="reveal-on-scroll mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {livePages(destinationSlugs)
+              .filter((p) => destinationPhotos[p.slug])
+              .map((p) => {
+                const photo = destinationPhotos[p.slug];
+                return (
+                  <Link key={p.slug} href={hrefFor(p.slug)} className="group relative overflow-hidden rounded-2xl">
+                    <div className="relative aspect-[4/5] w-full">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                      />
+                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <p className="font-serif text-xl font-semibold text-white">{p.nav ?? p.h1}</p>
+                      <p className="mt-1 text-sm text-white/75 transition-transform duration-300 group-hover:translate-x-1">
+                        View services →
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
           </div>
-          <p className="mt-8">
+          <p className="reveal-on-scroll mt-8 text-sm text-muted">
+            Also serving{" "}
+            {livePages(destinationSlugs)
+              .filter((p) => !destinationPhotos[p.slug])
+              .map((p, i, arr) => (
+                <span key={p.slug}>
+                  <Link href={hrefFor(p.slug)} className="font-semibold text-accent hover:underline">
+                    {p.nav ?? p.h1}
+                  </Link>
+                  {i < arr.length - 2 ? ", " : i === arr.length - 2 ? " and " : ""}
+                </span>
+              ))}
+            .
+          </p>
+          <p className="mt-4">
             <Link href="/destinations" className="font-semibold text-accent hover:underline">
               All destinations, airports and routes →
             </Link>
@@ -328,9 +397,21 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <SectionHeading eyebrow="Popular routes" title="Fixed price, all-inclusive" lead="Tell us the date and group size; we reply with a fixed quote." />
-          <div className="reveal-on-scroll mt-10">
-            <PageCards pages={livePages(routeSlugs)} />
-          </div>
+          <ul className="reveal-on-scroll mt-10 divide-y divide-line border-y border-line">
+            {livePages(routeSlugs).map((p) => (
+              <li key={p.slug}>
+                <Link href={pathFor(p)} className="group flex items-center justify-between gap-6 py-5">
+                  <span>
+                    <span className="font-serif text-lg font-semibold transition-colors group-hover:text-accent">{p.nav ?? p.h1}</span>
+                    <span className="mt-1 block text-sm text-muted">{p.lead}</span>
+                  </span>
+                  <span className="shrink-0 text-accent transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                    →
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 
@@ -339,9 +420,26 @@ export default function Home() {
         <section className="bg-sand/50 py-20">
           <Container>
             <SectionHeading eyebrow="Guides" title="Real numbers and access rules, with sources" />
-            <div className="reveal-on-scroll mt-10">
-              <PageCards pages={guides} />
-            </div>
+            <ul className="reveal-on-scroll mt-10 divide-y divide-line border-y border-line">
+              {guides.map((p) => (
+                <li key={p.slug}>
+                  <Link
+                    href={pathFor(p)}
+                    className="group flex flex-col gap-1 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+                  >
+                    <span>
+                      <span className="font-serif text-lg font-semibold transition-colors group-hover:text-accent">{p.nav ?? p.h1}</span>
+                      <span className="mt-1 block max-w-xl text-sm text-muted">{p.lead}</span>
+                    </span>
+                    {p.readingMinutes && (
+                      <span className="shrink-0 text-xs font-semibold uppercase tracking-widest text-muted">
+                        {p.readingMinutes} min read
+                      </span>
+                    )}
+                  </Link>
+                </li>
+              ))}
+            </ul>
             <p className="mt-8">
               <Link href="/guides" className="font-semibold text-accent hover:underline">
                 All guides →
