@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #0b1f31; /* deep navy — matches the logo's background */
+  --ink: #0a1f32; /* deep navy — matches the logo's background */
   --paper: #fbf9f5; /* warm off-white */
   --sand: #f1ece3;
   --line: #e2dbcf;
