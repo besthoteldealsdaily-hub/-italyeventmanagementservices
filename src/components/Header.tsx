@@ -10,15 +10,16 @@ export default function Header() {
   const links = getNavLinks();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
-      <Container className="flex h-16 items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0B1F31]/95 text-white backdrop-blur">
+      <Container className="flex h-20 items-center justify-between gap-6">
         <Link href="/" className="shrink-0 leading-none" aria-label={`${site.name} — home`}>
           <Image
             src="/italy-event-management-services-logo.webp"
             alt={site.name}
             width={2216}
             height={709}
-            className="h-9 w-auto rounded-md sm:h-10"
+            priority
+            className="h-14 w-auto rounded-md sm:h-16"
           />
         </Link>
 
@@ -27,7 +28,7 @@ export default function Header() {
             <div key={g.label} className="group relative">
               <button
                 type="button"
-                className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium hover:bg-sand"
+                className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium hover:bg-white/10"
                 aria-haspopup="true"
               >
                 {g.label}
@@ -37,7 +38,7 @@ export default function Header() {
               </button>
               <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-2 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
                 <div
-                  className={`rounded-xl border border-line bg-white p-5 shadow-xl ${
+                  className={`rounded-xl border border-line bg-white p-5 text-ink shadow-xl ${
                     g.columns.length > 1 ? "w-[44rem]" : "w-72"
                   }`}
                 >
@@ -69,7 +70,7 @@ export default function Header() {
             </div>
           ))}
           {links.map((item) => (
-            <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-sand">
+            <Link key={item.href} href={item.href} className="rounded-md px-3 py-2 text-sm font-medium hover:bg-white/10">
               {item.label}
             </Link>
           ))}

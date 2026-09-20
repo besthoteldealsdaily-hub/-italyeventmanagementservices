@@ -21,7 +21,7 @@ export default function MobileNav({
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-controls="mobile-menu"
-        className="rounded-md border border-line p-2"
+        className="rounded-md border border-white/25 p-2"
       >
         <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
         <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -31,7 +31,7 @@ export default function MobileNav({
       {open && (
         <div
           id="mobile-menu"
-          className="absolute inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-paper px-4 pb-6 pt-2 shadow-lg"
+          className="absolute inset-x-0 top-20 max-h-[calc(100vh-5rem)] overflow-y-auto border-b border-line bg-paper px-4 pb-6 pt-2 text-ink shadow-lg"
         >
           <ul className="divide-y divide-line">
             {groups.map((g) => (
