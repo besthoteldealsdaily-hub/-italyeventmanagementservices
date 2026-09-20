@@ -190,7 +190,7 @@ export const eventServicePages: ContentPage[] = [
         a: "Yes. That is the core of the service: one team, one budget sheet and one invoice across all three.",
       },
     ],
-    related: ["corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "for-event-agencies", "how-to-plan-a-corporate-event-in-italy"],
+    related: ["corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "christmas-corporate-events-italy", "for-event-agencies"],
     cta: { label: "Request an event quote", service: "event" },
     serviceType: "Event management",
     areaServed: ["Italy"],
@@ -243,9 +243,71 @@ export const eventServicePages: ContentPage[] = [
         a: "Hotel blocks have attrition allowances and venues have minimums; we manage the changes against those terms and tell you the impact early.",
       },
     ],
-    related: ["rome-corporate-events", "event-management-italy", "incentive-travel-italy", "conferences-mice-italy"],
+    related: ["rome-corporate-events", "event-management-italy", "incentive-travel-italy", "how-to-plan-a-corporate-event-in-italy"],
     cta: { label: "Request a corporate event quote", service: "event" },
     serviceType: "Corporate events",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "christmas-corporate-events-italy",
+    kind: "service",
+    title: "Christmas & NYE Corporate Party Transport | Italy",
+    description:
+      "Guest transport for company Christmas parties and New Year's Eve events in Italy: hotel-to-venue shuttles, late-night returns and backup vehicles.",
+    h1: "Christmas & New Year's Eve Corporate Party Transport",
+    nav: "Christmas & NYE parties",
+    lead:
+      "Shuttles, late-night returns and a backup vehicle for the company Christmas party or a New Year's Eve group in Rome, Milan, Florence and beyond — booked early, before the season fills up.",
+    parent: { slug: "event-management-italy", label: "Event management" },
+    tags: [],
+    facts: [
+      { label: "Peak window", value: "Early December through 6 January; city centres run Christmas markets and lights that add to evening traffic" },
+      { label: "Booking lead time", value: "6–10 weeks ahead for December weekends; venues and vehicles both book out early in this window" },
+      { label: "New Year's Eve", value: "Many Italian city centres close streets around midnight for public celebrations; we plan the drop-off and pick-up point outside the closure zone in advance" },
+      { label: "Typical group", value: "20–150 guests for a company party; smaller VIP or board-level NYE bookings also common" },
+    ],
+    included: [
+      "Hotel-to-venue shuttle loops timed to the party or dinner",
+      "Late-night return waves, including after-midnight NYE pickups",
+      "A backup vehicle held for the evening",
+      "Route planning around Christmas-market and NYE street closures",
+      "One dispatch number for the whole evening",
+    ],
+    sections: [
+      {
+        heading: "Why this season needs earlier planning",
+        paragraphs: [
+          "December combines Christmas-market crowds, shorter daylight and, on 31 December, city-centre road closures for public celebrations. None of that is a problem if it is planned for — but vehicles and drivers for the popular Friday and Saturday dates in December get booked well before the season starts, so we ask for dates as early as possible.",
+        ],
+      },
+      {
+        heading: "A typical evening",
+        bullets: [
+          "Hotel pickup, timed to the dinner or party start",
+          "A held vehicle or driver on standby through the evening for early leavers",
+          "A late-night return wave, staggered so guests are not queuing at once",
+          "For NYE, a drop-off and pickup point confirmed outside any street-closure zone",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How early should we book a December date?",
+        a: "6–10 weeks ahead for popular Friday and Saturday nights; earlier is safer, since December is our busiest month for evening transport.",
+      },
+      {
+        q: "Can you handle a late finish on New Year's Eve?",
+        a: "Yes — we plan for after-midnight pickups and confirm the drop-off point in advance, since many city centres close streets around midnight.",
+      },
+      {
+        q: "Do you cover the whole evening, or just drop-off?",
+        a: "Both — a single drop-off, or a held vehicle for the evening with a return wave at the end, whichever your event needs.",
+      },
+    ],
+    related: ["corporate-events-italy", "event-transportation-italy", "group-transportation-italy", "event-management-italy"],
+    cta: { label: "Request a Christmas or NYE quote", service: "event" },
+    serviceType: "Seasonal corporate event transport",
     areaServed: ["Italy"],
   }),
 
@@ -292,7 +354,7 @@ export const eventServicePages: ContentPage[] = [
         a: "Through vetted partners, quoted as separate lines.",
       },
     ],
-    related: ["rome-mice-services", "milan-mice-services", "for-event-agencies", "hotel-group-bookings-italy"],
+    related: ["rome-mice-services", "milan-mice-services", "venice-mice-services", "for-event-agencies"],
     cta: { label: "Request a MICE quote", service: "event" },
     serviceType: "Conference and MICE logistics",
     areaServed: ["Italy"],
@@ -549,6 +611,65 @@ export const eventServicePages: ContentPage[] = [
     related: ["group-transportation-italy", "for-tour-operators", "rome-to-assisi-transfer", "minibus-coach-hire-italy"],
     cta: { label: "Request a group quote", service: "group" },
     serviceType: "Group travel logistics",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "luxury-event-management-italy",
+    kind: "service",
+    title: "Luxury Event Management in Italy | VIP & Discreet",
+    description:
+      "Luxury event logistics in Italy for UHNW clients, family offices and premium brands: VIP transport, discreet security, villa and hotel blocks, one contact.",
+    h1: "Luxury Event Management in Italy",
+    nav: "Luxury events",
+    lead:
+      "One accountable team across VIP transport, security, villa and hotel blocks and on-site coordination — for clients who need discretion and a backup for everything, not just a nice car.",
+    parent: { slug: "services", label: "Services" },
+    tags: [],
+    facts: [
+      { label: "What's different here", value: "Same partner network as our standard services, run at luxury tier: S-Class or equivalent sedans, V-Class vans, licensed security and discreet drivers as standard, not an upgrade" },
+      { label: "Typical clients", value: "UHNW families, family offices, luxury brands, talent management and premium event agencies" },
+      { label: "Scope", value: "VIP and delegation transport, security through licensed partners, villa and luxury hotel blocks, and on-site event coordination" },
+      { label: "Market context", value: "Italy hosted 367,981 business events in 2024 (+8.2%), worth about €11.7 billion in direct contribution — a market with a genuine luxury and UHNW segment" },
+    ],
+    included: [
+      "Luxury vehicles and discreet, briefed drivers as standard",
+      "Licensed security providers through partners, on request",
+      "Villa and luxury hotel sourcing and negotiation",
+      "A single named contact across transport, accommodation and on-site logistics",
+      "A backup plan for every vehicle and every supplier",
+    ],
+    sections: [
+      {
+        heading: "Discretion is a process, not a promise",
+        paragraphs: [
+          "For luxury and UHNW clients, the risk is not usually the main event — it's a driver who doesn't know the route, a hotel that mishandles a guest list, or no backup when a vehicle fails. We brief every driver and supplier, confirm details a day ahead, and hold a backup for every vehicle class, so nothing depends on one person or one car working perfectly.",
+        ],
+      },
+      {
+        heading: "What this covers, and what stays with specialists",
+        paragraphs: [
+          "We run transport, security coordination, accommodation and on-site logistics directly. Catering, entertainment, styling and production are sourced through vetted specialist partners we brief and manage, so you deal with one team even though several suppliers are involved.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you handle security directly?",
+        a: "Through licensed security providers, quoted as a separate line. We brief them alongside the transport and dispatch teams so everyone works from the same schedule.",
+      },
+      {
+        q: "Can you source a villa, not just a hotel?",
+        a: "Yes, through vetted partners across Lake Como, Tuscany, the Amalfi Coast and Rome, with transport and staffing coordinated around it.",
+      },
+      {
+        q: "How is this different from your standard corporate or wedding services?",
+        a: "Same network, luxury tier as standard rather than an add-on: discreet drivers, security on request, villa-level accommodation and a single senior contact throughout.",
+      },
+    ],
+    related: ["vip-transfers-italy", "marriage-proposal-transfer-italy", "destination-weddings-italy", "corporate-events-italy"],
+    cta: { label: "Request a luxury event proposal", service: "event" },
+    serviceType: "Luxury event management",
     areaServed: ["Italy"],
   }),
 

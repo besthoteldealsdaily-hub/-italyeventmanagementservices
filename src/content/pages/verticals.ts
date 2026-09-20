@@ -8,6 +8,7 @@ const MILAN = { slug: "milan", label: "Milan" };
 const FLORENCE = { slug: "florence", label: "Florence" };
 const TUSCANY = { slug: "tuscany", label: "Tuscany" };
 const AMALFI = { slug: "amalfi-coast", label: "Amalfi Coast" };
+const VENICE = { slug: "venice", label: "Venice" };
 
 export const verticalPages: ContentPage[] = [
   page({
@@ -792,6 +793,65 @@ export const verticalPages: ContentPage[] = [
     cta: { label: "Request a MICE quote", service: "event" },
     serviceType: "MICE logistics",
     areaServed: ["Rome", "Lazio"],
+  }),
+
+  page({
+    slug: "venice-mice-services",
+    kind: "vertical",
+    title: "Venice MICE Services: Delegate Transport & Water Taxis",
+    description:
+      "MICE logistics in Venice: delegate transfers to Piazzale Roma or Mestre, water-taxi legs to canal-side venues and hotel blocks, coordinated by one team.",
+    h1: "MICE Services in Venice",
+    nav: "Venice MICE",
+    lead:
+      "Venice is car-free, so delegate logistics are two parts — the road to Piazzale Roma or Mestre, and the water into the city. We plan both as one programme.",
+    parent: VENICE,
+    tags: ["venice"],
+    facts: [
+      { label: "Why Venice is different", value: "The historic centre has no roads; road transport ends at Piazzale Roma or Tronchetto, with the final leg by water taxi or lagoon boat" },
+      { label: "Airports", value: "Marco Polo (VCE) at Tessera, and Treviso (TSF); water taxis run directly from Marco Polo to most canal-side hotels" },
+      { label: "Venues", value: "Hotel congress facilities, and the Biennale pavilions at the Giardini and Arsenale during exhibition years" },
+      { label: "Market context", value: "Italy is second in the world for international association meetings, with 635 in 2024" },
+    ],
+    included: [
+      "Delegate arrival waves from Marco Polo and Treviso to Piazzale Roma or Mestre",
+      "Water-taxi and lagoon-boat legs to venues and hotels, arranged through licensed local partners",
+      "Hotel blocks with clear cut-off dates and attrition terms",
+      "VIP and speaker transfers with named drivers on the road leg",
+      "On-site dispatch desk and backup vehicles for the road side of the programme",
+    ],
+    sections: [
+      {
+        heading: "The road leg and the water leg",
+        paragraphs: [
+          "We run the road side of your programme directly: airport waves, hotel blocks and dispatch. The water leg — water taxis and lagoon boats to canal-side venues — needs local boats, permits and captains, so we arrange it through licensed local partners and coordinate the timing so delegates move as one group, not a scattered queue for taxis at Piazzale Roma.",
+        ],
+      },
+      {
+        heading: "Mainland or historic centre",
+        paragraphs: [
+          "A mainland Mestre base gives easier coach and vehicle access and suits larger groups; a historic-centre base puts delegates within walking distance of Biennale venues and canal-side hotels, at the cost of every transfer needing a boat. We propose both where relevant so you can weigh access against atmosphere.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How do delegates get from the airport to a canal-side venue?",
+        a: "By road to Piazzale Roma or Tronchetto, then water taxi or lagoon boat for the final leg. We plan both stages as one schedule so groups move together.",
+      },
+      {
+        q: "Do you take care of hotel blocks?",
+        a: "Yes — mainland and historic-centre options, with cut-off and attrition terms agreed and the rooming list managed centrally.",
+      },
+      {
+        q: "Can you work with our PCO or event agency?",
+        a: "Yes — many clients are agencies who need a specialist ground and water-logistics partner in Venice.",
+      },
+    ],
+    related: ["venice", "conferences-mice-italy", "venice-airport-transfer", "hotel-group-bookings-italy"],
+    cta: { label: "Request a MICE quote", service: "event" },
+    serviceType: "MICE logistics",
+    areaServed: ["Venice", "Veneto"],
   }),
 
   page({

@@ -132,6 +132,69 @@ export const transportServicePages: ContentPage[] = [
   }),
 
   page({
+    slug: "marriage-proposal-transfer-italy",
+    kind: "service",
+    title: "Marriage Proposal & Romantic Transfer | Italy",
+    description:
+      "A discreet private chauffeur for a marriage proposal in Italy: Rome, Lake Como, the Amalfi Coast, Tuscany or Venice. Timed to sunset, backup vehicle held.",
+    h1: "Marriage Proposal & Romantic Transfer in Italy",
+    nav: "Proposal transfer",
+    lead:
+      "We get you there on time, at the right light, with a driver briefed to stay out of the way at the right moment. The proposal is yours — we handle the road.",
+    parent: { slug: "services", label: "Services" },
+    tags: [],
+    facts: [
+      { label: "Booking type", value: "Hourly, three-hour minimum — enough for the drive, the moment and a slower return" },
+      { label: "Vehicles", value: "E-Class or similar, or a luxury vehicle on request" },
+      { label: "Where couples propose", value: "Rome's Gianicolo Hill at sunset, a Lake Como lakeside terrace, a Positano or Ravello viewpoint, a Tuscan vineyard at golden hour, a quiet Venice campo away from the main routes" },
+      { label: "What we don't stage", value: "The proposal itself — we handle transport, timing and discretion; flowers, champagne and a photographer are arranged through vetted partners on request" },
+    ],
+    included: [
+      "Licensed, insured chauffeur and vehicle",
+      "A driver briefed to arrive early, wait discreetly and step back at the right moment",
+      "Advice on quiet, scenic spots and the best time of day for light and crowds",
+      "A backup vehicle held for the booking",
+      "Optional champagne, flowers or a photographer through vetted partners",
+    ],
+    sections: [
+      {
+        heading: "Timing matters more than the spot",
+        paragraphs: [
+          "The same viewpoint that is empty at sunrise can be full of tour groups by mid-morning. We plan the pickup time backwards from the moment you want — golden hour on the Gianicolo, a quiet window on a Positano terrace — so you arrive with the light and the privacy you pictured, not whatever the traffic allows.",
+        ],
+      },
+      {
+        heading: "If you want more than the drive",
+        paragraphs: [
+          "Some couples want champagne on ice, flowers already at the spot, or a photographer capturing the moment from a discreet distance. We can arrange any of these through vetted local partners — quoted as separate lines, confirmed before the day so nothing is a surprise except the proposal itself.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Will the driver know what's happening?",
+        a: "Yes — we brief the driver in advance so they know to stay discreet, keep their distance at the right moment, and not interrupt.",
+      },
+      {
+        q: "Can you suggest where to propose?",
+        a: "Yes, based on your group size, the season and how private you want the moment to be. We don't stage the proposal itself, only the logistics around it.",
+      },
+      {
+        q: "Can you arrange a photographer or flowers?",
+        a: "Through vetted partners, as separate lines on your quote, confirmed in advance.",
+      },
+      {
+        q: "What if the weather changes at the last minute?",
+        a: "Tell us as early as possible — we can usually propose an indoor or alternative option nearby, or rebook the time of day.",
+      },
+    ],
+    related: ["private-chauffeur-italy", "luxury-event-management-italy", "destination-weddings-italy", "vip-transfers-italy"],
+    cta: { label: "Plan a proposal transfer", service: "chauffeur" },
+    serviceType: "Private chauffeur",
+    areaServed: ["Italy"],
+  }),
+
+  page({
     slug: "hourly-chauffeur-italy",
     kind: "service",
     title: "Hourly Chauffeur in Italy | Flexible Car with Driver",
@@ -539,7 +602,7 @@ export const transportServicePages: ContentPage[] = [
         a: "Yes — model class, colour and amenities where available; the exact vehicle is confirmed on the voucher.",
       },
     ],
-    related: ["private-chauffeur-italy", "corporate-transportation-italy", "wedding-transportation-italy", "airport-transfers"],
+    related: ["luxury-event-management-italy", "private-chauffeur-italy", "corporate-transportation-italy", "wedding-transportation-italy"],
     cta: { label: "Request a VIP transfer", service: "transfer" },
     serviceType: "VIP transfer",
     areaServed: ["Italy"],

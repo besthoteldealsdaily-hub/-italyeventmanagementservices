@@ -27,6 +27,7 @@ export const hubPages: ContentPage[] = [
           "minibus-coach-hire-italy",
           "cruise-port-transfers-italy",
           "vip-transfers-italy",
+          "marriage-proposal-transfer-italy",
           "corporate-transportation-italy",
           "event-transportation-italy",
         ],
@@ -39,7 +40,15 @@ export const hubPages: ContentPage[] = [
       {
         title: "Event management and MICE",
         text: "Logistics-led events, conferences and corporate travel.",
-        slugs: ["event-management-italy", "corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "corporate-travel-italy"],
+        slugs: [
+          "event-management-italy",
+          "corporate-events-italy",
+          "conferences-mice-italy",
+          "incentive-travel-italy",
+          "corporate-travel-italy",
+          "christmas-corporate-events-italy",
+          "luxury-event-management-italy",
+        ],
       },
       {
         title: "Weddings",

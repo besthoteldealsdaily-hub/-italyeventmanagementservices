@@ -174,7 +174,7 @@ export const cityPages: ContentPage[] = [
         a: "It can be a practical choice for budget and access, and it is only a short train or bus ride from the lagoon. We can advise based on your group.",
       },
     ],
-    related: ["venice-airport-transfer", "rome-to-venice-transfer", "florence-to-venice-transfer", "milan-to-venice-transfer"],
+    related: ["venice-mice-services", "venice-airport-transfer", "rome-to-venice-transfer", "florence-to-venice-transfer", "milan-to-venice-transfer"],
     cta: { label: "Request a quote for Venice", service: "other" },
     serviceType: "Ground transportation",
     areaServed: ["Venice", "Veneto"],
