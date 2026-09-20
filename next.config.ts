@@ -6,7 +6,15 @@ const nextConfig: NextConfig = {
   // Assets; this covers routes that instead go through the Worker itself (admin, api,
   // quote/pay/voucher/review token pages), which that file's rules don't reach.
   async headers() {
-    return [{ source: "/:path*", headers: [{ key: "X-Content-Type-Options", value: "nosniff" }] }];
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
   },
 };
 
