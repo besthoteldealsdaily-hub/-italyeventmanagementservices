@@ -16,7 +16,7 @@ export function Container({
 }
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors focus-visible:outline-2";
+  "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition duration-150 active:scale-[0.98] focus-visible:outline-2";
 
 const variants = {
   primary: "bg-accent text-white hover:bg-accent-dark",

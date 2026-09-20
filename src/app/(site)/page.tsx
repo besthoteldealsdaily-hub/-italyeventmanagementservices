@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import FaqList from "@/components/FaqList";
 import JsonLd from "@/components/JsonLd";
 import PageCards from "@/components/PageCards";
-import { ButtonLink, Container, SectionHeading } from "@/components/ui";
+import { ButtonLink, Check, Container, SectionHeading } from "@/components/ui";
 import { site, whatsappLink } from "@/config/site";
 import { getGuides, getPublishedPage, hrefFor } from "@/content/registry";
 import type { ContentPage, Faq } from "@/content/types";
@@ -139,7 +139,7 @@ function CardLink({ slug, children }: { slug: string; children: React.ReactNode 
   return (
     <Link
       href={hrefFor(slug)}
-      className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition hover:border-accent hover:shadow-md"
+      className="group flex h-full flex-col rounded-xl border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-md"
     >
       {children}
     </Link>
@@ -230,10 +230,13 @@ export default function Home() {
           <p className="text-xs font-semibold uppercase tracking-widest text-accent">Why work with us</p>
           <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {differentiators.map((d) => (
-            <div key={d.title}>
-              <p className="font-semibold">{d.title}</p>
-              <p className="mt-1 text-sm text-muted">{d.text}</p>
-            </div>
+              <div key={d.title} className="flex gap-3">
+                <Check />
+                <div>
+                  <p className="font-semibold">{d.title}</p>
+                  <p className="mt-1 text-sm text-muted">{d.text}</p>
+                </div>
+              </div>
             ))}
           </div>
         </Container>
@@ -247,12 +250,17 @@ export default function Home() {
             title="Everything that moves, sleeps and gathers your guests in Italy"
             lead="One accountable team across transportation, accommodation and events — built on a network of vetted local suppliers."
           />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((s) => (
+          <div className="reveal-on-scroll mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((s, i) => (
               <CardLink key={s.title} slug={s.slug}>
-                <h3 className="text-lg font-semibold">{s.title}</h3>
+                <span className="font-serif text-2xl font-semibold text-accent/50 transition-colors duration-300 group-hover:text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted">{s.text}</p>
-                <span className="mt-4 text-sm font-semibold text-accent group-hover:underline">Learn more →</span>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:underline">
+                  Learn more <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                </span>
               </CardLink>
             ))}
           </div>
@@ -268,10 +276,13 @@ export default function Home() {
       <section className="bg-sand/50 py-20">
         <Container>
           <SectionHeading eyebrow="Who we work with" title="Built for professionals who can't afford a missed pick-up" />
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {audiences.map((a) => (
+          <div className="reveal-on-scroll mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            {audiences.map((a, i) => (
               <CardLink key={a.title} slug={a.slug}>
-                <h3 className="text-base font-semibold">{a.title}</h3>
+                <span className="font-serif text-xl font-semibold text-accent/50 transition-colors duration-300 group-hover:text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 text-base font-semibold">{a.title}</h3>
                 <p className="mt-2 flex-1 text-sm text-muted">{a.text}</p>
               </CardLink>
             ))}
@@ -283,9 +294,12 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <SectionHeading eyebrow="How it works" title="From request to arrival in four steps" />
-          <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="reveal-on-scroll mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
-              <li key={s.n} className="rounded-xl border border-line bg-white p-6">
+              <li
+                key={s.n}
+                className="rounded-xl border border-line bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-md"
+              >
                 <span className="font-serif text-4xl font-semibold text-accent">{s.n}</span>
                 <p className="mt-3 font-semibold">{s.title}</p>
                 <p className="mt-1 text-sm text-muted">{s.text}</p>
@@ -299,7 +313,7 @@ export default function Home() {
       <section className="bg-sand/50 py-20">
         <Container>
           <SectionHeading eyebrow="Where we operate" title="Rome first — and the destinations people actually travel to" />
-          <div className="mt-10">
+          <div className="reveal-on-scroll mt-10">
             <PageCards pages={livePages(destinationSlugs)} />
           </div>
           <p className="mt-8">
@@ -314,7 +328,7 @@ export default function Home() {
       <section className="py-20">
         <Container>
           <SectionHeading eyebrow="Popular routes" title="Fixed price, all-inclusive" lead="Tell us the date and group size; we reply with a fixed quote." />
-          <div className="mt-10">
+          <div className="reveal-on-scroll mt-10">
             <PageCards pages={livePages(routeSlugs)} />
           </div>
         </Container>
@@ -325,7 +339,7 @@ export default function Home() {
         <section className="bg-sand/50 py-20">
           <Container>
             <SectionHeading eyebrow="Guides" title="Real numbers and access rules, with sources" />
-            <div className="mt-10">
+            <div className="reveal-on-scroll mt-10">
               <PageCards pages={guides} />
             </div>
             <p className="mt-8">
@@ -341,7 +355,7 @@ export default function Home() {
       <section className="py-20">
         <Container narrow>
           <SectionHeading eyebrow="FAQ" title="Straight answers" />
-          <div className="mt-8">
+          <div className="reveal-on-scroll mt-8">
             <FaqList faqs={faqs} />
           </div>
         </Container>

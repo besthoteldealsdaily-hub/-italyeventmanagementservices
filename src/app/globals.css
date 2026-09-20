@@ -88,3 +88,29 @@ details[open] summary .chev {
     transform: scale(1);
   }
 }
+
+/*
+ * Scroll-in reveal for homepage sections below the hero. Pure CSS, no JS: browsers
+ * without animation-timeline support (older Firefox) just render the element in its
+ * resting, fully visible state — never stuck hidden, nothing to hydrate. No explicit
+ * animation-duration on purpose: a view()-linked animation doesn't need one, and a
+ * browser that ignores animation-timeline then treats the (unset, 0s) duration as
+ * "already finished", i.e. visible immediately.
+ */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on-scroll {
+    animation: reveal-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
