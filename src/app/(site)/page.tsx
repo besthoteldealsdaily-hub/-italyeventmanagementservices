@@ -19,7 +19,7 @@ export const metadata: Metadata = pageMetadata({
 const services = [
   {
     title: "Event management",
-    text: "Logistics-led events: transport waves, hotel blocks, venues and on-site coordination through vetted partners.",
+    text: "Planning, venues, catering, AV and on-site coordination for corporate, luxury and conference events, through vetted suppliers.",
     slug: "event-management-italy",
   },
   {
@@ -44,7 +44,7 @@ const services = [
   },
   {
     title: "Destination weddings",
-    text: "Guest shuttles, couple cars and accommodation blocks — with a backup vehicle on standby.",
+    text: "Full planning for your Italian wedding: venue, ceremony, catering, décor, photography, music, guest hotels and transport.",
     slug: "destination-weddings-italy",
   },
   {

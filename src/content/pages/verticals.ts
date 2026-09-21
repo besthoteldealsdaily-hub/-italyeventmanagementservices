@@ -14,13 +14,13 @@ export const verticalPages: ContentPage[] = [
   page({
     slug: "milan-mice-services",
     kind: "vertical",
-    title: "Milan MICE Services: Delegate Transport & Hotel Blocks",
+    title: "Milan MICE Services | Venues, Registration & Hotel Blocks",
     description:
-      "MICE logistics in Milan: delegate transfers, shuttle loops to the venue, hotel blocks with clear terms and on-site coordination through vetted partners.",
+      "MICE services in Milan: venue sourcing, registration and hosts, AV, hotel blocks and delegate transport, coordinated through vetted partners.",
     h1: "MICE Services in Milan",
     nav: "Milan MICE",
     lead:
-      "Delegate arrivals, venue shuttles, hotel blocks and on-site coordination for meetings, conferences and exhibitions in Italy's business capital.",
+      "Venue sourcing, registration, AV, hotel blocks and delegate transport for meetings, conferences and exhibitions in Italy's business capital, coordinated by one team.",
     parent: MILAN,
     tags: ["milan"],
     facts: [
@@ -30,21 +30,32 @@ export const verticalPages: ContentPage[] = [
       { label: "Access", value: "Milan's Area C charge and city restrictions are built into shuttle plans" },
     ],
     included: [
-      "Delegate arrival waves from Malpensa, Linate and Bergamo",
-      "Shuttle loops between hotels and the venue, timed to the programme",
+      "Venue sourcing: conference centres, fair grounds and hotel congress facilities, proposed against your budget and delegate numbers",
+      "Registration desk, hosts and interpreters through staffing partners",
+      "AV sourcing for plenaries, breakouts and gala evenings",
+      "Catering for coffee breaks, lunches and dinners through vetted caterers",
       "Hotel blocks with clear cut-off dates and attrition terms",
-      "VIP and speaker transfers with named drivers",
-      "On-site dispatch desk and backup vehicles",
+      "Delegate arrival waves, venue shuttles and VIP and speaker transfers",
+      "On-site coordination and a dispatch desk with backup vehicles",
     ],
     sections: [
       {
-        heading: "Logistics, not production",
+        heading: "What we manage, and what stays with you",
         paragraphs: [
-          "We are the transport and accommodation spine of your event: getting delegates in and out, between hotels and venues, and to dinners. For staging, AV and content we work with specialist partners or alongside your own agency.",
+          "We coordinate the operating side of the event: venue, registration, AV, catering, accommodation and transport, each delivered by a specialist we source, brief and manage. The conference programme, the speakers and the content stay with you or your PCO, and we work alongside them.",
         ],
       },
       {
-        heading: "A typical conference shuttle plan",
+        heading: "Venues in Milan",
+        bullets: [
+          "MiCo and the Fieramilano Rho fair grounds for large conferences and exhibitions",
+          "Porta Nuova and CityLife for modern venues",
+          "Navigli and Brera for smaller, characterful spaces",
+          "Hotel congress facilities, when delegates sleep and meet under one roof",
+        ],
+      },
+      {
+        heading: "Getting delegates to the venue",
         bullets: [
           "Airport waves grouped by flight arrival windows",
           "Morning hotel-to-venue loops with a fixed frequency",
@@ -63,13 +74,17 @@ export const verticalPages: ContentPage[] = [
         a: "Yes. We negotiate rooms with hotels, agree cut-off and attrition terms and manage the rooming list.",
       },
       {
+        q: "Do you run the registration desk and the AV?",
+        a: "We source and manage both through partners: a staffing team for registration and hosts, and an AV supplier briefed to the same schedule. We do not own the equipment.",
+      },
+      {
         q: "Can you work with our PCO or event agency?",
-        a: "Yes — many clients are agencies who need reliable ground logistics as a specialist partner.",
+        a: "Yes. Many clients are agencies who need a reliable operating partner on the ground in Milan.",
       },
     ],
-    related: ["milan", "conferences-mice-italy", "milan-corporate-events", "milan-hotel-booking"],
+    related: ["milan", "conferences-mice-italy", "event-services-italy", "milan-corporate-events", "milan-hotel-booking"],
     cta: { label: "Request a MICE quote", service: "event" },
-    serviceType: "MICE logistics",
+    serviceType: "MICE services",
     areaServed: ["Milan", "Lombardy"],
   }),
 
@@ -131,7 +146,7 @@ export const verticalPages: ContentPage[] = [
         a: "A backup vehicle from a pre-approved operator is on standby, and our dispatch team is reachable throughout.",
       },
     ],
-    related: ["lake-como-wedding-transport", "for-wedding-planners", "pisa-airport-transfer", "tuscany"],
+    related: ["lake-como-wedding-transport", "tuscany-wedding-planning", "for-wedding-planners", "pisa-airport-transfer", "tuscany"],
     cta: { label: "Request a wedding logistics plan", service: "wedding" },
     serviceType: "Wedding guest transportation",
     areaServed: ["Tuscany"],
@@ -189,9 +204,259 @@ export const verticalPages: ContentPage[] = [
         a: "Not usually. Small minibuses and vans are more reliable on the Coast; we add loops rather than bigger vehicles.",
       },
     ],
-    related: ["amalfi-coast", "naples-to-amalfi-coast-transfer", "amalfi-coast-alternate-license-plates", "for-wedding-planners"],
+    related: ["amalfi-coast", "amalfi-coast-wedding-planning", "naples-to-amalfi-coast-transfer", "amalfi-coast-alternate-license-plates", "for-wedding-planners"],
     cta: { label: "Request a wedding logistics plan", service: "wedding" },
     serviceType: "Wedding guest transportation",
+    areaServed: ["Amalfi Coast", "Campania"],
+  }),
+
+  page({
+    slug: "tuscany-wedding-planning",
+    kind: "vertical",
+    title: "Tuscany Wedding Planning | Villas, Estates & Ceremonies",
+    description:
+      "Full-service wedding planning in Tuscany: villa and estate venues, ceremony options, suppliers, guest hotels and transport, coordinated by one team.",
+    h1: "Wedding Planning in Tuscany",
+    nav: "Tuscany wedding planning",
+    lead:
+      "Villas, wine estates and hill-town venues in Chianti, the Val d'Orcia and the Florence hills, planned from the first venue search to the last shuttle home.",
+    parent: { slug: "destination-weddings-italy", label: "Destination weddings" },
+    tags: ["tuscany", "florence"],
+    facts: [
+      { label: "Where couples marry", value: "Central Italy (Tuscany, Umbria, Lazio) accounts for 31.3% of foreign wedding requests" },
+      { label: "Average wedding size", value: "About 64 guests across 15,100+ foreign weddings in 2024" },
+      { label: "Venue range", value: "Countryside villas, wine estates and farmhouses, castles and hamlets, and historic venues in Florence and Siena" },
+      { label: "Villa changeovers", value: "Many villa rentals change over on Saturdays, so guests tend to arrive on the same day" },
+      { label: "Gateways", value: "Pisa and Florence airports, and Florence's station" },
+    ],
+    included: [
+      "Venue search across villas, estates and historic venues, with availability checked before you commit",
+      "Ceremony planning, civil, religious or symbolic, with the paperwork steps mapped early",
+      "Catering, wine service and bar through local caterers",
+      "Décor, florals, photography and music through independent local suppliers",
+      "Guest hotels and villa stays, and shuttles for the wedding weekend",
+      "A run of show for each day and a coordinator on site",
+    ],
+    sections: [
+      {
+        heading: "Choosing a Tuscan venue",
+        bullets: [
+          "Countryside villa or estate: room for the whole weekend and a private feel, with a longer drive from the airport and from guests staying in town",
+          "Wine estate or farmhouse: set among vineyards or olive groves, often with a limited number of guest rooms on site",
+          "Castle or hamlet: dramatic settings with stone paths and stairs that need a mobility check",
+          "Historic city venue in Florence: short walks between hotel, ceremony and dinner, with the restricted-traffic zone to plan around for load-in",
+        ],
+      },
+      {
+        heading: "What we plan for in Tuscany",
+        bullets: [
+          "A rain plan: a covered or indoor space agreed for the ceremony and the dinner before you book",
+          "Summer heat: shade, water and a ceremony time that avoids the hottest hours",
+          "Music and noise limits: some venues and municipalities set a cut-off for amplified music, so we check it before planning the evening",
+          "Access: unpaved estate lanes that rule out coaches, and a last stretch that suits vans or a small shuttle",
+          "Suppliers: proposals compared on price, terms and style, with travel and set-up costs shown as separate lines",
+        ],
+      },
+      {
+        heading: "Ceremony options",
+        paragraphs: [
+          "A legal civil ceremony takes place at the town hall, or at a venue the comune has approved for civil weddings. A religious ceremony in a village church or chapel needs paperwork through your parish. A symbolic ceremony can be held in a garden, an olive grove or on a terrace, wherever the venue allows. We confirm which options apply to your venue and your nationality before you commit.",
+        ],
+      },
+      {
+        heading: "Guests: hotels and shuttles",
+        paragraphs: [
+          "Guests often stay in several towns and villas. We build hotel blocks and a shuttle plan around the ceremony time, and both can also be booked on their own. The vehicle side is covered on our Tuscany wedding transportation page.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "When is the best time to marry in Tuscany?",
+        a: "Late spring and early autumn are the most comfortable. July and August are hot, and the best venues for peak dates book first. We tell you what is realistic for your dates after the first call.",
+      },
+      {
+        q: "Can we have a legal ceremony at a villa?",
+        a: "Sometimes. It depends on whether the comune approves the venue for civil ceremonies. Otherwise the legal part is done at the town hall and the celebration takes place at the villa. We check this for your chosen venue before you book it.",
+      },
+      {
+        q: "How many guests can a Tuscan venue hold?",
+        a: "It varies widely, from intimate villas to large estates. We shortlist against your guest count and check both seating and sleeping capacity.",
+      },
+      {
+        q: "Do you also arrange the guests' transport?",
+        a: "Yes, as part of the plan or on its own. See our Tuscany wedding transportation page for the vehicle side.",
+      },
+    ],
+    related: ["destination-weddings-italy", "tuscany-wedding-transport", "wedding-accommodation-italy", "florence-event-management", "tuscany"],
+    cta: { label: "Plan my wedding", service: "wedding" },
+    serviceType: "Destination wedding planning",
+    areaServed: ["Tuscany"],
+  }),
+
+  page({
+    slug: "lake-como-wedding-planning",
+    kind: "vertical",
+    title: "Lake Como Wedding Planning | Villas, Ceremonies & Boats",
+    description:
+      "Full-service wedding planning at Lake Como: lakeside villas, boat arrivals, ceremony options, suppliers, guest hotels and transport, coordinated by one team.",
+    h1: "Wedding Planning at Lake Como",
+    nav: "Lake Como wedding planning",
+    lead:
+      "Lakeside villas and gardens around Como, Bellagio and Varenna, planned with the lake's boats and narrow roads built into the plan from the start.",
+    parent: { slug: "destination-weddings-italy", label: "Destination weddings" },
+    tags: ["lake-como", "milan"],
+    facts: [
+      { label: "Venues", value: "Lakeside villas are among the most requested wedding venues in Italy" },
+      { label: "Average wedding size", value: "About 64 guests across 15,100+ foreign weddings in 2024" },
+      { label: "Gateway", value: "Milan Malpensa, roughly 50–60 minutes from Como; Linate and Bergamo are alternatives" },
+      { label: "Getting around", value: "Lakeside roads are narrow, Como's centre has a restricted-traffic zone, and ferries and private boats are part of the plan" },
+    ],
+    included: [
+      "Venue search across lakeside villas, hotels and gardens, with availability checked before you commit",
+      "Ceremony planning, civil, religious or symbolic, with the paperwork steps mapped early",
+      "Catering and bar through local caterers approved by the venue",
+      "Décor, florals, photography and music through independent local suppliers",
+      "Boat arrivals and ferry timings coordinated with licensed boat operators",
+      "Guest hotels and transport, and a coordinator on site for the wedding days",
+    ],
+    sections: [
+      {
+        heading: "Choosing a lakeside venue",
+        bullets: [
+          "Historic villa with gardens: the classic setting, often with rules from the owner on décor, music and caterers",
+          "Lakefront hotel: guests sleep and celebrate in one place, with fewer moving parts",
+          "A venue reached by boat: a memorable arrival, planned around capacity, timing and weather",
+          "Small-town venues around Bellagio and Varenna: compact and charming, with narrow streets and limited parking",
+        ],
+      },
+      {
+        heading: "What we plan for at the lake",
+        bullets: [
+          "Boat timings: arrivals, ferries and private boats scheduled with licensed operators, with a fallback if the weather changes",
+          "Lake weather: a covered or indoor option agreed for the ceremony and the dinner before you book",
+          "Access: narrow roads and limited parking mean fewer, smaller vehicles and a clear drop-off point",
+          "Venue rules: caterers, décor and music approved by the villa before anything is confirmed",
+          "Suppliers: proposals compared on price, terms and style, with travel and set-up costs shown as separate lines",
+        ],
+      },
+      {
+        heading: "Ceremony options",
+        paragraphs: [
+          "A legal civil ceremony takes place at the town hall, or at a venue the comune has approved for civil weddings. A religious ceremony in a lakeside church needs paperwork through your parish. A symbolic ceremony can be held in a villa garden or on a terrace, wherever the owner allows. We confirm which options apply to your venue and your nationality before you commit.",
+        ],
+      },
+      {
+        heading: "Guests: hotels, boats and shuttles",
+        paragraphs: [
+          "Guests stay in several lakeside towns, and the road between them is slow. We build hotel blocks and a shuttle and boat plan around the ceremony time, and both can also be booked on their own. The vehicle side is covered on our Lake Como wedding transportation page.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Can we arrive at the ceremony by boat?",
+        a: "Often, where the venue has a landing. We coordinate the timing with licensed boat operators and confirm the venue's access and capacity for boat arrivals before you commit.",
+      },
+      {
+        q: "When should we book a Lake Como venue?",
+        a: "As early as you can. Lakeside villas are in demand, and dates in the warmer months book first. We check availability before you commit to a date.",
+      },
+      {
+        q: "Can we have a legal ceremony at a villa?",
+        a: "Sometimes. It depends on whether the comune approves the venue for civil ceremonies. Otherwise the legal part is done at the town hall and the celebration takes place at the villa. We check this for your chosen venue before you book it.",
+      },
+      {
+        q: "Do you also arrange guest hotels and transport?",
+        a: "Yes, as part of the plan or on their own. See our Lake Como wedding transportation page for the vehicle side.",
+      },
+    ],
+    related: ["destination-weddings-italy", "lake-como-wedding-transport", "wedding-accommodation-italy", "luxury-event-management-italy", "lake-como"],
+    cta: { label: "Plan my wedding", service: "wedding" },
+    serviceType: "Destination wedding planning",
+    areaServed: ["Lake Como", "Lombardy"],
+  }),
+
+  page({
+    slug: "amalfi-coast-wedding-planning",
+    kind: "vertical",
+    title: "Amalfi Coast Wedding Planning | Terraces & Ceremonies",
+    description:
+      "Full-service wedding planning on the Amalfi Coast: terrace and villa venues, ceremony options, access planning, suppliers, guest hotels and transport.",
+    h1: "Wedding Planning on the Amalfi Coast",
+    nav: "Amalfi wedding planning",
+    lead:
+      "Cliff-top terraces, villa gardens and sea-view hotels from Positano to Ravello, planned around steps, narrow roads and the crowds of the season.",
+    parent: { slug: "destination-weddings-italy", label: "Destination weddings" },
+    tags: ["amalfi-coast", "naples"],
+    facts: [
+      { label: "South and islands", value: "Southern Italy and the islands account for 29.3% of foreign wedding requests" },
+      { label: "Season", value: "May to October is the peak, and June to September is the hardest for road capacity" },
+      { label: "Access", value: "Eleven Coast towns apply traffic restrictions and an alternate-plate scheme, and many venues sit up steps or footpaths" },
+      { label: "Average wedding size", value: "About 64 guests across 15,100+ foreign weddings in 2024" },
+    ],
+    included: [
+      "Venue search across terraces, villa gardens and hotels, with availability checked before you commit",
+      "Ceremony planning, civil, religious or symbolic, with the paperwork steps mapped early",
+      "Catering and bar through local caterers",
+      "Décor, florals, photography and music through independent local suppliers",
+      "Access planning: steps, drop-off points, deliveries and boat legs",
+      "Guest hotels and transport, and a coordinator on site for the wedding days",
+    ],
+    sections: [
+      {
+        heading: "Choosing a Coast venue",
+        bullets: [
+          "Cliff-top hotel with a terrace: guests sleep and celebrate in one place, with a view to match",
+          "Villa garden in a hill town such as Ravello: a classic setting, usually suited to a smaller guest list",
+          "Sea-level venue: easier for guests to reach, more exposed to weather and summer crowds",
+          "A venue reached by boat: a memorable arrival, planned around sea conditions",
+        ],
+      },
+      {
+        heading: "What we plan for on the Coast",
+        bullets: [
+          "Steps and footpaths: the last few hundred metres are checked with the venue, with an alternative for guests with limited mobility",
+          "Deliveries: flowers, catering equipment and sound reach the venue by small vehicles or on foot, so set-up time is planned generously",
+          "Weather and sea: a covered option agreed in advance, and a fallback if a boat leg cannot run",
+          "Access rules: restrictions and fees that vary by town and time of day, itemised in the plan",
+          "Suppliers: proposals compared on price, terms and style, with travel and set-up costs shown as separate lines",
+        ],
+      },
+      {
+        heading: "Ceremony options",
+        paragraphs: [
+          "A legal civil ceremony takes place at the town hall, or at a venue the comune has approved for civil weddings. A religious ceremony in a local church needs paperwork through your parish. A symbolic ceremony can be held on a terrace or in a garden, wherever the venue allows. We confirm which options apply to your venue and your nationality before you commit.",
+        ],
+      },
+      {
+        heading: "Guests: hotels and shuttles",
+        paragraphs: [
+          "Coast hotels fill early in the peak season, and the road between the towns is slow. We build hotel blocks with clear cut-off dates and a shuttle plan with small vehicles and, where it helps, a boat leg. Both can also be booked on their own. The vehicle side is covered on our Amalfi Coast wedding transportation page.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "How many guests suit an Amalfi Coast wedding?",
+        a: "Small and mid-sized weddings are the most practical, because venue space and road access limit large groups. We check the venue's real capacity and the access before you commit to a guest count.",
+      },
+      {
+        q: "Can guests with limited mobility attend?",
+        a: "Usually, with planning. We check the steps and the last stretch to the venue, then arrange the closest drop-off point and an alternative route where one exists.",
+      },
+      {
+        q: "When should we marry on the Coast?",
+        a: "May to October is the peak season, and June to September is the hardest for road capacity. Late spring and early autumn are often calmer. We advise on dates after the first call.",
+      },
+      {
+        q: "Can we have a legal ceremony on the Coast?",
+        a: "In most cases, yes. The requirements depend on your nationality and on the town hall (comune) where the ceremony takes place. We confirm what applies to you at the start and map the deadlines.",
+      },
+    ],
+    related: ["destination-weddings-italy", "amalfi-coast-wedding-transport", "wedding-accommodation-italy", "amalfi-coast", "event-services-italy"],
+    cta: { label: "Plan my wedding", service: "wedding" },
+    serviceType: "Destination wedding planning",
     areaServed: ["Amalfi Coast", "Campania"],
   }),
 
@@ -736,13 +1001,13 @@ export const verticalPages: ContentPage[] = [
   page({
     slug: "rome-mice-services",
     kind: "vertical",
-    title: "Rome MICE Services: Delegate Transport & Hotel Blocks",
+    title: "Rome MICE Services | Venues, Registration & Hotel Blocks",
     description:
-      "MICE logistics in Rome: delegate transfers, shuttle loops to the venue, hotel blocks with clear terms and on-site coordination through vetted partners.",
+      "MICE services in Rome: venue sourcing, registration and hosts, AV, hotel blocks and delegate transport, coordinated through vetted partners.",
     h1: "MICE Services in Rome",
     nav: "Rome MICE",
     lead:
-      "Delegate arrivals, venue shuttles, hotel blocks and on-site coordination for meetings, conferences and exhibitions in Rome.",
+      "Venue sourcing, registration, AV, hotel blocks and delegate transport for meetings, conferences and exhibitions in Rome, coordinated by one team.",
     parent: ROME,
     tags: ["rome"],
     facts: [
@@ -752,21 +1017,32 @@ export const verticalPages: ContentPage[] = [
       { label: "Access", value: "Rome's Centro Storico ZTL shapes hotel-to-venue shuttle routing; licensed NCC vehicles are among the authorised categories" },
     ],
     included: [
-      "Delegate arrival waves from Fiumicino and Ciampino",
-      "Shuttle loops between hotels and the venue, timed to the programme",
+      "Venue sourcing: congress centres, fair grounds, hotel congress facilities and historic venues, proposed against your budget and delegate numbers",
+      "Registration desk, hosts and interpreters through staffing partners",
+      "AV sourcing for plenaries, breakouts and gala evenings",
+      "Catering for coffee breaks, lunches and dinners through vetted caterers",
       "Hotel blocks with clear cut-off dates and attrition terms",
-      "VIP and speaker transfers with named drivers",
-      "On-site dispatch desk and backup vehicles",
+      "Delegate arrival waves, venue shuttles and VIP and speaker transfers",
+      "On-site coordination and a dispatch desk with backup vehicles",
     ],
     sections: [
       {
-        heading: "Logistics, not production",
+        heading: "What we manage, and what stays with you",
         paragraphs: [
-          "We are the transport and accommodation spine of your event: getting delegates in and out, between hotels and the venue, and to dinners. For staging, AV and content we work with specialist partners or alongside your own agency.",
+          "We coordinate the operating side of the event: venue, registration, AV, catering, accommodation and transport, each delivered by a specialist we source, brief and manage. The conference programme, the speakers and the content stay with you or your PCO, and we work alongside them.",
         ],
       },
       {
-        heading: "A typical conference shuttle plan",
+        heading: "Venues in Rome",
+        bullets: [
+          "The EUR district around the La Nuvola congress centre",
+          "Fiera di Roma for exhibitions and larger formats",
+          "Hotel congress facilities, when delegates sleep and meet under one roof",
+          "Historic venues inside the Centro Storico restricted zone, with access planned in advance",
+        ],
+      },
+      {
+        heading: "Getting delegates to the venue",
         bullets: [
           "Airport waves from Fiumicino and Ciampino, grouped by flight arrival windows",
           "Morning hotel-to-venue loops with a fixed frequency, routed around the Centro Storico ZTL",
@@ -785,26 +1061,30 @@ export const verticalPages: ContentPage[] = [
         a: "Yes. We prioritise hotels near La Nuvola or your venue, negotiate rooms, agree cut-off and attrition terms and manage the rooming list.",
       },
       {
+        q: "Do you run the registration desk and the AV?",
+        a: "We source and manage both through partners: a staffing team for registration and hosts, and an AV supplier briefed to the same schedule. We do not own the equipment.",
+      },
+      {
         q: "Can you work with our PCO or event agency?",
-        a: "Yes — many clients are agencies who need reliable ground logistics as a specialist partner in Rome.",
+        a: "Yes. Many clients are agencies who need a reliable operating partner on the ground in Rome.",
       },
     ],
-    related: ["rome", "conferences-mice-italy", "rome-corporate-events", "rome-hotel-booking"],
+    related: ["rome", "conferences-mice-italy", "event-services-italy", "rome-corporate-events", "rome-hotel-booking"],
     cta: { label: "Request a MICE quote", service: "event" },
-    serviceType: "MICE logistics",
+    serviceType: "MICE services",
     areaServed: ["Rome", "Lazio"],
   }),
 
   page({
     slug: "venice-mice-services",
     kind: "vertical",
-    title: "Venice MICE Services: Delegate Transport & Water Taxis",
+    title: "Venice MICE Services | Venues, Water Access & Hotel Blocks",
     description:
-      "MICE logistics in Venice: delegate transfers to Piazzale Roma or Mestre, water-taxi legs to canal-side venues and hotel blocks, coordinated by one team.",
+      "MICE services in Venice: venue sourcing, registration, hotel blocks and delegate transport, with water-taxi and lagoon access planned as one programme.",
     h1: "MICE Services in Venice",
     nav: "Venice MICE",
     lead:
-      "Venice is car-free, so delegate logistics are two parts — the road to Piazzale Roma or Mestre, and the water into the city. We plan both as one programme.",
+      "Venue sourcing, registration, hotel blocks and delegate transport for meetings and conferences in a car-free city, where the road to Piazzale Roma or Mestre and the water into Venice are planned as one programme.",
     parent: VENICE,
     tags: ["venice"],
     facts: [
@@ -814,13 +1094,21 @@ export const verticalPages: ContentPage[] = [
       { label: "Market context", value: "Italy is second in the world for international association meetings, with 635 in 2024" },
     ],
     included: [
+      "Venue sourcing: hotel congress facilities and other venues, proposed against your budget and delegate numbers",
+      "Registration desk, hosts and interpreters through staffing partners",
       "Delegate arrival waves from Marco Polo and Treviso to Piazzale Roma or Mestre",
       "Water-taxi and lagoon-boat legs to venues and hotels, arranged through licensed local partners",
       "Hotel blocks with clear cut-off dates and attrition terms",
       "VIP and speaker transfers with named drivers on the road leg",
-      "On-site dispatch desk and backup vehicles for the road side of the programme",
+      "On-site coordination and a dispatch desk with backup vehicles for the road side of the programme",
     ],
     sections: [
+      {
+        heading: "What we manage, and what stays with you",
+        paragraphs: [
+          "We coordinate the operating side of the event: venue, registration, accommodation and transport, each delivered by a specialist we source, brief and manage. The conference programme, the speakers and the content stay with you or your PCO, and we work alongside them.",
+        ],
+      },
       {
         heading: "The road leg and the water leg",
         paragraphs: [
@@ -845,12 +1133,12 @@ export const verticalPages: ContentPage[] = [
       },
       {
         q: "Can you work with our PCO or event agency?",
-        a: "Yes — many clients are agencies who need a specialist ground and water-logistics partner in Venice.",
+        a: "Yes. Many clients are agencies who need a reliable operating partner in Venice, where the road and the water both have to be planned.",
       },
     ],
-    related: ["venice", "conferences-mice-italy", "venice-airport-transfer", "hotel-group-bookings-italy"],
+    related: ["venice", "conferences-mice-italy", "event-services-italy", "venice-airport-transfer", "hotel-group-bookings-italy"],
     cta: { label: "Request a MICE quote", service: "event" },
-    serviceType: "MICE logistics",
+    serviceType: "MICE services",
     areaServed: ["Venice", "Veneto"],
   }),
 
@@ -883,7 +1171,7 @@ export const verticalPages: ContentPage[] = [
       {
         heading: "Why this is separate from our fair and delegate pages",
         paragraphs: [
-          "Milan also hosts major trade fairs and international conferences, which we cover with dedicated fair-transport and MICE-logistics services built around Fieramilano Rho and delegate schedules. A company offsite, product launch or leadership retreat has a different shape — a single client, a chosen venue and a guest list you control — so we plan it as its own scope rather than fitting it into a fair-week template.",
+          "Milan also hosts major trade fairs and international conferences, which we cover with dedicated fair-transport and MICE services built around Fieramilano Rho and delegate schedules. A company offsite, product launch or leadership retreat has a different shape — a single client, a chosen venue and a guest list you control — so we plan it as its own scope rather than fitting it into a fair-week template.",
         ],
       },
     ],

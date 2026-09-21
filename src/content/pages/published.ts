@@ -399,7 +399,7 @@ export const publishedPages: ContentPage[] = [
         a: "Typically a deposit at booking and the balance about 14 days before the wedding. The schedule is shown in your quote.",
       },
     ],
-    related: ["group-transportation-italy", "for-wedding-planners", "rome-to-florence-transfer"],
+    related: ["group-transportation-italy", "lake-como-wedding-planning", "for-wedding-planners", "rome-to-florence-transfer"],
     cta: { label: "Request a wedding logistics plan", service: "wedding" },
     serviceType: "Wedding guest transportation",
     areaServed: ["Lake Como", "Lombardy"],
@@ -411,12 +411,12 @@ export const publishedPages: ContentPage[] = [
     status: "published",
     nav: "Rome corporate events",
     tags: ["rome"],
-    title: "Rome Corporate Events: Transport, Hotel Blocks & Logistics",
+    title: "Rome Corporate Events | Venues, Catering & Hotel Blocks",
     description:
-      "Corporate events in Rome: guest transport, hotel room blocks, venue and catering sourcing, and on-site coordination through vetted partners. Request a quote.",
+      "Corporate event management in Rome: venue and catering sourcing, AV, hotel room blocks, guest transport and on-site coordination through vetted partners.",
     h1: "Corporate Events in Rome",
     lead:
-      "Transport, hotel blocks and on-site logistics for meetings, offsites and conferences in Rome — built from vetted local partners, priced transparently, coordinated by one team.",
+      "Venue, catering, hotel blocks, guest transport and on-site coordination for meetings, offsites and conferences in Rome — built from vetted local partners, priced transparently, coordinated by one team.",
     parent: { slug: "rome", label: "Rome" },
     facts: [
       {
@@ -428,9 +428,9 @@ export const publishedPages: ContentPage[] = [
       { label: "Typical scope", value: "Group airport transfers, hotel room blocks, meeting rooms, dinners, guided activities, on-site staff" },
     ],
     included: [
-      "Transfers and shuttle waves for every guest arrival",
-      "Hotel room blocks with negotiated terms",
       "Venue, catering and AV sourcing through vetted partners",
+      "Hotel room blocks with negotiated terms",
+      "Transfers and shuttle waves for every guest arrival",
       "On-site coordinator and dispatch desk",
       "One budget sheet and one invoice",
     ],
@@ -438,7 +438,7 @@ export const publishedPages: ContentPage[] = [
       {
         heading: "What we handle — and what we don't",
         paragraphs: [
-          "We are the logistics and accommodation spine of your event: transport, hotel blocks and coordination. For creative production — staging, decor, content — we bring in specialist partners or work alongside your own agency.",
+          "We coordinate the whole event: venue, catering, AV, accommodation, transport and on-site management, each delivered by a specialist we source and manage. Creative production — staging design, content and creative direction — stays with specialist suppliers or your own agency, and we work alongside them.",
         ],
       },
       {
@@ -455,7 +455,7 @@ export const publishedPages: ContentPage[] = [
     faqs: [
       {
         q: "Do you work with event agencies?",
-        a: "Yes. Many clients are agencies who need reliable ground logistics or a second pair of hands in Rome.",
+        a: "Yes. Many clients are agencies who need a reliable operating partner or a second pair of hands in Rome.",
       },
       {
         q: "How do payments and cancellations work?",
@@ -470,9 +470,9 @@ export const publishedPages: ContentPage[] = [
         a: "From 10–20 guests up to several hundred. Larger events are staged with supplier deposits paid directly where possible.",
       },
     ],
-    related: ["rome-hotel-booking", "group-transportation-italy", "rome-airport-transfer", "for-wedding-planners"],
+    related: ["corporate-events-italy", "event-services-italy", "rome-hotel-booking", "rome-mice-services", "group-transportation-italy"],
     cta: { label: "Request an event quote", service: "event" },
-    serviceType: "Corporate event logistics",
+    serviceType: "Corporate event management",
     areaServed: ["Rome", "Lazio"],
     updated: UPDATED,
   },

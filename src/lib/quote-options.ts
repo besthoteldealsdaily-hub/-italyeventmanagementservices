@@ -3,10 +3,10 @@
 export const SERVICE_OPTIONS = [
   { value: "transfer", label: "Airport / city-to-city transfer" },
   { value: "chauffeur", label: "Private chauffeur (hourly / full day)" },
-  { value: "wedding", label: "Wedding guest logistics" },
+  { value: "wedding", label: "Wedding planning or guest transport" },
   { value: "group", label: "Group transport (minivan / minibus / coach)" },
   { value: "hotel-block", label: "Group hotel accommodation / room block" },
-  { value: "event", label: "Corporate event / MICE logistics" },
+  { value: "event", label: "Corporate event, conference or MICE" },
   { value: "tour", label: "Private tour or day trip" },
   { value: "trade", label: "Trade account (agency / planner / event agency)" },
   { value: "supplier", label: "Supplier application (I provide transport, hotels, venues…)" },

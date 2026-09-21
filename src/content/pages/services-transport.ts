@@ -141,7 +141,7 @@ export const transportServicePages: ContentPage[] = [
     nav: "Proposal transfer",
     lead:
       "We get you there on time, at the right light, with a driver briefed to stay out of the way at the right moment. The proposal is yours — we handle the road.",
-    parent: { slug: "services", label: "Services" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "Booking type", value: "Hourly, three-hour minimum — enough for the drive, the moment and a slower return" },
@@ -364,7 +364,7 @@ export const transportServicePages: ContentPage[] = [
     nav: "Wedding transportation",
     lead:
       "Guest shuttles, the couple's car and airport arrival waves — planned with your planner and delivered by one coordinator, with a backup vehicle on standby.",
-    parent: { slug: "destination-weddings-italy", label: "Destination weddings" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "Market", value: "15,100+ weddings of foreign couples in Italy in 2024, with about 960,000 guests; average spend €61,500" },

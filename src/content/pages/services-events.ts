@@ -163,6 +163,16 @@ export const eventServicePages: ContentPage[] = [
           "Venues, caterers, AV and décor are best delivered by specialists who hold the permits and know the site. We source and manage them so you deal with one team, and we ask each supplier for the safety and licensing documents that apply.",
         ],
       },
+      {
+        heading: "How we source and manage a venue or caterer",
+        bullets: [
+          "Brief: guest count, dates, budget range and the feel you want",
+          "Shortlist: two or three venue and supplier options that fit, with proposals and pricing compared side by side",
+          "Vet: safety and licensing documents requested from each supplier before any is proposed",
+          "Contract: terms mirrored between your agreement with us and our agreement with the supplier, so there is no gap",
+          "Manage: one point of contact for changes, and on-site oversight so the supplier delivers what was agreed",
+        ],
+      },
     ],
     faqs: [
       {
@@ -172,6 +182,10 @@ export const eventServicePages: ContentPage[] = [
       {
         q: "Do you handle creative production?",
         a: "Through specialist partners or alongside your own creative agency; we focus on logistics.",
+      },
+      {
+        q: "How do you vet a venue or caterer before proposing them?",
+        a: "We ask each supplier for the safety and licensing documents that apply, and compare proposals on price, terms and fit for your guest count before anything is put to you.",
       },
       {
         q: "Do you manage events outside Rome?",
@@ -190,9 +204,95 @@ export const eventServicePages: ContentPage[] = [
         a: "Yes. That is the core of the service: one team, one budget sheet and one invoice across all three.",
       },
     ],
-    related: ["corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "christmas-corporate-events-italy", "for-event-agencies"],
+    related: ["event-services-italy", "corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "for-event-agencies"],
     cta: { label: "Request an event quote", service: "event" },
     serviceType: "Event management",
+    areaServed: ["Italy"],
+  }),
+
+  page({
+    slug: "event-services-italy",
+    kind: "service",
+    title: "Event Services in Italy | Venues, Catering, AV & Staff",
+    description:
+      "Event services in Italy coordinated by one team: venue sourcing, catering, AV, décor, hosts and security through vetted suppliers, on one budget.",
+    h1: "Event Services in Italy",
+    nav: "Event services",
+    lead:
+      "The suppliers behind an event — venues, catering, AV, décor, hosts and security — sourced, briefed and managed by one team, so you deal with one contact instead of six vendors.",
+    parent: { slug: "event-management-italy", label: "Event management" },
+    tags: [],
+    facts: [
+      { label: "How it works", value: "We coordinate specialist suppliers rather than deliver in-house: we source, brief, contract and manage them, and you deal with one team" },
+      { label: "What we don't own", value: "Venues, kitchens, AV equipment or studios — every supplier is an independent specialist, and the proposal says so" },
+      { label: "Supplier checks", value: "We ask each supplier for the safety and licensing documents that apply before proposing them" },
+      { label: "Budget", value: "Itemised supplier costs plus a clear management fee, shown line by line on one budget sheet" },
+      { label: "Scale", value: "From small offsites of 10–20 guests to conferences of several hundred delegates" },
+    ],
+    included: [
+      "Venue sourcing: congress centres, hotels, palaces and villas, proposed against your budget and guest count",
+      "Catering sourcing for group dinners, receptions and gala evenings",
+      "AV sourcing for conferences, galas and award ceremonies",
+      "Décor and styling through specialist suppliers",
+      "Hosts, hostesses, registration staff and interpreters through partners",
+      "Licensed security providers through partners, on request",
+      "One budget sheet, one contract path and one invoice",
+    ],
+    sections: [
+      {
+        heading: "Venues, city by city",
+        bullets: [
+          "Rome: the EUR district around the La Nuvola congress centre, hotel congress facilities, and historic venues inside the Centro Storico restricted zone",
+          "Milan: MiCo and the Fieramilano Rho fair grounds for conferences and exhibitions; Porta Nuova and CityLife for modern venues; Navigli and Brera for smaller, characterful spaces",
+          "Florence and Tuscany: historic city venues, or countryside villas and estates in Chianti and the Val d'Orcia",
+          "Venice: hotel congress facilities, and the Biennale pavilions at the Giardini and Arsenale in exhibition years — the historic centre has no roads, so access is planned by water",
+          "Lake Como, the Amalfi Coast and Tuscany: villas, with narrow access roads built into the plan from the start",
+        ],
+      },
+      {
+        heading: "Dinners, receptions and catering",
+        paragraphs: [
+          "Group dinners in a local restaurant or private venue, receptions and gala evenings are sourced from vetted caterers and venues, with menus and service timing written into the supplier contract so what was agreed is what is delivered.",
+        ],
+      },
+      {
+        heading: "AV, registration and staffing",
+        paragraphs: [
+          "For conferences, galas and award ceremonies we source the AV supplier and the front-of-house team together, so the registration desk, the hosts and the technical setup are briefed to one schedule rather than three.",
+        ],
+      },
+      {
+        heading: "What we don't provide ourselves",
+        paragraphs: [
+          "We are an event management company, not a venue, a caterer or an equipment house. Creative production — staging design, content and creative direction — stays with specialist suppliers or your own agency, and we work alongside them.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you own venues, kitchens or equipment?",
+        a: "No. Every venue, caterer and AV supplier is an independent specialist we source and manage, and each proposal shows who is delivering what.",
+      },
+      {
+        q: "How do you check suppliers before proposing them?",
+        a: "We ask each supplier for the safety and licensing documents that apply, and compare proposals on price, terms and fit for your guest count before anything is put to you.",
+      },
+      {
+        q: "Can you arrange a photographer, DJ or florist?",
+        a: "For weddings, yes: photography, florals and music are part of our wedding planning service. For other events, tell us what is needed. If we can source it through a trusted supplier we will say so and quote it as a separate line, and if we cannot we will tell you plainly.",
+      },
+      {
+        q: "Can transport and hotels be booked with the event?",
+        a: "Yes, as separate lines on the same budget sheet and invoice.",
+      },
+      {
+        q: "Do you work outside Rome?",
+        a: "Yes — Milan, Florence, Tuscany, Lake Como and the Amalfi Coast, using local suppliers vetted the same way in every city.",
+      },
+    ],
+    related: ["event-management-italy", "corporate-events-italy", "conferences-mice-italy", "luxury-event-management-italy", "destination-weddings-italy"],
+    cta: { label: "Request an event quote", service: "event" },
+    serviceType: "Event management services",
     areaServed: ["Italy"],
   }),
 
@@ -217,6 +317,7 @@ export const eventServicePages: ContentPage[] = [
     included: [
       "Hotel blocks and meeting rooms",
       "Venue and catering sourcing through partners",
+      "Stage, AV and run-of-show coordination for gala dinners and award ceremonies",
       "Transport waves and shuttles",
       "Activities with licensed guides and providers",
       "On-site coordination",
@@ -232,6 +333,12 @@ export const eventServicePages: ContentPage[] = [
           "Run: coordinator on site, dispatch desk for transport",
         ],
       },
+      {
+        heading: "Gala dinners and award ceremonies",
+        paragraphs: [
+          "A gala evening has its own shape: a reception, a seated dinner, an awards segment or speeches, then a close. We build the run-of-show with your team, propose venues with the right stage and AV setup through vetted partners, and manage the seating plan and timing on the night so the programme runs to schedule.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -241,6 +348,10 @@ export const eventServicePages: ContentPage[] = [
       {
         q: "What happens if the guest count changes?",
         a: "Hotel blocks have attrition allowances and venues have minimums; we manage the changes against those terms and tell you the impact early.",
+      },
+      {
+        q: "Can you run an award ceremony or gala dinner with a stage and AV?",
+        a: "Yes — we source the venue and AV/staging partners, build the run-of-show with you, and manage the seating plan and timing on the night.",
       },
     ],
     related: ["rome-corporate-events", "event-management-italy", "incentive-travel-italy", "how-to-plan-a-corporate-event-in-italy"],
@@ -252,14 +363,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "christmas-corporate-events-italy",
     kind: "service",
-    title: "Christmas & NYE Corporate Party Logistics | Italy",
+    title: "Christmas & NYE Corporate Party Transport | Italy",
     description:
-      "Transport and hotel logistics for company Christmas parties and New Year's Eve events in Italy: shuttles, late-night returns and backup vehicles.",
-    h1: "Christmas & New Year's Eve Corporate Party Logistics",
-    nav: "Christmas & NYE parties",
+      "Guest transport for company Christmas parties and New Year's Eve events in Italy: hotel-to-venue shuttles, late-night returns and backup vehicles.",
+    h1: "Christmas & New Year's Eve Corporate Party Transport",
+    nav: "Christmas & NYE party transport",
     lead:
       "Shuttles, late-night returns and a backup vehicle for the company Christmas party or a New Year's Eve group in Rome, Milan, Florence and beyond — booked early, before the season fills up.",
-    parent: { slug: "event-management-italy", label: "Event management" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "Peak window", value: "Early December through 6 January; city centres run Christmas markets and lights that add to evening traffic" },
@@ -334,13 +445,19 @@ export const eventServicePages: ContentPage[] = [
       "Hotel blocks with cut-off and attrition management",
       "Venue shuttles timed to the programme",
       "VIP and speaker transfers",
-      "Hosts, registration and interpreters through partners",
+      "Registration desk, badge/check-in flow, hosts and interpreters through partners",
     ],
     sections: [
       {
         heading: "Fair and conference weeks",
         paragraphs: [
           "Milan, Verona, Bologna and Rimini host major fairs; Rome and Milan host large conferences. In those weeks hotels fill and vehicles are scarce, so blocks and fleets should be reserved before flights are booked. Book early and we hold backups.",
+        ],
+      },
+      {
+        heading: "Registration, staffing and the delegate experience",
+        paragraphs: [
+          "The registration desk is the first thing a delegate sees, so we treat it as part of the logistics plan, not an afterthought. Through vetted staffing partners we set up the check-in flow, badge printing and host briefing, and we time it against the same arrival waves as the transport plan, so there's no queue building up at the door while a shuttle unloads outside.",
         ],
       },
     ],
@@ -351,12 +468,16 @@ export const eventServicePages: ContentPage[] = [
       },
       {
         q: "Can you provide registration desks and hosts?",
-        a: "Through vetted partners, quoted as separate lines.",
+        a: "Yes, through vetted staffing partners: check-in flow, badge printing and host briefing, timed to your delegate arrival waves.",
+      },
+      {
+        q: "Do you design the conference programme itself?",
+        a: "No — content, speakers and session design stay with you or your PCO. We design and run the logistics around the programme: arrivals, registration, venue shuttles and hotel blocks.",
       },
     ],
     related: ["rome-mice-services", "milan-mice-services", "venice-mice-services", "for-event-agencies"],
     cta: { label: "Request a MICE quote", service: "event" },
-    serviceType: "Conference and MICE logistics",
+    serviceType: "Conference and MICE services",
     areaServed: ["Italy"],
   }),
 
@@ -461,33 +582,50 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "destination-weddings-italy",
     kind: "service",
-    title: "Destination Weddings in Italy | Guest Logistics",
+    title: "Destination Wedding Planning in Italy | Full Service",
     description:
-      "Guest logistics for destination weddings in Italy: transport, accommodation blocks and coordination alongside your planner. Lake Como, Tuscany, Amalfi Coast.",
-    h1: "Destination Weddings in Italy",
+      "Full-service destination wedding planning in Italy: venue, ceremony, catering, décor, photography, music, guest hotels and transport, coordinated by one team.",
+    h1: "Destination Wedding Planning in Italy",
     nav: "Destination weddings",
     lead:
-      "We handle the guest logistics of your Italian wedding — transport and accommodation — and work alongside your planner and venue.",
+      "One team plans your Italian wedding from the first venue search to the last shuttle home: venue, ceremony, catering, décor, photography, music, guest hotels and transport, delivered through vetted local suppliers.",
     parent: { slug: "services", label: "Services" },
     tags: [],
     facts: [
       { label: "The market", value: "15,100+ weddings of foreign couples in Italy in 2024, about €931.6 million in direct revenue; the sector reached about €1.1 billion in 2025" },
       { label: "Average budget", value: "€61,500 per wedding in 2024 (+4.2%); catering takes 36%" },
       { label: "Where couples come from", value: "The United States 30.4% of requests, the United Kingdom 20.7%, Germany 8.7%" },
-      { label: "What we do", value: "Guest transport and accommodation logistics; we do not plan the ceremony or décor" },
+      { label: "What we do", value: "End-to-end planning and coordination, from the venue and ceremony to guest hotels and transport" },
+      { label: "What we don't own", value: "Venues, kitchens, studios or equipment: each part is delivered by an independent local supplier that we source and manage" },
     ],
     included: [
-      "Guest transport plans and shuttles",
-      "Accommodation blocks at hotels and villas",
-      "Couple car and VIP transfers",
-      "Coordination with your planner and venue",
-      "A backup vehicle and one coordinator on the day",
+      "A concept, budget and timeline for the whole wedding weekend",
+      "Venue search and booking: villas, estates, castles and hotels",
+      "Ceremony planning, civil, religious or symbolic, with paperwork steps mapped early",
+      "Catering and bar through local caterers",
+      "Décor, florals and styling",
+      "Photography and video",
+      "Music and entertainment",
+      "Welcome dinner, rehearsal dinner and farewell brunch, where you want them",
+      "Guest hotels and transport for the weekend",
+      "A coordinator on site for the wedding days",
     ],
     sections: [
       {
-        heading: "Working with your planner",
+        heading: "How we plan a wedding",
+        bullets: [
+          "Brief: guest count, budget, dates and the feel you want, agreed on a first call",
+          "Venue and date: a shortlist that fits your guest count and ceremony, with availability checked before you commit",
+          "Suppliers: proposals from caterers, florists, photographers and musicians, compared on price, terms and fit with your style",
+          "Ceremony and paperwork: the steps and deadlines for your nationality and the town hall (comune) involved, coordinated with the venue and the officiant or church",
+          "Guests: hotel blocks and a transport plan built from the guest list and the timeline",
+          "The weekend: a run of show for each day and a coordinator on site",
+        ],
+      },
+      {
+        heading: "Civil, religious or symbolic ceremony",
         paragraphs: [
-          "Your planner owns the design and the day; we own getting people there and back. Send guest numbers, hotels and the timeline, and we return a logistics plan and fixed quote. We keep the planner in the loop and provide one dispatch number for the day.",
+          "A legally binding ceremony in Italy is either civil, held at the town hall or a venue the comune has approved, or religious, which involves extra paperwork through your parish. A symbolic ceremony has no legal effect and can be held wherever the venue allows, and some couples complete the legal steps at home. The requirements depend on your nationality and on the comune, so we confirm them at the start.",
         ],
       },
       {
@@ -499,20 +637,44 @@ export const eventServicePages: ContentPage[] = [
           "Rome and its surroundings",
         ],
       },
+      {
+        heading: "Guest hotels and transport",
+        paragraphs: [
+          "Getting guests from several airports to a villa outside the nearest town is the part everyone remembers. We plan it with the rest of the wedding: hotel blocks with cut-off dates and rooming lists, and shuttles timed to the ceremony and the last dance. Both are also available on their own, on separate pages.",
+        ],
+      },
+      {
+        heading: "Already working with a planner?",
+        paragraphs: [
+          "Then we work alongside them. Your planner keeps the design and the day; we take guest transport and accommodation, share the plan with your planner and provide one dispatch number for the wedding day.",
+        ],
+      },
     ],
     faqs: [
       {
         q: "Do you plan the whole wedding?",
-        a: "No. We focus on guest transport and accommodation. Planners and venues handle the ceremony, décor and catering.",
+        a: "Yes. We plan and coordinate the whole weekend: venue, ceremony, catering, décor, photography, music, guest hotels and transport, through independent local suppliers that we source, brief and manage.",
       },
       {
-        q: "Can couples without a planner use you?",
-        a: "Yes; we offer a higher level of coordination for couples who are managing the wedding themselves.",
+        q: "Can we have a legal ceremony in Italy?",
+        a: "In most cases, yes. The requirements depend on your nationality and on the town hall (comune) where the ceremony takes place. Religious ceremonies need extra paperwork through your parish, and symbolic ceremonies are not legally binding. We confirm what applies to you at the start and map the deadlines.",
+      },
+      {
+        q: "Do you own the venues or the equipment?",
+        a: "No. We don't own venues, kitchens, studios or equipment. Every venue, caterer, florist, photographer and musician is an independent professional we source and manage, and the proposal shows who is delivering what.",
+      },
+      {
+        q: "How far ahead should we start planning?",
+        a: "Twelve months ahead is comfortable for a peak-season date, and the best venues for May, June and September book first. A shorter timeline can work for a smaller wedding, and we tell you what is realistic after the first call.",
+      },
+      {
+        q: "Can we book only the guest transport and hotels?",
+        a: "Yes. If you already have a planner, or you are organising the wedding yourselves, we can take guest transport and accommodation on their own.",
       },
     ],
-    related: ["wedding-transportation-italy", "wedding-accommodation-italy", "lake-como-wedding-transport", "for-wedding-planners"],
-    cta: { label: "Request a wedding logistics plan", service: "wedding" },
-    serviceType: "Destination wedding logistics",
+    related: ["tuscany-wedding-planning", "lake-como-wedding-planning", "amalfi-coast-wedding-planning", "wedding-accommodation-italy", "wedding-transportation-italy", "event-services-italy"],
+    cta: { label: "Plan my wedding", service: "wedding" },
+    serviceType: "Destination wedding planning",
     areaServed: ["Italy"],
   }),
 
@@ -652,6 +814,12 @@ export const eventServicePages: ContentPage[] = [
           "We run transport, security coordination, accommodation and on-site logistics directly. Catering, entertainment, styling and production are sourced through vetted specialist partners we brief and manage, so you deal with one team even though several suppliers are involved.",
         ],
       },
+      {
+        heading: "Luxury galas and VIP dinners",
+        paragraphs: [
+          "A private gala or VIP dinner adds guest-list discretion to the usual event work: who is seated near whom, who arrives first, which guests should never be photographed together. We build the seating plan and run-of-show with you, brief the venue and catering partners on the discretion requirements, and keep a coordinator on-site through the evening so the plan holds even as it inevitably shifts.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -666,8 +834,12 @@ export const eventServicePages: ContentPage[] = [
         q: "How is this different from your standard corporate or wedding services?",
         a: "Same network, luxury tier as standard rather than an add-on: discreet drivers, security on request, villa-level accommodation and a single senior contact throughout.",
       },
+      {
+        q: "Can you manage guest-list discretion for a private gala?",
+        a: "Yes — seating plans, arrival order and who should or shouldn't be seated or photographed together are briefed to every venue, catering and security partner in advance.",
+      },
     ],
-    related: ["vip-transfers-italy", "marriage-proposal-transfer-italy", "destination-weddings-italy", "corporate-events-italy"],
+    related: ["event-services-italy", "vip-transfers-italy", "destination-weddings-italy", "corporate-events-italy"],
     cta: { label: "Request a luxury event proposal", service: "event" },
     serviceType: "Luxury event management",
     areaServed: ["Italy"],
@@ -913,14 +1085,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "birthday-celebration-transport-italy",
     kind: "service",
-    title: "Birthday & Milestone Celebration Logistics | Italy",
+    title: "Birthday & Milestone Celebration Transport | Italy",
     description:
-      "Transport and hotel logistics for birthday celebrations in Italy: guest shuttles, a chauffeur for the milestone trip, room blocks and a backup vehicle.",
-    h1: "Birthday & Milestone Celebration Logistics in Italy",
-    nav: "Birthday celebrations",
+      "Group transport for birthday celebrations in Italy: guest shuttles, a chauffeur for the milestone trip, hotel blocks and a backup vehicle for the night.",
+    h1: "Birthday & Milestone Celebration Transport in Italy",
+    nav: "Birthday celebration transport",
     lead:
-      "The logistics side of a birthday trip or party in Italy — guest transport, a hotel block if the group is staying, and a driver who knows the venue and the return time. We don't plan the party itself.",
-    parent: { slug: "services", label: "Services" },
+      "The transport side of a birthday trip or party in Italy — guest shuttles, a hotel block if the group is staying, and a driver who knows the venue and the return time. We don't plan the party itself.",
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "What we do", value: "Guest transport, hotel blocks and a chauffeur for the day or evening; venue booking, catering, decor and entertainment stay with the venue or a specialist planner" },
@@ -975,14 +1147,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "baby-shower-family-celebration-transport-italy",
     kind: "service",
-    title: "Baby Shower & Family Celebration Logistics | Italy",
+    title: "Baby Shower & Family Celebration Transport | Italy",
     description:
-      "Transport and hotel logistics for baby showers, gender-reveal gatherings and family celebrations in Italy: shuttles, room blocks and one coordinator.",
-    h1: "Baby Shower & Family Celebration Logistics in Italy",
-    nav: "Baby & family celebrations",
+      "Guest transport for baby showers, gender-reveal gatherings and family celebrations in Italy: shuttles, hotel blocks and one coordinator for the day.",
+    h1: "Baby Shower & Family Celebration Transport in Italy",
+    nav: "Family celebration transport",
     lead:
       "Guest transport and accommodation for a baby shower, gender-reveal gathering or family celebration — the venue, styling and catering stay with the host or venue.",
-    parent: { slug: "services", label: "Services" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "What we do", value: "Guest transport and, for out-of-town family, hotel room blocks; venue styling, catering and games stay with the host or venue" },
@@ -1024,14 +1196,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "private-social-event-transport-italy",
     kind: "service",
-    title: "Private & Social Event Logistics in Italy",
+    title: "Private & Social Event Transport in Italy",
     description:
-      "Transport and hotel logistics for anniversaries, graduations, retirements, family reunions and other private celebrations in Italy, with a backup vehicle.",
-    h1: "Private & Social Event Logistics in Italy",
-    nav: "Private & social events",
+      "Guest transport for anniversaries, graduations, retirements, family reunions and other private celebrations in Italy, with hotel blocks and a backup vehicle.",
+    h1: "Private & Social Event Transport in Italy",
+    nav: "Private event transport",
     lead:
       "One transport plan for anniversaries, graduations, retirements, reunions and any private celebration that needs guests moved and, sometimes, housed — sized to your group, not a template.",
-    parent: { slug: "services", label: "Services" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "Occasions we cover", value: "Anniversaries, graduations, retirements, family reunions, welcome and farewell gatherings — any private group event, not just the ones with their own page" },
@@ -1077,14 +1249,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "product-launch-fashion-event-transport-italy",
     kind: "service",
-    title: "Product Launch & Fashion Event Logistics | Italy",
+    title: "Product Launch & Fashion Event Transport | Italy",
     description:
-      "Guest, VIP and hotel logistics for product launches, brand activations and fashion events in Italy: shuttle loops, VIP cars and venue-access planning.",
-    h1: "Product Launch & Fashion Event Logistics in Italy",
-    nav: "Launches & fashion events",
+      "Guest and VIP transport for product launches, brand activations and fashion events in Italy: shuttle loops, VIP cars and venue-access planning.",
+    h1: "Product Launch & Fashion Event Transport in Italy",
+    nav: "Launch & fashion event transport",
     lead:
       "Guest shuttles, VIP cars and venue-access planning for a product launch, brand activation or fashion-week event — we run the transport, your production team or agency runs the show.",
-    parent: { slug: "event-management-italy", label: "Event management" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "What we do", value: "Guest and press arrival waves, VIP and talent transfers, venue-access planning; staging, production and creative direction stay with your agency" },
@@ -1126,14 +1298,14 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "entertainment-event-transport-italy",
     kind: "service",
-    title: "Entertainment & Concert Event Logistics | Italy",
+    title: "Entertainment & Concert Event Transport | Italy",
     description:
-      "Guest and hotel logistics for concerts, festivals and entertainment events in Italy: group shuttles, VIP cars, late-night returns. We move guests, not the show.",
-    h1: "Entertainment & Concert Event Logistics in Italy",
-    nav: "Entertainment events",
+      "Guest transport for concerts, festivals and entertainment events in Italy: group shuttles, VIP cars and late-night returns. We move guests, not the show.",
+    h1: "Entertainment & Concert Event Transport in Italy",
+    nav: "Entertainment event transport",
     lead:
       "Group shuttles and VIP transfers to a concert, festival or entertainment event — timed around the show, with a plan for the crowd at the end of the night.",
-    parent: { slug: "event-management-italy", label: "Event management" },
+    parent: { slug: "transportation", label: "Transportation" },
     tags: [],
     facts: [
       { label: "What we do", value: "Guest and VIP transport to and from the venue; booking the artist, staging or production stays with the promoter or your entertainment agency" },
@@ -1175,11 +1347,11 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "cultural-religious-group-transport-italy",
     kind: "service",
-    title: "Cultural & Religious Group Logistics in Italy",
+    title: "Cultural & Religious Group Transport in Italy",
     description:
-      "Group transport and hotel logistics for pilgrimage, faith and cultural-heritage groups in Italy: coaches, room blocks and licensed guides.",
-    h1: "Cultural & Religious Group Logistics in Italy",
-    nav: "Cultural & religious groups",
+      "Group transport for pilgrimage, faith and cultural-heritage groups in Italy: coaches, hotel blocks and licensed guides, planned around access rules.",
+    h1: "Cultural & Religious Group Transport in Italy",
+    nav: "Cultural & religious group transport",
     lead:
       "Coaches, hotel blocks and licensed guides for pilgrimage, parish and cultural-heritage groups — the same careful planning we use for any large group, built around the sites you're visiting.",
     parent: { slug: "group-travel-italy", label: "Group travel" },

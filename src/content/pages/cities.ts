@@ -30,7 +30,7 @@ export const cityPages: ContentPage[] = [
           "Executive chauffeurs by the hour or day for delegations and roadshows",
           "Fair-week shuttles between hotels and the Rho and city fair sites",
           "Lake Como, Lake Maggiore, Verona and Venice transfers",
-          "Corporate and MICE logistics: transport, hotel blocks and on-site coordination",
+          "Corporate events and MICE: venues, hotel blocks, transport and on-site coordination",
         ],
       },
       {
