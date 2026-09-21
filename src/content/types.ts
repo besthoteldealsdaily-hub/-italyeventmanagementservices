@@ -19,10 +19,31 @@ export interface Fact {
   value: string;
 }
 
+/** Internal link inside a section. Give a `slug` (skipped automatically if unpublished) or an `href` for a static route. */
+export interface SectionLink {
+  label: string;
+  slug?: string;
+  href?: string;
+}
+
+/** An H3 block inside a section. */
+export interface SectionItem {
+  title: string;
+  text?: string;
+  bullets?: string[];
+  links?: SectionLink[];
+}
+
 export interface Section {
   heading: string;
   paragraphs?: string[];
   bullets?: string[];
+  /** H3 blocks, shown after the paragraphs and bullets */
+  items?: SectionItem[];
+  /** Internal links shown as a list at the end of the section */
+  links?: SectionLink[];
+  /** Show this section after the FAQs instead of before them */
+  afterFaq?: boolean;
 }
 
 /** Which quote-form service option a page's CTA pre-selects. */

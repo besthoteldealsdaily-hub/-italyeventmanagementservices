@@ -2,6 +2,10 @@ import type { ContentPage, PageKind, RegistryEntry } from "./types";
 import { airportPages } from "./pages/airports";
 import { cityPages } from "./pages/cities";
 import { guidePages } from "./pages/guides";
+import { corporateGuides } from "./pages/guides-corporate";
+import { planningGuides } from "./pages/guides-planning";
+import { productionGuides } from "./pages/guides-production";
+import { weddingGuides } from "./pages/guides-weddings";
 import { hubPages } from "./pages/hubs";
 import { industryPages } from "./pages/industries";
 import { publishedPages } from "./pages/published";
@@ -22,6 +26,10 @@ const allPages: ContentPage[] = [
   ...verticalPages,
   ...industryPages,
   ...guidePages,
+  ...weddingGuides,
+  ...corporateGuides,
+  ...productionGuides,
+  ...planningGuides,
 ];
 
 /** slug → entry. Published pages override stubs with the same slug. */

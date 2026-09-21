@@ -15,6 +15,10 @@ for (const p of pages) {
   if (p.parent && p.parent.slug !== "guides" && !slugs.has(p.parent.slug)) errors.push(`${p.slug}: parent → unknown slug "${p.parent.slug}"`);
   if (p.parent?.slug === p.slug) errors.push(`${p.slug}: parent points to itself`);
   for (const g of p.groups ?? []) for (const s of g.slugs) if (!slugs.has(s)) errors.push(`${p.slug}: hub group "${g.title}" → unknown slug "${s}"`);
+  for (const sec of p.sections ?? []) {
+    const links = [...(sec.links ?? []), ...(sec.items ?? []).flatMap((i) => i.links ?? [])];
+    for (const l of links) if (l.slug && !slugs.has(l.slug)) errors.push(`${p.slug}: section "${sec.heading}" link → unknown slug "${l.slug}"`);
+  }
 
   if (p.title.length > 60) warnings.push(`${p.slug}: title is ${p.title.length} chars (> 60): ${p.title}`);
   if (p.description.length > 160) warnings.push(`${p.slug}: description is ${p.description.length} chars (> 160)`);
