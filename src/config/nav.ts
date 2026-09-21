@@ -21,6 +21,18 @@ export const navGroups: NavGroup[] = [
     all: { label: "All services", href: "/services" },
     columns: [
       {
+        title: "Event management and weddings",
+        slugs: [
+          "event-management-italy",
+          "event-services-italy",
+          "corporate-events-italy",
+          "conferences-mice-italy",
+          "luxury-event-management-italy",
+          "destination-weddings-italy",
+          "incentive-travel-italy",
+        ],
+      },
+      {
         title: "Transportation",
         slugs: [
           "airport-transfers",
@@ -29,27 +41,18 @@ export const navGroups: NavGroup[] = [
           "group-transportation-italy",
           "minibus-coach-hire-italy",
           "cruise-port-transfers-italy",
+          "wedding-transportation-italy",
         ],
       },
       {
-        title: "Hotels and events",
+        title: "Hotels, tours and travel",
         slugs: [
           "hotel-group-bookings-italy",
-          "event-management-italy",
-          "corporate-events-italy",
-          "conferences-mice-italy",
-          "incentive-travel-italy",
-          "corporate-travel-italy",
-        ],
-      },
-      {
-        title: "Weddings, tours, groups",
-        slugs: [
-          "destination-weddings-italy",
-          "wedding-transportation-italy",
+          "wedding-accommodation-italy",
           "private-tours-italy",
           "group-travel-italy",
           "italy-dmc-services",
+          "corporate-travel-italy",
         ],
       },
     ],
@@ -113,6 +116,18 @@ export const navLinks: { label: string; href: string }[] = [
 /** Footer columns (slugs, same rules). */
 export const footerColumns: NavColumn[] = [
   {
+    title: "Events and weddings",
+    slugs: [
+      "event-management-italy",
+      "event-services-italy",
+      "corporate-events-italy",
+      "conferences-mice-italy",
+      "luxury-event-management-italy",
+      "destination-weddings-italy",
+      "incentive-travel-italy",
+    ],
+  },
+  {
     title: "Transportation",
     slugs: [
       "airport-transfers",
@@ -123,19 +138,16 @@ export const footerColumns: NavColumn[] = [
       "minibus-coach-hire-italy",
       "cruise-port-transfers-italy",
       "vip-transfers-italy",
+      "wedding-transportation-italy",
     ],
   },
   {
-    title: "Hotels, events, weddings",
+    title: "Hotels and travel",
     slugs: [
       "hotel-group-bookings-italy",
-      "event-management-italy",
-      "corporate-events-italy",
-      "conferences-mice-italy",
-      "destination-weddings-italy",
-      "wedding-transportation-italy",
       "private-tours-italy",
       "group-travel-italy",
+      "italy-dmc-services",
     ],
   },
   {

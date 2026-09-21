@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "About Italy Event Management Services",
   description:
-    "A boutique Italian logistics and event-management company coordinating transport, accommodation and events through vetted local partners.",
+    "A boutique Italian event management and travel company planning weddings, corporate events and group travel through vetted local partners.",
   path: "/about",
 });
 
@@ -15,19 +15,20 @@ export default function AboutPage() {
   return (
     <Container narrow className="py-16 sm:py-24">
       <Eyebrow>About</Eyebrow>
-      <h1 className="mt-3 text-4xl font-semibold sm:text-5xl">We make Italy run on time</h1>
+      <h1 className="mt-3 text-4xl font-semibold sm:text-5xl">Events, weddings and travel in Italy, run by one team</h1>
       <p className="mt-6 text-lg leading-relaxed text-muted">
-        {site.name} is a boutique Italian logistics and event-management company. We coordinate transport, accommodation
-        and events across Rome, Milan, Tuscany, the Lakes and the Amalfi Coast through a vetted network of licensed local
-        partners — for destination-wedding planners, travel agencies, event agencies and corporate teams.
+        {site.name} is a boutique Italian event management and travel company. We plan and coordinate events and
+        weddings, and arrange the group accommodation and transport around them, across Rome, Milan, Tuscany, the Lakes
+        and the Amalfi Coast through a vetted network of licensed local partners — for couples, corporate teams, event
+        agencies, wedding planners and travel agencies.
       </p>
 
       <h2 className="mt-14 text-2xl font-semibold">How we work</h2>
       <div className="mt-5 space-y-4 leading-relaxed text-muted">
         <p>
-          We don&apos;t own vehicles or venues. That is a deliberate choice: it lets us choose the best licensed operator
-          for each route and event rather than filling our own fleet. Every partner is checked for licences and insurance
-          before they receive work, and we keep backups for every vehicle class.
+          We don&apos;t own vehicles, venues, kitchens or equipment. That is a deliberate choice: it lets us choose the
+          best specialist for each event and each route rather than filling our own fleet or calendar. Every partner is
+          checked for licences and insurance before they receive work, and we keep backups for every vehicle class.
         </p>
         <p>
           You get one contract, one dispatch team and one invoice — and a team accountable for the result. Prices are
@@ -40,6 +41,7 @@ export default function AboutPage() {
         <CheckList
           items={[
             `A fixed, itemised quote ${site.responseSla}`,
+            "One coordinator for the whole event, from the first brief to the last supplier",
             "Licensed and insured operators — verified, not assumed",
             "A named dispatch contact on every voucher, reachable around the clock",
             "A backup-vehicle process for every job",

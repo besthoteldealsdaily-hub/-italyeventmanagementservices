@@ -335,7 +335,7 @@ export default function Home() {
         </div>
         <Container className="absolute inset-x-0 bottom-0 pb-10 sm:pb-14">
           <p className="max-w-xl font-serif text-2xl font-semibold leading-snug text-white sm:text-3xl">
-            From the airport to the villa gate to a 200-guest gala — transport, hotels and event logistics, one invoice.
+            From the first brief to a 200-guest gala — the venue, the event itself, hotels and transport, one team and one invoice.
           </p>
         </Container>
       </section>

@@ -32,7 +32,7 @@ export default function Footer() {
         aria-hidden
         className="pointer-events-none absolute inset-0 [background:radial-gradient(ellipse_60%_50%_at_85%_0%,rgba(168,72,42,0.12),transparent)]"
       />
-      <Container className="relative grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-6">
+      <Container className="relative grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-7">
         <div className="lg:col-span-2">
           <Image
             src="/italy-event-management-services-logo.webp"
@@ -42,7 +42,7 @@ export default function Footer() {
             className="h-12 w-auto rounded-md"
           />
           <p className="mt-4 max-w-xs text-sm leading-relaxed">
-            Transfers, group transport, hotel blocks and events across Italy — run by one accountable team.
+            Events, weddings, hotels and transport across Italy — planned and run by one accountable team.
           </p>
           <ul className="mt-5 space-y-1.5 text-sm">
             <li>

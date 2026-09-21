@@ -126,26 +126,28 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "event-management-italy",
     kind: "service",
-    title: "Event Management in Italy | Logistics-Led Events",
+    title: "Event Management in Italy | Planning & Production",
     description:
-      "Event management in Italy with logistics at the core: transport, hotel blocks, venue and catering sourcing and on-site coordination through vetted partners.",
+      "Event management in Italy: planning, venues, catering, AV, décor and on-site coordination through vetted partners. Hotels and transport when needed.",
     h1: "Event Management in Italy",
     nav: "Event management",
     lead:
-      "We run the logistics spine of your event — transport, accommodation and coordination — and bring in vetted partners for venues, catering and production.",
+      "We plan, source and coordinate your event in Italy — the venue, catering, AV, décor, staffing and the day itself — through vetted partners, and add hotels and transport when you need them.",
     parent: { slug: "services", label: "Services" },
     tags: [],
     facts: [
       { label: "Market", value: "Italy hosted 367,981 business events in 2024 (+8.2%) with 29.3 million participants, worth about €11.7 billion in direct contribution" },
-      { label: "Our role", value: "Logistics-led: transport, hotel blocks, venue and supplier sourcing, on-site coordination" },
+      { label: "Our role", value: "End-to-end planning and coordination: programme and budget, venue and supplier sourcing, production management and on-site delivery" },
       { label: "Pricing", value: "Itemised supplier costs plus a clear management fee, with your budget shown line by line" },
       { label: "Payment schedule", value: "Typically 30% at contract, 40% about 60 days before and 30% about 14 days before, mirrored to suppliers" },
     ],
     included: [
-      "Programme and budget planning",
-      "Transport and hotel-block management",
-      "Venue, catering and AV sourcing through vetted partners",
-      "On-site coordination and dispatch",
+      "Concept, programme and budget planning",
+      "Venue, catering, AV and décor sourcing through vetted partners",
+      "Production management: supplier briefs, schedules and the run of show",
+      "Hosts, registration and staffing through partners",
+      "On-site coordination for setup, the event itself and breakdown",
+      "Hotels and transport added when needed",
       "One budget sheet and one invoice",
     ],
     sections: [
@@ -181,7 +183,7 @@ export const eventServicePages: ContentPage[] = [
       },
       {
         q: "Do you handle creative production?",
-        a: "Through specialist partners or alongside your own creative agency; we focus on logistics.",
+        a: "We manage production through specialist partners: AV, décor and technical suppliers briefed to one schedule. Creative direction can come from your own agency, and we work alongside it.",
       },
       {
         q: "How do you vet a venue or caterer before proposing them?",
@@ -192,7 +194,7 @@ export const eventServicePages: ContentPage[] = [
         a: "Yes — Milan, Florence, Tuscany, Lake Como and the Amalfi Coast, using local suppliers vetted the same way in every city.",
       },
       {
-        q: "Can you source the venue, not just the logistics around it?",
+        q: "Can you source the venue as well as manage the event?",
         a: "Yes, through vetted partners: congress centres, hotels, palaces and villas, proposed against your budget and guest count.",
       },
       {
@@ -201,7 +203,7 @@ export const eventServicePages: ContentPage[] = [
       },
       {
         q: "Can hotel accommodation, transport and the event itself be booked together?",
-        a: "Yes. That is the core of the service: one team, one budget sheet and one invoice across all three.",
+        a: "Yes. Hotels and transport are added to the event as separate lines on the same budget sheet and invoice.",
       },
     ],
     related: ["event-services-italy", "corporate-events-italy", "conferences-mice-italy", "incentive-travel-italy", "for-event-agencies"],
@@ -425,27 +427,28 @@ export const eventServicePages: ContentPage[] = [
   page({
     slug: "conferences-mice-italy",
     kind: "service",
-    title: "Conferences & MICE Services in Italy | Delegate Logistics",
+    title: "Conferences & MICE Services in Italy | Venues & Delegates",
     description:
-      "MICE services in Italy: delegate transfers, hotel blocks, venue shuttles and on-site coordination for meetings, conferences and exhibitions.",
+      "MICE services in Italy: venue sourcing, registration and hosts, AV, hotel blocks, delegate transport and on-site coordination for conferences and exhibitions.",
     h1: "Conferences & MICE Services in Italy",
     nav: "Conferences & MICE",
     lead:
-      "Delegate arrivals, hotel blocks, venue shuttles and on-site coordination for conferences and exhibitions across Italy.",
+      "Venue sourcing, registration, AV, hotel blocks, delegate transport and on-site coordination for conferences, meetings and exhibitions across Italy.",
     parent: { slug: "event-management-italy", label: "Event management" },
     tags: [],
     facts: [
       { label: "Italy in the market", value: "Second in the world for international association meetings, with 635 in 2024; six Italian cities are in the global top 100" },
       { label: "Leading cities", value: "Rome ninth (114 meetings) and Milan fourteenth (100 meetings, up from 29th)" },
       { label: "Growth", value: "Collective and MICE trips are growing about three times faster than routine business trips" },
-      { label: "Our scope", value: "Delegate transport, hotel blocks, VIP handling and on-site logistics; content and production through partners" },
+      { label: "Our scope", value: "Venue sourcing, registration and hosts, AV, hotel blocks, delegate transport and on-site coordination; content and speakers stay with you or your PCO" },
     ],
     included: [
-      "Delegate arrival and departure waves",
-      "Hotel blocks with cut-off and attrition management",
-      "Venue shuttles timed to the programme",
-      "VIP and speaker transfers",
+      "Venue sourcing: congress centres, fair grounds and hotel congress facilities",
       "Registration desk, badge/check-in flow, hosts and interpreters through partners",
+      "AV sourcing for plenaries, breakouts and gala evenings",
+      "Hotel blocks with cut-off and attrition management",
+      "Delegate arrival and departure waves, venue shuttles and VIP and speaker transfers",
+      "On-site coordination for the whole programme",
     ],
     sections: [
       {
@@ -457,14 +460,14 @@ export const eventServicePages: ContentPage[] = [
       {
         heading: "Registration, staffing and the delegate experience",
         paragraphs: [
-          "The registration desk is the first thing a delegate sees, so we treat it as part of the logistics plan, not an afterthought. Through vetted staffing partners we set up the check-in flow, badge printing and host briefing, and we time it against the same arrival waves as the transport plan, so there's no queue building up at the door while a shuttle unloads outside.",
+          "The registration desk is the first thing a delegate sees, so we plan it as part of the event, not an afterthought. Through vetted staffing partners we set up the check-in flow, badge printing and host briefing, and we time it against the same arrival waves as the transport plan, so there's no queue building up at the door while a shuttle unloads outside.",
         ],
       },
     ],
     faqs: [
       {
         q: "Can you work with our PCO?",
-        a: "Yes — many clients are PCOs or agencies who need a specialist logistics partner in Italy.",
+        a: "Yes. Many clients are PCOs or agencies who need an operating partner on the ground in Italy.",
       },
       {
         q: "Can you provide registration desks and hosts?",
@@ -472,7 +475,7 @@ export const eventServicePages: ContentPage[] = [
       },
       {
         q: "Do you design the conference programme itself?",
-        a: "No — content, speakers and session design stay with you or your PCO. We design and run the logistics around the programme: arrivals, registration, venue shuttles and hotel blocks.",
+        a: "No — content, speakers and session design stay with you or your PCO. We run the operating side around the programme: venue, registration, AV, hotel blocks and delegate arrivals.",
       },
     ],
     related: ["rome-mice-services", "milan-mice-services", "venice-mice-services", "for-event-agencies"],
@@ -490,8 +493,8 @@ export const eventServicePages: ContentPage[] = [
     h1: "Corporate Travel in Italy",
     nav: "Corporate travel",
     lead:
-      "Ground handling for delegations, roadshows and executive visits: airport meet-and-greet, chauffeurs, hotel blocks and meeting logistics.",
-    parent: { slug: "event-management-italy", label: "Event management" },
+      "Ground handling for delegations, roadshows and executive visits: airport meet-and-greet, chauffeurs, hotel blocks and meeting arrangements.",
+    parent: { slug: "services", label: "Services" },
     tags: [],
     facts: [
       { label: "Focus", value: "Inbound corporate travel to Italy — delegations, roadshows, offsites, incentive groups" },
@@ -781,25 +784,26 @@ export const eventServicePages: ContentPage[] = [
     kind: "service",
     title: "Luxury Event Management in Italy | VIP & Discreet",
     description:
-      "Luxury event logistics in Italy for UHNW clients, family offices and premium brands: VIP transport, discreet security, villa and hotel blocks, one contact.",
+      "Luxury event management in Italy for UHNW clients, family offices and premium brands: villas, galas, VIP dinners, discreet security coordination, one contact.",
     h1: "Luxury Event Management in Italy",
     nav: "Luxury events",
     lead:
-      "One accountable team across VIP transport, security, villa and hotel blocks and on-site coordination — for clients who need discretion and a backup for everything, not just a nice car.",
+      "One accountable team across the venue, catering, production, security coordination and on-site management — for clients who need discretion and a backup for everything.",
     parent: { slug: "services", label: "Services" },
     tags: [],
     facts: [
       { label: "What's different here", value: "Same partner network as our standard services, run at luxury tier: S-Class or equivalent sedans, V-Class vans, licensed security and discreet drivers as standard, not an upgrade" },
       { label: "Typical clients", value: "UHNW families, family offices, luxury brands, talent management and premium event agencies" },
-      { label: "Scope", value: "VIP and delegation transport, security through licensed partners, villa and luxury hotel blocks, and on-site event coordination" },
+      { label: "Scope", value: "Villa and venue sourcing, gala and dinner planning, security through licensed partners, on-site event coordination, with VIP transport and luxury hotel blocks alongside" },
       { label: "Market context", value: "Italy hosted 367,981 business events in 2024 (+8.2%), worth about €11.7 billion in direct contribution — a market with a genuine luxury and UHNW segment" },
     ],
     included: [
-      "Luxury vehicles and discreet, briefed drivers as standard",
+      "Villa, palace and luxury venue sourcing and negotiation",
+      "Gala and VIP dinner planning: seating, run of show and supplier briefs",
       "Licensed security providers through partners, on request",
-      "Villa and luxury hotel sourcing and negotiation",
-      "A single named contact across transport, accommodation and on-site logistics",
-      "A backup plan for every vehicle and every supplier",
+      "Luxury vehicles and discreet, briefed drivers, and luxury hotel sourcing, alongside the event",
+      "A single named contact across the event, accommodation and transport",
+      "A backup plan for every supplier and every vehicle",
     ],
     sections: [
       {
@@ -811,7 +815,7 @@ export const eventServicePages: ContentPage[] = [
       {
         heading: "What this covers, and what stays with specialists",
         paragraphs: [
-          "We run transport, security coordination, accommodation and on-site logistics directly. Catering, entertainment, styling and production are sourced through vetted specialist partners we brief and manage, so you deal with one team even though several suppliers are involved.",
+          "We plan and coordinate the event: venue, catering, entertainment, styling, production and security are sourced through vetted specialist partners we brief and manage, with VIP transport and accommodation alongside when needed. You deal with one team even though several suppliers are involved.",
         ],
       },
       {
