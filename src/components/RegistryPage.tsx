@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { ContentPage } from "@/content/types";
+import type { ContentPage, Section, SectionLink } from "@/content/types";
 import { getPublishedPage, pagesTagged, pathFor, relatedFor } from "@/content/registry";
 import { articleJsonLd, breadcrumbJsonLd, collectionJsonLd, faqJsonLd, serviceJsonLd } from "@/lib/seo";
 import Breadcrumbs, { type Crumb } from "./Breadcrumbs";
@@ -33,6 +33,78 @@ export function crumbsFor(page: ContentPage): Crumb[] {
   }
   crumbs.push({ name: page.nav ?? page.h1, path: pathFor(page) });
   return crumbs;
+}
+
+/** Links to live pages only: a slug that is not published is dropped, so a section never links to a 404. */
+function resolveLinks(links: SectionLink[] = []): { label: string; href: string }[] {
+  return links.flatMap((l) => {
+    if (l.href) return [{ label: l.label, href: l.href }];
+    const target = l.slug ? getPublishedPage(l.slug) : undefined;
+    return target ? [{ label: l.label, href: pathFor(target) }] : [];
+  });
+}
+
+function SectionBlock({ section }: { section: Section }) {
+  const links = resolveLinks(section.links);
+  return (
+    <section>
+      <h2 className="text-2xl font-semibold">{section.heading}</h2>
+      {section.paragraphs?.map((p) => (
+        <p key={p} className="mt-4 leading-relaxed text-muted">
+          {p}
+        </p>
+      ))}
+      {section.bullets && (
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-accent">
+          {section.bullets.map((b) => (
+            <li key={b}>{b}</li>
+          ))}
+        </ul>
+      )}
+      {section.items && (
+        <div className="mt-6 space-y-7">
+          {section.items.map((item) => {
+            const itemLinks = resolveLinks(item.links);
+            return (
+              <div key={item.title}>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                {item.text && <p className="mt-2 leading-relaxed text-muted">{item.text}</p>}
+                {item.bullets && (
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-muted marker:text-accent">
+                    {item.bullets.map((b) => (
+                      <li key={b}>{b}</li>
+                    ))}
+                  </ul>
+                )}
+                {itemLinks.length > 0 && (
+                  <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm font-medium">
+                    {itemLinks.map((l) => (
+                      <li key={l.href}>
+                        <Link href={l.href} className="text-accent hover:underline">
+                          {l.label} <span aria-hidden>→</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      )}
+      {links.length > 0 && (
+        <ul className="mt-5 grid gap-x-6 gap-y-2 text-sm font-medium sm:grid-cols-2">
+          {links.map((l) => (
+            <li key={l.href}>
+              <Link href={l.href} className="text-accent hover:underline">
+                {l.label} <span aria-hidden>→</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
 }
 
 /** Pages carrying a city's tag, grouped for the city page. */
@@ -141,22 +213,8 @@ export default function RegistryPage({ page }: { page: ContentPage }) {
             </section>
           )}
 
-          {page.sections?.map((s) => (
-            <section key={s.heading}>
-              <h2 className="text-2xl font-semibold">{s.heading}</h2>
-              {s.paragraphs?.map((p) => (
-                <p key={p} className="mt-4 leading-relaxed text-muted">
-                  {p}
-                </p>
-              ))}
-              {s.bullets && (
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-muted marker:text-accent">
-                  {s.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-              )}
-            </section>
+          {page.sections?.filter((s) => !s.afterFaq).map((s) => (
+            <SectionBlock key={s.heading} section={s} />
           ))}
 
           {cityGroups.map((g) => (
@@ -178,6 +236,10 @@ export default function RegistryPage({ page }: { page: ContentPage }) {
               </div>
             </section>
           )}
+
+          {page.sections?.filter((s) => s.afterFaq).map((s) => (
+            <SectionBlock key={s.heading} section={s} />
+          ))}
 
           {page.sources && page.sources.length > 0 && (
             <section aria-labelledby="sources">
