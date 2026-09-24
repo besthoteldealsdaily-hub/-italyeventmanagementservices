@@ -1,6 +1,6 @@
 "use server";
 
-import { deliverLead, newReference } from "@/lib/leads";
+import { confirmToCustomer, deliverLead, newReference } from "@/lib/leads";
 import { saveLead } from "@/lib/lead-store";
 import { headers } from "next/headers";
 import { turnstileEnabled, verifyTurnstile } from "@/lib/turnstile";
@@ -60,6 +60,9 @@ export async function submitQuote(_prev: QuoteFormState, formData: FormData): Pr
       values: echo(),
     };
   }
+
+  // Best-effort: a customer email hiccup shouldn't turn an accepted lead into an error for them.
+  await confirmToCustomer(reference, lead);
 
   return {
     status: "success",

@@ -1,4 +1,6 @@
 import { randomBytes } from "node:crypto";
+import { site } from "@/config/site";
+import { sendMail } from "./mail";
 import { sendViaSmtp, smtpConfigured } from "./smtp";
 import { SERVICE_OPTIONS } from "./quote-options";
 import type { QuoteInput } from "./quote-schema";
@@ -92,6 +94,30 @@ async function sendWebhook(reference: string, lead: QuoteInput, body: string): P
     body: JSON.stringify({ text: `New quote request\n${body}`, reference, lead }),
   });
   return res.ok;
+}
+
+/**
+ * Best-effort "we've got it" email to the customer, separate from the owner notification above.
+ * Never throws and its result doesn't affect whether the submission counts as delivered — a
+ * customer email hiccup shouldn't turn a successfully-received lead into an error for them.
+ */
+export async function confirmToCustomer(reference: string, lead: QuoteInput): Promise<boolean> {
+  const subject = `We've got your request — ${reference}`;
+  const text = [
+    `Hi ${lead.name},`,
+    "",
+    `Thanks for your request (reference ${reference}) for ${serviceLabel(lead.service).toLowerCase()}.`,
+    `We reply with a fixed quote ${site.responseSla}.`,
+    "",
+    "Just reply to this email if anything changes on your side — it reaches our team directly.",
+    "",
+    `— ${site.name}`,
+  ].join("\n");
+  try {
+    return await sendMail({ to: lead.email, subject, text });
+  } catch {
+    return false;
+  }
 }
 
 /** Returns true if at least one channel accepted the lead. */
