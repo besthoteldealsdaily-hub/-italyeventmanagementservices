@@ -1,12 +1,24 @@
-/** Transactional email via Resend (same env vars as the lead notifications). Returns false when not configured or on failure. */
+import { sendViaSmtp, smtpConfigured } from "./smtp";
+
+/** Transactional email via SMTP (if configured) or Resend. Returns false when neither is configured or on failure. */
 export function mailConfigured(): boolean {
-  return Boolean(process.env.RESEND_API_KEY && process.env.QUOTE_FROM_EMAIL);
+  return smtpConfigured() || Boolean(process.env.RESEND_API_KEY && process.env.QUOTE_FROM_EMAIL);
 }
 
 export async function sendMail(opts: { to: string; subject: string; text: string; replyTo?: string }): Promise<boolean> {
+  if (!opts.to) return false;
+  const replyTo = opts.replyTo ?? process.env.QUOTE_TO_EMAIL?.split(",")[0]?.trim();
+
+  if (smtpConfigured()) {
+    const from = process.env.SMTP_FROM ?? process.env.SMTP_USER!;
+    const sent = await sendViaSmtp({ to: [opts.to], subject: opts.subject, text: opts.text, from, replyTo });
+    if (sent) return true;
+    // Fall through to Resend below, in case both are configured.
+  }
+
   const key = process.env.RESEND_API_KEY;
   const from = process.env.QUOTE_FROM_EMAIL;
-  if (!key || !from || !opts.to) return false;
+  if (!key || !from) return false;
   try {
     const res = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -14,7 +26,7 @@ export async function sendMail(opts: { to: string; subject: string; text: string
       body: JSON.stringify({
         from,
         to: [opts.to],
-        reply_to: opts.replyTo ?? process.env.QUOTE_TO_EMAIL?.split(",")[0]?.trim(),
+        reply_to: replyTo,
         subject: opts.subject,
         text: opts.text,
       }),

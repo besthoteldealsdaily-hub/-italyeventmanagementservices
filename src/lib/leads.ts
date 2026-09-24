@@ -1,12 +1,14 @@
 import { randomBytes } from "node:crypto";
+import { sendViaSmtp, smtpConfigured } from "./smtp";
 import { SERVICE_OPTIONS } from "./quote-options";
 import type { QuoteInput } from "./quote-schema";
 
 /**
  * Lead delivery (server-side only).
  *
- * v0 pipeline: email notification (Resend) and/or a generic webhook (Telegram bot, Slack, Make, n8n…).
- * When you add Postgres (see /db/schema.sql), persist the lead FIRST, then notify.
+ * v0 pipeline: email notification (SMTP, e.g. Gmail with an App Password, or Resend) and/or a
+ * generic webhook (Telegram bot, Slack, Make, n8n…). When you add Postgres (see /db/schema.sql),
+ * persist the lead FIRST, then notify.
  */
 
 export function newReference(now = new Date()) {
@@ -50,19 +52,30 @@ export function formatLead(reference: string, lead: QuoteInput) {
 }
 
 async function sendEmail(reference: string, lead: QuoteInput, body: string): Promise<boolean> {
-  const key = process.env.RESEND_API_KEY;
   const to = process.env.QUOTE_TO_EMAIL;
+  if (!to) return false;
+  const subject = `[${reference}] ${serviceLabel(lead.service)} — ${lead.name}`;
+  const recipients = to.split(",").map((s) => s.trim());
+
+  if (smtpConfigured()) {
+    const from = process.env.SMTP_FROM ?? process.env.SMTP_USER!;
+    const sent = await sendViaSmtp({ to: recipients, subject, text: body, from, replyTo: lead.email });
+    if (sent) return true;
+    // Fall through to Resend below, in case both are configured.
+  }
+
+  const key = process.env.RESEND_API_KEY;
   const from = process.env.QUOTE_FROM_EMAIL;
-  if (!key || !to || !from) return false;
+  if (!key || !from) return false;
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body: JSON.stringify({
       from,
-      to: to.split(",").map((s) => s.trim()),
+      to: recipients,
       reply_to: lead.email,
-      subject: `[${reference}] ${serviceLabel(lead.service)} — ${lead.name}`,
+      subject,
       text: body,
     }),
   });
@@ -93,7 +106,7 @@ export async function deliverLead(reference: string, lead: QuoteInput): Promise<
     return true;
   }
   if (!delivered) {
-    console.error(`[quote] Lead ${reference} could not be delivered — check RESEND_* / LEAD_WEBHOOK_URL env vars.`);
+    console.error(`[quote] Lead ${reference} could not be delivered — check SMTP_* / RESEND_* / LEAD_WEBHOOK_URL env vars.`);
   }
   return delivered;
 }

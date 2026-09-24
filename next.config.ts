@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig: NextConfig = {
+  // worker-mailer (SMTP) imports the Workers-only `cloudflare:sockets` API dynamically at call
+  // time. Left out of bundling so neither Next's bundler nor the Cloudflare build tries to
+  // resolve that import ahead of time; it only has to exist once actually run in a Worker.
+  serverExternalPackages: ["worker-mailer"],
   // public/_headers covers prerendered pages/assets served straight from Workers Static
   // Assets; this covers routes that instead go through the Worker itself (admin, api,
   // quote/pay/voucher/review token pages), which that file's rules don't reach.
