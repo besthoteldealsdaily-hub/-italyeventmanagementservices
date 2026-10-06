@@ -22,6 +22,22 @@ type Props = { params: Promise<{ id: string }>; searchParams: Promise<{ ok?: str
 
 const Th = ({ children }: { children: React.ReactNode }) => <th className={thCls}>{children}</th>;
 
+/** wa.me link pre-filled with the trip brief for a booking line's driver. Null when there's no driver phone to send it to. */
+function driverWhatsAppLink(bookingRef: string, customerName: string, customerPhone: string | null, item: Record<string, string | number | null>) {
+  const phone = String(item.driver_phone ?? "").replace(/[^\d]/g, "");
+  if (!phone) return null;
+  const lines = [
+    `Job ${bookingRef} — ${item.description}`,
+    item.pickup_at ? `When: ${fmtDateTime(String(item.pickup_at))}` : null,
+    item.pickup || item.dropoff ? `Route: ${item.pickup ?? "–"} → ${item.dropoff ?? "–"}` : null,
+    item.pax ? `Passengers: ${item.pax}${item.bags ? ` · Bags: ${item.bags}` : ""}` : null,
+    item.flight_no ? `Flight: ${item.flight_no}` : null,
+    `Client: ${customerName}${customerPhone ? ` — ${customerPhone}` : ""}`,
+    item.notes ? `Notes: ${item.notes}` : null,
+  ].filter(Boolean);
+  return `https://wa.me/${phone}?text=${encodeURIComponent(lines.join("\n"))}`;
+}
+
 export default async function BookingDetail({ params, searchParams }: Props) {
   await requireAdmin();
   const { id } = await params;
@@ -36,7 +52,11 @@ export default async function BookingDetail({ params, searchParams }: Props) {
 
   const [items, schedule, payments, refunds, invoices, payouts, incidents, tasks, review, totals, paid, settings] = await Promise.all([
     db.all<Record<string, string | number | null>>(
-      "SELECT bi.*, s.legal_name AS supplier_name FROM booking_items bi LEFT JOIN suppliers s ON s.id = bi.supplier_id WHERE bi.booking_id = ? ORDER BY bi.position, bi.pickup_at",
+      `SELECT bi.*, s.legal_name AS supplier_name, d.name AS driver_name, d.phone AS driver_phone
+       FROM booking_items bi
+       LEFT JOIN suppliers s ON s.id = bi.supplier_id
+       LEFT JOIN drivers d ON d.id = bi.driver_id
+       WHERE bi.booking_id = ? ORDER BY bi.position, bi.pickup_at`,
       id,
     ),
     db.all<{ id: string; milestone: string; due_date: string; amount_cents: number; status: string }>("SELECT * FROM payment_schedules WHERE booking_id = ? ORDER BY due_date, rowid", id),
@@ -100,15 +120,17 @@ export default async function BookingDetail({ params, searchParams }: Props) {
                     <Th>Service</Th>
                     <Th>When</Th>
                     <Th>Supplier</Th>
+                    <Th>Driver</Th>
                     <Th>Status</Th>
                     <Th>Total</Th>
                     <Th>Cost</Th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line">
-                  {items.length === 0 && <EmptyRow cols={6} />}
+                  {items.length === 0 && <EmptyRow cols={7} />}
                   {items.map((it) => {
                     const net = Math.round(Number(it.qty ?? 1) * Number(it.price_cents ?? 0));
+                    const waLink = driverWhatsAppLink(String(booking.ref), String(booking.customer_name ?? ""), booking.customer_phone, it);
                     return (
                       <tr key={String(it.id)}>
                         <td className={tdCls}>
@@ -121,6 +143,14 @@ export default async function BookingDetail({ params, searchParams }: Props) {
                         </td>
                         <td className={tdCls}>{fmtDateTime(String(it.pickup_at ?? ""))}</td>
                         <td className={tdCls}>{String(it.supplier_name ?? "—")}</td>
+                        <td className={tdCls}>
+                          {it.driver_name ? String(it.driver_name) : <span className="text-muted">—</span>}
+                          {waLink && (
+                            <a href={waLink} target="_blank" rel="noopener noreferrer" className="ml-2 text-xs font-medium text-accent hover:underline">
+                              WhatsApp
+                            </a>
+                          )}
+                        </td>
                         <td className={tdCls}>
                           <StatusBadge status={String(it.supplier_status ?? "requested")} />
                         </td>
